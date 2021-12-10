@@ -5,10 +5,31 @@
  */
 package Business.Sensor;
 
+import java.util.ArrayList; 
 /**
  *
  * @author apurv
  */
-public class NoisePollutionSesnorDirectory {
+public class NoisePollutionSesnorDirectory extends Sensor {
+        private ArrayList<NoisePollutionSensor>  NoisePollutionSensor;
     
+    public NoisePollutionSesnorDirectory(){
+        NoisePollutionSensor = new ArrayList<NoisePollutionSensor>();
+    }
+
+    public ArrayList<NoisePollutionSensor> getNoisePollutionSensor() {
+        return NoisePollutionSensor;
+    }
+
+    public void setNoisePollutionSensor(ArrayList<NoisePollutionSensor> NoisePollutionSensor) {
+        this.NoisePollutionSensor= NoisePollutionSensor;
+    }
+    
+    public NoisePollutionSensor addNoisePollutionSensor()
+    {
+        NoisePollutionSensor noisePollutionSensor = new NoisePollutionSensor();
+        NoisePollutionSensor.add(noisePollutionSensor);
+        return noisePollutionSensor;
+    }
+
 }

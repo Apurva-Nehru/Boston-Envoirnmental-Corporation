@@ -12,7 +12,7 @@ import Business.Role.EnvironmentSensorAdminRole;
  *
  * @author apurv
  */
-public class SensorManagementEnterprise {
+public class SensorManagementEnterprise extends Enterprise {
      public SensorManagementEnterprise(String name, Enterprise.EnterpriseType type) {
         super(name, type.SensorManagement);
     }

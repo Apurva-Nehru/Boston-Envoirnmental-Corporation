@@ -12,25 +12,31 @@ public class Employee {
     
     private String Name;
     private int id;
-    private static int count = 1;
-
-    public Employee() {
+    private  static int count=1;
+    
+    public Employee(){
         id = count;
         count++;
+    }
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String Name) {
+        this.Name = Name;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setName(String name) {
-        this.Name = name;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    
-    public String getName() {
-        return Name;
-    }
+  
+
+   
 
     @Override
     public String toString() {

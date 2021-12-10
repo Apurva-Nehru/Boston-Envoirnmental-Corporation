@@ -15,7 +15,7 @@ public class EnterpriseDirectory {
      private ArrayList<Enterprise> enterpriseList;
     public EnterpriseDirectory() {
         
-        enterpriseList = new ArrayList<>();
+        enterpriseList = new ArrayList<Enterprise>();
     }
 
     public ArrayList<Enterprise> getEnterpriseList() {
@@ -24,8 +24,8 @@ public class EnterpriseDirectory {
 
     public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type) {
         Enterprise enterprise = null;
-        if (type == Enterprise.EnterpriseType.EnvironmentManagement) {
-            enterprise = new EnvironmentManagementEnterprise(name, type);
+        if (type == Enterprise.EnterpriseType.EnvManagement) {
+            enterprise = new EnvManagementEnterprise(name, type);
             enterpriseList.add(enterprise);
         }
         
@@ -42,11 +42,10 @@ public class EnterpriseDirectory {
         return enterprise;
     }
 
-    public void DeleteEnterprise(Enterprise enterprise) {
+    public void Delete_Enterprise(Enterprise enterprise) {
        
         enterpriseList.remove(enterprise);
     }
 
-    
     
 }

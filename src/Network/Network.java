@@ -7,7 +7,7 @@ package Network;
 
 import Business.Enterprise.Enterprise;
 import Business.Enterprise.EnterpriseDirectory;
---import Business.Sensors.MasterSensorDirectory;
+
 
 /**
  *
@@ -34,8 +34,8 @@ public class Network {
     }
     
     public boolean sameEnterprise(String name) {
-        for (Enterprise e : enterpriseDirectory.getEnterpriseList()) {
-            if (e.getName().equals(name)) {
+        for (Enterprise ent : enterpriseDirectory.getEnterpriseList()) {
+            if (ent.getName().equals(name)) {
                 return true;
             }
         }

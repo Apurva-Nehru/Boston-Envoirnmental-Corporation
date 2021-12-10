@@ -7,13 +7,16 @@ package Business.Enterprise;
 
 import Business.Role.Role;
 import java.util.ArrayList;
+import Business.Oragnization.Organization;
+import Business.Oragnization.OrganizationDirectory;
+
 
 //import Business.Organization.OrganizationDirectory;
 /**
  *
  * @author apurv
  */
-public class Enterprise {
+public class Enterprise extends Organization{
      private EnterpriseType enterpriseType;
     private OrganizationDirectory organizationDirectory;
 
@@ -35,23 +38,23 @@ public class Enterprise {
     
     public enum EnterpriseType {
 
-        EnvironmentManagement("Environmental Management"),
+        EnvManagement("Environmental Management"),
         Government("Government Agency"), 
         SensorManagement("SensorManagement");
         
-        private String value;
+        private String val;
 
         private EnterpriseType(String value) {
-            this.value = value;
+            this.val = val;
         }
 
         public String getValue() {
-            return value;
+            return val;
         }
 
         @Override
         public String toString() {
-            return value;
+            return val;
         }
     }
 

@@ -13,8 +13,8 @@ import java.util.ArrayList;
  * @author apurv
  */
 public class EnvManagementEnterprise extends Enterprise{
-    public EnvironmentManagementEnterprise(String name, Enterprise.EnterpriseType type) {
-        super(name, type.EnvironmentManagement);
+    public EnvManagementEnterprise(String name, Enterprise.EnterpriseType type) {
+        super(name, type.EnvManagement);
     }
 
     @Override

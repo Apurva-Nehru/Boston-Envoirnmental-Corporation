@@ -13,9 +13,8 @@ import Business.Role.GovernmentAdminRole;
  *
  * @author apurv
  */
-public class GovernmentEnterprise {
-    public class GovernmentEnterprise extends Enterprise{
-    
+public class GovernmentEnterprise extends Enterprise{
+   
     public GovernmentEnterprise(String name, Enterprise.EnterpriseType type) {
         super(name, type.Government);
     }

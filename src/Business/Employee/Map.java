@@ -23,9 +23,7 @@ public class Map {
 {        
 JFrame test = new JFrame("Google Maps");
 try {
-//String latitude = "42.332227";
-//String longitude = "-71.099202";
-//String imageUrl = "https://www.google.com/maps/@42.3318286,-71.1048009,285m/data=!3m1!1e3";
+
 String imageUrl = "https://maps.googleapis.com/maps/api/staticmap?center="
 + lat
 + ","

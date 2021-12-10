@@ -53,7 +53,7 @@ public class EcoSystem extends Organization{
         this.networkList = networkList;
     }
     
-    public boolean checkIfUsernameIsUnique(String username) {
+    public boolean UniqueUserName(String username) {
 
         for (UserAccount user : this.getUserAccountDirectory().getUserAccountList()) {
           
@@ -61,16 +61,16 @@ public class EcoSystem extends Organization{
                 return false;
             }
             for (Network network : this.getNetworkList()) {
-                for (Enterprise enterprise : network.getEnterpriseDirectory().getEnterpriseList()) {
-                    for (UserAccount useraccount : enterprise.getUserAccountDirectory().getUserAccountList()) {
+                for (Enterprise entprise : network.getEnterpriseDirectory().getEnterpriseList()) {
+                    for (UserAccount useracc : entprise.getUserAccountDirectory().getUserAccountList()) {
                     
-                        if (useraccount.getUsername().equals(username)) {
+                        if (useracc.getUsername().equals(username)) {
                             return false;
                         }
-                        for (Organization org : enterprise.getOrganizationDirectory().getOrganizationList()) {
-                            for (UserAccount accOrg : org.getUserAccountDirectory().getUserAccountList()) {
+                        for (Organization org : entprise.getOrganizationDirectory().getOrganizationList()) {
+                            for (UserAccount accOrgn : org.getUserAccountDirectory().getUserAccountList()) {
                                
-                                if (accOrg.getUsername().equals(username)) {
+                                if (accOrgn.getUsername().equals(username)) {
                                     return false;
                                 }
                             }
@@ -87,16 +87,16 @@ public class EcoSystem extends Organization{
     
     public boolean checkIfCityNameisUnique(String cityName) {
 
-        for (Network n : this.networkList) {
-            if (n.getName().equals(cityName)) {
+        for (Network nwk : this.networkList) {
+            if (nwk.getName().equals(cityName)) {
                 return true;
             }
         }
         return false;
     }
     
-    public void DeleteCity(Network n) {
-        networkList.remove(n);
+    public void DeleteCity(Network net) {
+        networkList.remove(net);
     }
      
     

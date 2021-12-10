@@ -5,15 +5,15 @@
  */
 package Business.Sensor;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;
 /**
  *
  * @author apurv
  */
-public class NoisePollutionSesnorDirectory extends Sensor {
-        private ArrayList<NoisePollutionSensor>  NoisePollutionSensor;
+public class NoisePollutionSensorDirectory extends Sensor {
+       private ArrayList<NoisePollutionSensor>  NoisePollutionSensor;
     
-    public NoisePollutionSesnorDirectory(){
+    public NoisePollutionSensorDirectory(){
         NoisePollutionSensor = new ArrayList<NoisePollutionSensor>();
     }
 

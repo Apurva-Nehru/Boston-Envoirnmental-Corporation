@@ -5,10 +5,32 @@
  */
 package Business.Sensor;
 
+import java.util.ArrayList;
 /**
  *
  * @author apurv
  */
-public class WasteSensorDirectory {
+public class WasteSensorDirectory extends Sensor{
+    private ArrayList<WasteSensor>  WasteSensor;
     
+    public WasteSensorDirectory()
+    {
+        WasteSensor = new ArrayList< WasteSensor>();
+    }
+
+    public ArrayList< WasteSensor> getWasteSensor() {
+        return WasteSensor;
+    }
+
+    public void setWasteSensor(ArrayList<WasteSensor> WasteSensor) {
+        this. WasteSensor = WasteSensor;
+    }
+    
+    public WasteSensor addWasteSensor()
+    {
+        WasteSensor wasteSensor = new WasteSensor();
+        WasteSensor.add(wasteSensor);
+        return wasteSensor;
+    }
+
 }

@@ -19,10 +19,10 @@ public class EmployeeDirectory {
     }
 
     public Employee createEmployee(String name){
-        Employee employee = new Employee();
-        employee.setName(name);
-        employee_List.add(employee);
-        return employee;
+        Employee emp = new Employee();
+        emp.setName(name);
+        employee_List.add(emp);
+        return emp;
     }
     public ArrayList<Employee> getEmployeeList() {
         return employee_List;

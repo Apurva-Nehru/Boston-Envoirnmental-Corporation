@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Business.Oragnization;
-import Business.Role.Role;
+import Business.Role.Roles;
 import java.util.ArrayList;
 import Business.Oragnization.Organization.EnvironmentManagementType;
 

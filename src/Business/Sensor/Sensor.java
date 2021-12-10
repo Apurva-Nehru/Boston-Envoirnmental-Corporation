@@ -5,11 +5,10 @@
  */
 package Business.Sensor;
 
-import java.util.ArrayList;
 /**
  *
  * @author apurv
  */
-public class FloodManagementSensorDirectory {
+public class Sensor {
     
 }

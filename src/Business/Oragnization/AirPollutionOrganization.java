@@ -5,23 +5,23 @@
  */
 package Business.Oragnization;
 
-import Business.Oragnization.Organization.EnvironmentManagementType;
+import Business.Role.AirPollutionManagementRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
 /**
  *
- * @author apurv
+ * @author aishw
  */
-public class FoodAlertManageOrg {
-     public FoodAlertManageOrg() {
-        super(EnvironmentManagementType.FloodAlertManagement.getValue());
+public class AirPollutionOrganization extends Organization{
+     public AirPollutionOrganization() {
+        super(EnvironmentManagementType.AirPollutionSolution.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new FloodAlertManagementRole());
+        roles.add(new AirPollutionManagementRole());
         return roles;
     } 
 }

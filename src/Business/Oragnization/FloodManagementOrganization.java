@@ -5,23 +5,19 @@
  */
 package Business.Oragnization;
 
-import Business.Oragnization.Organization.EnvironmentManagementType;
-import Business.Role.Role;
-import java.util.ArrayList;
-
 /**
  *
- * @author apurv
+ * @author aishw
  */
-public class GarbageManagementOrganization {
-     public GarbageManagementOrganization() {
-        super(EnvironmentManagementType.GarbageManagement.getValue());
+public class FloodManagementOrganization extends Organization {
+    public FloodManagementOrganization() {
+        super(EnvironmentManagementType.FloodManagement.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new GarbageManagementRole());
+        roles.add(new FloodManagementRole());
         return roles;
-    }
+    } 
 }

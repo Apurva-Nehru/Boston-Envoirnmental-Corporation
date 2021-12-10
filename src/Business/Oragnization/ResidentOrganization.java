@@ -5,22 +5,23 @@
  */
 package Business.Oragnization;
 
+import Business.Role.ResidentRole;
+import Business.Role.GovernmentOfficialRole;
 import Business.Role.Role;
 import java.util.ArrayList;
-
 /**
  *
- * @author apurv
+ * @author aishw
  */
-public class CitizenOrg  extends Organization{
-    public CitizenOrg() {
-        super(GovernmentType.Cizizen.getValue());
-    }
+public class ResidentOrganization extends Organization {
+    public ResidentOrganization(){
+    super (GovernmentType.Resident.getValue());
+   }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new CitizenRole());
+        roles.add(new ResidentRole());
         return roles;
     }
     

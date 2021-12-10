@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author apurv
+ * @author aishw
  */
 public abstract class Organization {
  private String name;
@@ -26,10 +26,10 @@ public abstract class Organization {
     public enum EnvironmentManagementType {
 
         EnvironmentManagementAdmin("Environment Management Admin Organization"), 
-        AirPollutionSolution("Air Pollution Solution Organization"), 
-        NoisePollutionSolution("Noise Pollution Solution Organization"),
-        FloodAlertManagement("Flood Alert Management"),
-        GarbageManagement("Garbage Management");
+        AirPollution("Air Pollution Solution Organization"), 
+        NoisePollution("Noise Pollution Solution Organization"),
+        FloodManagement("Flood Alert Management"),
+        WasteManagement("Waste Management");
         private String value;
 
         private EnvironmentManagementType(String value) {
@@ -45,7 +45,7 @@ public abstract class Organization {
 
         GovernmentAdmin("Government Admin Organization"), 
         GovernmentOfficial("Government Official Organization"),
-        Cizizen("Citizen Organization");
+        Resident("Resident Organization");
         
         private String value;
 
@@ -83,6 +83,7 @@ public abstract class Organization {
     }
 
     public abstract ArrayList<Role> getSupportedRole();
+    
     
     public UserAccountDirectory getUserAccountDirectory() {
         return userAccountDirectory;

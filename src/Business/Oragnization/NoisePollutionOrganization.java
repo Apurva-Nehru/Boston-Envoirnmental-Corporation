@@ -13,9 +13,9 @@ import java.util.ArrayList;
  *
  * @author apurv
  */
-public class NoisePollutionOrganization {
+public class NoisePollutionOrganization extends Organization{
     public NoisePollutionOrganization() {
-        super(EnvironmentManagementType.NoisePollutionSolution.getValue());
+        super(EnvironmentManagementType.NoisePollution.getValue());
     }
     
     public ArrayList<Role> getSupportedRole() {

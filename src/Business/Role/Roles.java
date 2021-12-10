@@ -1,33 +1,30 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
-
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-
 /**
  *
- * @author raunak
+ * @author aishw
  */
-public abstract class Role {
-    
+public abstract class Roles {
     public enum RoleType{
         SystemAdmin("Admin"),
         EnvironmentManagementAdmin("Environment Management Admin"),
         EnvironmentSensorAdmin("Environment Sensor Admin"),
         GovernmentAdmin("Government Admin"),
-        Citizen("Citizen"),
-        GarbageManagement("Garbage Management"),
+        Resident("Resident"),
+        WasteManagement("Waste Management"),
         AirPollutionManagement("Air Pollution Management"),
         NoisePollutionManagement("Noise Pollution Management"),
         FloodAlertManagement("Flood Alert Management"),
-        WaterPollutionManagement("Water Pollution Management"),
         GovernmentOfficial("Government Official");
         
         private String value;
@@ -55,5 +52,5 @@ public abstract class Role {
     public String toString() {
         return this.getClass().getSimpleName();
     }
-        
+
 }

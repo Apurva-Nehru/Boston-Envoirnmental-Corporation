@@ -13,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author apurv
  */
-public class GovOrg {
+public class GovOrg extends Organization {
       public GovOrg() {
         super(GovernmentType.GovernmentOfficial.getValue());
     }

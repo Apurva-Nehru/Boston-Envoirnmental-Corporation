@@ -4,23 +4,23 @@
  * and open the template in the editor.
  */
 package Business.Oragnization;
-
 import Business.Role.Role;
 import java.util.ArrayList;
+import Business.Oragnization.Organization.EnvironmentManagementType;
 
 /**
  *
- * @author apurv
+ * @author aishw
  */
-public class PollutionOrganization extends Organization{
-     public PollutionOrganization() {
-        super(EnvironmentManagementType.AirPollutionSolution.getValue());
+public class WasteManagementOrganization extends Organization {
+    public WasteManagementOrganization() {
+        super(EnvironmentManagementType.WasteManagement.getValue());
     }
     
     @Override
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
-        roles.add(new AirPollutionManagementRole());
+        roles.add(new WasteManagementRole());
         return roles;
-    } 
+}
 }

@@ -4,11 +4,23 @@
  * and open the template in the editor.
  */
 package Business.Role;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.ResidentOrganization;
+import Business.Oragnization.GovOrg;
+import Business.Organization.Organization;
+import Business.UserAccount.UserAccount;
+import UserInterface.CitizenOrganization.CitizenWorkAreaJPanel;
+import javax.swing.JPanel;
 
 /**
  *
  * @author aishw
  */
-public class ResidentRole {
+public class ResidentRole extends Roles{
     
+@Override
+public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
+return new ResidentWorkAreaJPanel(userProcessContainer, account, (ResidentOrganization) organization, enterprise, system);
+}
 }

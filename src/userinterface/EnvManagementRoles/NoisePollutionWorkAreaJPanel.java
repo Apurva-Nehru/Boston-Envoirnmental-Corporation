@@ -7,7 +7,9 @@ package userinterface.EnvManagementRoles;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Oragnization.NoisePollutionOrganization;
 import Business.UserAccount.UserAccount;
+import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
@@ -17,15 +19,21 @@ import javax.swing.JPanel;
 public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
     private JPanel userProcessContainer; 
     private UserAccount account; 
-    private NoisePollutionSolutionOrganization organization; 
+    private NoisePollutionOrganization organization; 
     private Enterprise enterprise; 
     private EcoSystem business;
     /**
      * Creates new form NoisePollutionWorkAreaJPanel
      */
-    public NoisePollutionWorkAreaJPanel() {
+   public NoisePollutionWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, NoisePollutionOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,7 +45,7 @@ public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        btn_View_Queue = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 102));
 
@@ -45,34 +53,48 @@ public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Noise Pollution Work Area");
 
-        jLabel2.setText("View_Work_Queue");
+        btn_View_Queue.setText("View_Work_QUEUE");
+        btn_View_Queue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_View_QueueActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(198, 198, 198)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addGap(172, 172, 172)
+                .addComponent(btn_View_Queue)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(135, 135, 135)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addGap(131, 131, 131)
+                .addComponent(btn_View_Queue)
+                .addContainerGap(278, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_View_QueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_View_QueueActionPerformed
+        // TODO add your handling code here:
+          // TODO add your handling code here:
+        NoisePollutionManagementWorkQueueJPanel airPollutionManagementWorkQueue = new NoisePollutionManagementWorkQueueJPanel(userProcessContainer, account, enterprise.getOrganizationDirectory());
+        userProcessContainer.add("airPollutionManagementWorkQueue", airPollutionManagementWorkQueue);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btn_View_QueueActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_View_Queue;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -36,12 +36,20 @@ import javax.swing.table.DefaultTableModel;
  * @author aishw
  */
 public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
-
+    private OrganizationDirectory organizationDirectory;
+    private UserAccount account;
+    private JPanel userProcessContainer;
+    private EcoSystem business;
     /**
      * Creates new form ViewFloodAreaWorkQueue
      */
     public ViewFloodAreaWorkQueue() {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organizationDirectory = organizationDirectory ;
+        this.business = business;
+        populateTable();
     }
 
     /**
@@ -222,7 +230,7 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) PendingReqJTable.getModel();
         model.setRowCount(0);
 
-        for(Organization organization : directory.getOrganizationList())
+        for(Organization organization : organizationDirectory.getOrganizationList())
         {
             if(organization instanceof EnvironmentSensorOrganization)
             {
@@ -254,7 +262,7 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) ResolvedJTable.getModel();
         model.setRowCount(0);
 
-        for(Organization organization : directory.getOrganizationList())
+        for(Organization organization : organizationDirectory   .getOrganizationList())
         {
             if(organization instanceof EnvironmentSensorOrganization)
             {
@@ -284,47 +292,14 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
-        int row = ResolvedJTable.getSelectedRow();
-        if(row <0){
-            JOptionPane.showMessageDialog(null, "No row selected");
-        }
-        else
-        {
-
-            AirPollutionWorkRequest airPollutionWorkRequest = (AirPollutionWorkRequest)ResolvedJTable.getValueAt(row, 0);
-
-            AirPollutionSensor airPollutionSensor = airPollutionWorkRequest.getAirPollutionSensor();
-            GovWorkRequest reques = new GovWorkRequest();
-            reques.setAirPollutionSensor(airPollutionSensor);
-            reques.setAirPollutionMessage("The Area bearing pincode "+airPollutionSensor.getZipcode()+"'s air quality is now better.");
-            reques.setSender(userAccount);
-            reques.setStatus("Resolution Message Sent to Government");
-
-            Organization orgzn = null;
-            for(Network ntwk: business.getNetworkList())
-            {
-                for(Enterprise enterprise : ntwk.getEnterpriseDirectory().getEnterpriseList())
-                {
-                    for(Organization org : enterprise.getOrganizationDirectory().getOrganizationList())
-                    {
-                        //System.out.println(org.getName());
-                        if (org instanceof GovOrg){
-                            orgzn = org;
-                            break;
-                        }
-                    }
-                }
-            }
-            if (orgzn!=null){
-
-                ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
-                boolean workRequestAlreadyPresent = false;
-
-                orgzn.getWorkQueue().getWorkRequestList().add(reques);
-                userAccount.getWorkQ().getWorkRequestList().add(reques);
-                JOptionPane.showMessageDialog(null, "Request Successfully sent to Government");
-            }
-        }
+        userProcessContainer.remove(this);
+        Component[] componentArray = userProcessContainer.getComponents();
+        Component component = componentArray[componentArray.length - 1];
+        //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        //sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+        
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnResolvedMessageGovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResolvedMessageGovActionPerformed

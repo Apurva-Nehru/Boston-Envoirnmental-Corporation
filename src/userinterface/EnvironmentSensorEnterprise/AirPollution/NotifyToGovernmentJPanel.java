@@ -67,7 +67,7 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 SensorDirectory sensedirect;
                 sensedirect = ((EnvironmentSensorOrganization) org).getSensorDirectory();
                 
-                for(Sensor sense : sensedirect)
+                for(Sensor sense : sensedirect.getSensorList())
                 {
                     if(sense instanceof AirPollutionSensor)
                     {
@@ -184,11 +184,11 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
         Sensor airPollutionSenso = (Sensor)HighlyAirPollutedAreasJTable.getValueAt(row, 0);
         
         AirPollutionSensor airPollutionSensor = (AirPollutionSensor) airPollutionSenso;
-        GovWorkRequest request = new GovWorkRequest();
-        request.setAirPollutionSensor(airPollutionSensor);
-        request.setAirPollutionMessage("The Area bearing pincode "+airPollutionSensor.getZipcode()+" has bad air quality for now, please inform residents to avoid this area until further notice");
-        request.setSender(userAccount);
-        request.setStatus("Successfully Notified to Government");
+        GovWorkRequest reques = new GovWorkRequest();
+        reques.setAirPollutionSensor(airPollutionSensor);
+        reques.setAirPollutionMessage("The Area bearing pincode "+airPollutionSensor.getZipcode()+" has bad air quality for now, please inform residents to avoid this area until further notice");
+        reques.setSender(userAccount);
+        reques.setStatus("Successfully Notified to Government");
         
         Organization orgn = null;
         for(Network ntwk: business.getNetworkList())
@@ -212,8 +212,8 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                     
             if(orgn.getWorkQueue().getWorkRequestList().isEmpty())
             {
-                orgn.getWorkQueue().getWorkRequestList().add(request);
-                userAccount.getWorkQ().getWorkRequestList().add(request);
+                orgn.getWorkQueue().getWorkRequestList().add(reques);
+                userAccount.getWorkQ().getWorkRequestList().add(reques);
                 JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
             }
             else
@@ -224,12 +224,12 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 {
                     GovWorkRequest reque = (GovWorkRequest) request1;
                     
-                    if(req.getAirPollutionSensor() != null)
+                    if(reque.getAirPollutionSensor() != null)
                     {
-                    sensorIDsArray.add(req.getAirPollutionSensor().getSensorId());
+                    sensorIDsArray.add(reque.getAirPollutionSensor().getSensorId());
                     for(int i=0; i<sensorIDsArray.size(); i++)
                     {
-                        if(request.getAirPollutionSensor().getSensorId() == sensorIDsArray.get(i))
+                        if(reques.getAirPollutionSensor().getSensorId() == sensorIDsArray.get(i))
                         {
                             workRequestAlreadyPresent = true;
                         }
@@ -243,8 +243,8 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                     }
                     else
                     {
-                        orgn.getWorkQueue().getWorkRequestList().add(request);
-                        userAccount.getWorkQueue().getWorkRequestList().add(request);
+                        orgn.getWorkQueue().getWorkRequestList().add(reques);
+                        userAccount.getWorkQ().getWorkRequestList().add(reques);
                         JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
                     }
                 }

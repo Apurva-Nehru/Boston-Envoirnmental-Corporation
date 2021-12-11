@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author aishw
  */
-public class FloodManagementWorkRequest {
+public class FloodManagementWorkRequest extends WorkRequest {
     private ArrayList<FloodManagementSensor> floodManagementsensor;
     private String msg;
 

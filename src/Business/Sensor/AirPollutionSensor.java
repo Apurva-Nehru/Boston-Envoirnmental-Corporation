@@ -22,7 +22,7 @@ public class AirPollutionSensor {
     int maximum = 200;
     private float airQualityIndex = rndm.nextInt(maximum - minimum) + minimum;
     
-    private Map<Date, Float> sensorResponseValues = new HashMap<>();
+    private Map<Date, Float> sensorResponseValues = new HashMap<Date, Float>();
     
     public AirPollutionSensor()
    {

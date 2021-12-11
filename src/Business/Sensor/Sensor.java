@@ -22,7 +22,7 @@ public class Sensor {
     private String longitude;
 
     int randomVal = 50;
-    private Map<Integer, Integer> testMap= new HashMap<>();
+    private Map<Integer, Integer> testMap= new HashMap<Integer, Integer>();
     
     public enum SensorType {
 

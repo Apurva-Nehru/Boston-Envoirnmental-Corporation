@@ -5,19 +5,35 @@
  */
 package userinterface.EnvManagementRoles;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.AirPollutionOrganization;
+import Business.Oragnization.OrganizationDirectory;
+import Business.UserAccount.UserAccount;
 import java.awt.CardLayout;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author apurv
  */
 public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
-
+   private JPanel userProcessContainer;
+    private UserAccount account; 
+    private AirPollutionOrganization organization; 
+    private Enterprise enterprise; 
+    private EcoSystem business;
     /**
      * Creates new form AirPollutionManagementWorkJPanel
      */
     public AirPollutionManagementWorkJPanel() {
-        initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+       this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
+       initComponents();
     }
 
     /**
@@ -30,7 +46,7 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_View_Work_request = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 102));
 
@@ -38,10 +54,10 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Air Pollution Management Work Area");
 
-        jButton1.setText("View Work request");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_View_Work_request.setText("View Work request");
+        btn_View_Work_request.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_View_Work_requestActionPerformed(evt);
             }
         });
 
@@ -55,7 +71,7 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addGap(140, 140, 140)
-                .addComponent(jButton1)
+                .addComponent(btn_View_Work_request)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -64,22 +80,23 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
                 .addGap(27, 27, 27)
                 .addComponent(jLabel1)
                 .addGap(84, 84, 84)
-                .addComponent(jButton1)
+                .addComponent(btn_View_Work_request)
                 .addContainerGap(339, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btn_View_Work_requestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_View_Work_requestActionPerformed
         // TODO add your handling code here:
-         AirPollutionManagementWorkJPanel airPollutionManagementWorkQueue = new AirPollutionManagementWorkJPanel(userProcessContainer, account, enterprise.getOrganizationDirectory());
+          AirPollutionManagementWorkQueueJPanel airPollutionManagementWorkQueue = new AirPollutionManagementWorkQueueJPanel(userProcessContainer, account, enterprise.getOrganizationDirectory());
         userProcessContainer.add("airPollutionManagementWorkQueue", airPollutionManagementWorkQueue);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btn_View_Work_requestActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_View_Work_request;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+
 }

@@ -16,7 +16,7 @@ import java.util.Set;
  *
  * @author aishw
  */
-public class AirPollutionSensor {
+public class AirPollutionSensor extends Sensor {
     Random rndm = new Random();
     int minimum = 140;
     int maximum = 200;

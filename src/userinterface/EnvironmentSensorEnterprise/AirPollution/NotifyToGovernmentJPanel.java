@@ -5,18 +5,98 @@
  */
 package userinterface.EnvironmentSensorEnterprise.AirPollution;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Network.Network;
+import Business.Oragnization.AirPollutionOrganization;
+import Business.Oragnization.EnvironmentSensorOrganization;
+import Business.Oragnization.GovOrg;
+import Business.Oragnization.Organization;
+import Business.Oragnization.OrganizationDirectory;
+import Business.Sensor.AirPollutionSensor;
+import Business.Sensor.Sensor;
+import Business.Sensor.SensorDirectory;
+import Business.UserAccount.UserAccount;
+import Business.WorkQueue.AirPollutionWorkRequest;
+import Business.WorkQueue.GovWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.awt.Component;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author aishw
  */
 public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
+    
+    private JPanel userProcessContainer;
+    private EcoSystem business;
+    private UserAccount userAccount;
+    private OrganizationDirectory organizationDirectory;
+    
 
     /**
      * Creates new form NotifyToGovernmentJPanel
      */
-    public NotifyToGovernmentJPanel() {
+    public NotifyToGovernmentJPanel(JPanel userProcessContainer, UserAccount userAccount, EcoSystem business, OrganizationDirectory organizationDirectory) {
         initComponents();
+        
+        this.userProcessContainer = userProcessContainer;
+        this.business = business;
+        this.userAccount = userAccount;
+        this.organizationDirectory = organizationDirectory;
+        
+        populateTable();
     }
+    
+    public void populateTable(){
+         ArrayList<AirPollutionSensor> tempAirPollutionSensorList = new ArrayList<AirPollutionSensor>();
+
+        for(Network ntwk: business.getNetworkList())
+        {
+            for(Enterprise entprise : ntwk.getEnterpriseDirectory().getEnterpriseList())
+            {
+                for(Organization org : entprise.getOrganizationDirectory().getOrganizationList())
+            {
+            if(org instanceof EnvironmentSensorOrganization)
+            {
+                SensorDirectory sensedirect;
+                sensedirect = ((EnvironmentSensorOrganization) org).getSensorDirectory();
+                
+                for(Sensor sense : sensedirect)
+                {
+                    if(sense instanceof AirPollutionSensor)
+                    {
+                        AirPollutionSensor air = (AirPollutionSensor)s;
+                        tempAirPollutionSensorList.add(air);
+                    }
+                }
+            }
+
+            }
+        }   }
+            
+            DefaultTableModel model = (DefaultTableModel) HighlyAirPollutedAreasJTable.getModel();
+        model.setRowCount(0);
+        
+        for(AirPollutionSensor airps : tempAirPollutionSensorList)
+                {
+                    if(airps.getAirQualityIndex()>150)
+                    {
+                        Object[] row = new Object[4];
+                        row[0] = airps;
+                        row[1] = airps.getZipcode();
+                        row[2] = airps.getAirQualityIndex();
+                        model.addRow(row);
+                    }
+                }
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -27,19 +107,73 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        HighlyAirPollutedAreasJTable = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+
+        HighlyAirPollutedAreasJTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Sensor ID", "Zipcode", "Air Pollution Quality Index"
+            }
+        ));
+        jScrollPane1.setViewportView(HighlyAirPollutedAreasJTable);
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Air Pollution Sensor Readings for the Desired Zipcode");
+
+        jButton1.setText("Back");
+
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jButton2.setText("Send Request To Government");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 708, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 695, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(39, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2)
+                        .addGap(57, 57, 57))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(35, 35, 35)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 267, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable HighlyAirPollutedAreasJTable;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

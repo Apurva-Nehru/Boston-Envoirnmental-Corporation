@@ -14,7 +14,7 @@ import java.util.Map;
  *
  * @author apurv
  */
-public class SensorDirectory extends Sensor{
+public class SensorDirectory {
     private ArrayList<Sensor> sensorList;
     
     private Map<String, Float> airPollutionSensorResponseValues = new HashMap<>();

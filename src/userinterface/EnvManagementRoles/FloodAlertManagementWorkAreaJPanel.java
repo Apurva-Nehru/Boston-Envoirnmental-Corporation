@@ -50,6 +50,8 @@ public class FloodAlertManagementWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btn_View_Work_Queue = new javax.swing.JButton();
 
+        setBackground(new java.awt.Color(0, 153, 102));
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Flood Alert Management Work Area");
 

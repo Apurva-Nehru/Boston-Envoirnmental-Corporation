@@ -5,12 +5,21 @@
  */
 package userinterface.EnvManagementRoles;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.UserAccount.UserAccount;
+import javax.swing.JPanel;
+
 /**
  *
  * @author apurv
  */
 public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
-
+    private JPanel userProcessContainer; 
+    private UserAccount account; 
+    private NoisePollutionSolutionOrganization organization; 
+    private Enterprise enterprise; 
+    private EcoSystem business;
     /**
      * Creates new form NoisePollutionWorkAreaJPanel
      */

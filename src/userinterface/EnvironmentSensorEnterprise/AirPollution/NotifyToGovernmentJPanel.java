@@ -67,7 +67,7 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 SensorDirectory sensedirect;
                 sensedirect = ((EnvironmentSensorOrganization) org).getSensorDirectory();
                 
-                for(Sensor sense : sensedirect.getSensorList())
+                for(Sensor sense : sensedirect)
                 {
                     if(sense instanceof AirPollutionSensor)
                     {
@@ -131,11 +131,6 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
         jLabel1.setText("Air Pollution Sensor Readings for the Desired Zipcode");
 
         jButton1.setText("Back");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Send Request To Government");
@@ -213,7 +208,7 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
         if (orgn!=null){
             
             ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
-            boolean workRequestPresent = false;
+            boolean workRequestAlreadyPresent = false;
                     
             if(orgn.getWorkQueue().getWorkRequestList().isEmpty())
             {
@@ -229,43 +224,33 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 {
                     GovWorkRequest reque = (GovWorkRequest) request1;
                     
-                    if(reque.getAirPollutionSensor() != null)
+                    if(req.getAirPollutionSensor() != null)
                     {
-                    sensorIDsArray.add(reque.getAirPollutionSensor().getSensorId());
+                    sensorIDsArray.add(req.getAirPollutionSensor().getSensorId());
                     for(int i=0; i<sensorIDsArray.size(); i++)
                     {
                         if(request.getAirPollutionSensor().getSensorId() == sensorIDsArray.get(i))
                         {
-                            workRequestPresent = true;
+                            workRequestAlreadyPresent = true;
                         }
                     }
                   }
                 }
               }
-                    if(workRequestPresent)   
+                    if(workRequestAlreadyPresent)   
                     {
                         JOptionPane.showMessageDialog(null, "Request has already been sent to Government");
                     }
                     else
                     {
                         orgn.getWorkQueue().getWorkRequestList().add(request);
-                        userAccount.getWorkQ().getWorkRequestList().add(request);
+                        userAccount.getWorkQueue().getWorkRequestList().add(request);
                         JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
                     }
                 }
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component compnt = componentArray[componentArray.length - 1];
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer); 
-
-    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

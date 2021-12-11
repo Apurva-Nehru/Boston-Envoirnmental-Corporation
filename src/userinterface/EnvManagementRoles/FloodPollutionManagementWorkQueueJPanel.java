@@ -6,6 +6,9 @@
 package userinterface.EnvManagementRoles;
 
 import Business.Oragnization.Organization;
+import Business.Oragnization.OrganizationDirectory;
+import Business.Sensor.FloodManagementSensor;
+import Business.UserAccount.UserAccount;
 import Business.WorkQueue.FloodManagementWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
@@ -13,7 +16,9 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.stream.Collectors;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -21,14 +26,25 @@ import javax.swing.table.DefaultTableModel;
  * @author apurv
  */
 public class FloodPollutionManagementWorkQueueJPanel extends javax.swing.JPanel {
-
+private OrganizationDirectory organizationdirectory;
+    private UserAccount userAccount;
+    private JPanel userProcessContainer;
     /**
      * Creates new form FloodPollutionManagementWorkQueueJPanel
      */
-    public FloodPollutionManagementWorkQueueJPanel() {
+    public FloodPollutionManagementWorkQueueJPanel(JPanel userProcessContainer, UserAccount account, OrganizationDirectory organizationDirectory) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.userAccount = account;
+        this.organizationdirectory = organizationDirectory;
+        populateTable();
     }
-
+ public String convertListToCSV(ArrayList<String> ZipcodeList)
+    {       
+        String zipcodesCommaSeparated = ZipcodeList.stream().collect(Collectors.joining(","));
+        return zipcodesCommaSeparated;
+      
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -122,18 +138,18 @@ public class FloodPollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
     }//GEN-LAST:event_btn_BackActionPerformed
 public void populateTable(){
         ArrayList<String> ZipcodeList = new ArrayList<String>();
-        ArrayList<FloodAlertWorkRequest> floodAlertWorkRequest = new ArrayList<FloodAlertWorkRequest>();
-        FloodAlertWorkRequest noise_wrs = null;
+        ArrayList<FloodManagementWorkRequest> floodAlertWorkRequest = new ArrayList<FloodManagementWorkRequest>();
+        FloodManagementWorkRequest noise_wrs = null;
         DefaultTableModel model = (DefaultTableModel) tbl_fooldTable.getModel();
         model.setRowCount(0);
         
         for(Organization organization : organizationdirectory.getOrganizationList())
         {
         for (WorkRequest wr : organization.getWorkQueue().getWorkRequestList()) {
-            if (wr instanceof FloodAlertWorkRequest){
-                noise_wrs = (FloodAlertWorkRequest)wr;
+            if (wr instanceof FloodManagementWorkRequest){
+                noise_wrs = (FloodManagementWorkRequest)wr;
             
-                for(FloodAlertSensor fas : noise_wrs.getFloodalertsensors())
+                for(FloodManagementSensor fas : noise_wrs.getFloodManagementSensor())
                 {
                 ZipcodeList.add(fas.getZipcode());
                 }
@@ -144,8 +160,8 @@ public void populateTable(){
                 //row[2] = noise_wrs.getFloodAlertSensor().getZipcode();
                 row[3] = noise_wrs.getStatus();
                 row[4] = noise_wrs.getMessage();
-                row[5] = noise_wrs.getRequestDate();
-                row[6] = noise_wrs.getResolveDate();
+                row[5] = noise_wrs.getRqstDate();
+                row[6] = noise_wrs.getRslvDate();
                 model.addRow(row);
             }
         }

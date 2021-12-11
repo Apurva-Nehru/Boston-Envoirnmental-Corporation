@@ -5,6 +5,7 @@
  */
 package userinterface.ResidentOrganization;
 
+import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
 import Business.Oragnization.ResidentOrganization;
 import Business.UserAccount.UserAccount;
@@ -20,7 +21,7 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private JPanel userProcessContainer;
 
-    public CitizenNotificationJPanel(JPanel userProcessContainer, UserAccount userAccount, OrganizationDirectory directory) {
+    public NotifyResidentJPanel(JPanel userProcessContainer, UserAccount userAccount, OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
@@ -143,9 +144,9 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         {
             if(organization instanceof ResidentOrganization) {
         for (WorkRequest wr : organization.getWorkQueue().getWorkRequestList()) {
-            if (wr instanceof CitizenWorkRequest) 
+            if (wr instanceof ResidentWorkRequest) 
             {
-                cit_wrs = (CitizenWorkRequest)wr;
+                cit_wrs = (ResidentWorkRequest)wr;
             
                 if(cit_wrs.getAirPollutionSensor()!=null)
                 {

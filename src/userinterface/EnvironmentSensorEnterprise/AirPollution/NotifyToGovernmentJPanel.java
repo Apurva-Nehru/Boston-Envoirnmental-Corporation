@@ -71,7 +71,7 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 {
                     if(sense instanceof AirPollutionSensor)
                     {
-                        AirPollutionSensor air = (AirPollutionSensor)s;
+                        AirPollutionSensor air = (AirPollutionSensor)sense;
                         tempAirPollutionSensorList.add(air);
                     }
                 }
@@ -134,6 +134,11 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Send Request To Government");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -167,6 +172,85 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
                 .addContainerGap(195, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        int row = HighlyAirPollutedAreasJTable.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }else{
+        //AirPollutionSensor airPollutionSensor = (AirPollutionSensor)SensorReadingsjTable.getValueAt(row, 0);
+        
+        Sensor airPollutionSenso = (Sensor)HighlyAirPollutedAreasJTable.getValueAt(row, 0);
+        
+        AirPollutionSensor airPollutionSensor = (AirPollutionSensor) airPollutionSenso;
+        GovWorkRequest request = new GovWorkRequest();
+        request.setAirPollutionSensor(airPollutionSensor);
+        request.setAirPollutionMessage("The Area bearing pincode "+airPollutionSensor.getZipcode()+" has bad air quality for now, please inform residents to avoid this area until further notice");
+        request.setSender(userAccount);
+        request.setStatus("Successfully Notified to Government");
+        
+        Organization orgn = null;
+        for(Network ntwk: business.getNetworkList())
+        {
+            for(Enterprise enterprise : ntwk.getEnterpriseDirectory().getEnterpriseList())
+            {
+                for(Organization orgzn : enterprise.getOrganizationDirectory().getOrganizationList())
+                {
+            //System.out.println(org.getName());
+            if (orgzn instanceof GovOrg){
+                orgn = orgzn;
+                break;
+                    }           
+                }
+            } 
+        }
+        if (orgn!=null){
+            
+            ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
+            boolean workRequestAlreadyPresent = false;
+                    
+            if(orgn.getWorkQueue().getWorkRequestList().isEmpty())
+            {
+                orgn.getWorkQueue().getWorkRequestList().add(request);
+                userAccount.getWorkQ().getWorkRequestList().add(request);
+                JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
+            }
+            else
+            {
+            for(WorkRequest request1 : orgn.getWorkQueue().getWorkRequestList())
+            {
+                if(request1 instanceof GovWorkRequest)
+                {
+                    GovWorkRequest reque = (GovWorkRequest) request1;
+                    
+                    if(req.getAirPollutionSensor() != null)
+                    {
+                    sensorIDsArray.add(req.getAirPollutionSensor().getSensorId());
+                    for(int i=0; i<sensorIDsArray.size(); i++)
+                    {
+                        if(request.getAirPollutionSensor().getSensorId() == sensorIDsArray.get(i))
+                        {
+                            workRequestAlreadyPresent = true;
+                        }
+                    }
+                  }
+                }
+              }
+                    if(workRequestAlreadyPresent)   
+                    {
+                        JOptionPane.showMessageDialog(null, "Request has already been sent to Government");
+                    }
+                    else
+                    {
+                        orgn.getWorkQueue().getWorkRequestList().add(request);
+                        userAccount.getWorkQueue().getWorkRequestList().add(request);
+                        JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

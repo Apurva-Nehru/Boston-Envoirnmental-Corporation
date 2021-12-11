@@ -5,7 +5,14 @@
  */
 package Business.Oragnization;
 
-import Business.Role.Role;
+import Business.Role.Roles;
+import Business.Role.FloodManagementRole;
+import Business.Role.SensorManagementRole;
+import Business.Sensor.AirPollutionSesnorDirectory;
+import Business.Sensor.FloodManagementSensorDirectory;
+import Business.Sensor.WasteSensorDirectory;
+import Business.Sensor.NoisePollutionSensorDirectory;
+import Business.Sensor.SensorDirectory;
 import Business.WorkQueue.WorkQueue;
 import java.util.ArrayList;
 
@@ -13,24 +20,24 @@ import java.util.ArrayList;
  *
  * @author apurv
  */
-public class EnvironmentSensorOrganization extends Organization {
+public abstract class EnvironmentSensorOrganization extends Organization{
     
     
-    private SensorDir sensorDirectory;
+    private SensorDirectory sensorDirectory;
     
     private WorkQueue GovernmentworkQueue;
     
     public EnvironmentSensorOrganization() {
         super(EnvironmentSensorManagementType.SensorManagement.getValue());
         
-        sensorDirectory = new SensorDir();
+        sensorDirectory = new SensorDirectory();
     }
 
-    public SensorDir getSensorDirectory() {
+    public SensorDirectory getSensorDirectory() {
         return sensorDirectory;
     }
 
-    public void setSensorDirectory(SensorDir sensorDirectory) {
+    public void setSensorDirectory(SensorDirectory sensorDirectory) {
         this.sensorDirectory = sensorDirectory;
     }
 
@@ -43,8 +50,8 @@ public class EnvironmentSensorOrganization extends Organization {
     }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new SensorManagementRole());
         return roles;
     }

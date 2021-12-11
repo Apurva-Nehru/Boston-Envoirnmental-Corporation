@@ -24,7 +24,7 @@ public abstract class Roles {
         WasteManagement("Waste Management"),
         AirPollutionManagement("Air Pollution Management"),
         NoisePollutionManagement("Noise Pollution Management"),
-        FloodAlertManagement("Flood Alert Management"),
+        FloodManagement("Flood Management"),
         GovernmentOfficial("Government Official");
         
         private String value;

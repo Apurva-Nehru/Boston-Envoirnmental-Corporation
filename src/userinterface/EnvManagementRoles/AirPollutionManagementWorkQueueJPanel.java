@@ -142,7 +142,7 @@ private OrganizationDirectory directory;
         
         AirPollutionWorkRequest airPollutionSolutionWorkRequest = (AirPollutionWorkRequest)workRequest;
         airPollutionSolutionWorkRequest.setStatus("Resolved");
-        airPollutionSolutionWorkRequest.setResolveDate(new Date());
+        airPollutionSolutionWorkRequest.setRslvDate(new Date());
         
         airPollutionSolutionWorkRequest.getAirPollutionSensor().setAirQualityIndex(rn.nextInt(75));
         
@@ -178,9 +178,9 @@ private OrganizationDirectory directory;
                 row[2] = air_wrs.getAirPollutionSensor().getSensorId();
                 row[3] = air_wrs.getAirPollutionSensor().getZipcode();
                 row[4] = air_wrs.getStatus();
-                row[5] = air_wrs.getMessage();
-                row[6] = air_wrs.getRequestDate();
-                row[7] = air_wrs.getResolveDate();
+                row[5] = air_wrs.getMsg();
+                row[6] = air_wrs.getRqstDate();
+                row[7] = air_wrs.getRslvDate();
                 model.addRow(row);
             }
         }

@@ -19,7 +19,7 @@ public class FloodManagementSensor extends Sensor {
      Random rndm = new Random();
     private float currentlevel= 50+rndm.nextInt(300);
 
-    private Map<Date, Float> sensorResponseValues = new HashMap<>();
+    private Map<Date, Float> sensorResponseValues = new HashMap<Date, Float>();
     
     public FloodManagementSensor()
    {

@@ -38,10 +38,8 @@
                       <EmptySpace min="-2" pref="264" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="userJButton" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="manageOrganizationJButton" max="32767" attributes="0"/>
-                              <Component id="manageEmployeeJButton" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="manageOrganizationJButton" max="32767" attributes="0"/>
+                          <Component id="manageEmployeeJButton" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
               </Group>

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.GovOfficialOrgRole;
+package userinterface.GovOfficialOrgRole;
 
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.ResidentOrganization;

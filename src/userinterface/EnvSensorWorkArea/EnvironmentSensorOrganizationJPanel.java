@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.EnvSensorWorkArea;
+package userinterface.EnvSensorWorkArea;
 
 import Business.Oragnization.Organization;
 import Business.Oragnization.Organization.EnvironmentSensorManagementType;

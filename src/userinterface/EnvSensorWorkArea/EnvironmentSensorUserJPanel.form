@@ -23,18 +23,13 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="367" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="jLabel5" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Component id="jLabel1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -44,15 +39,10 @@
                                   <Component id="txt_Password" min="-2" pref="250" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="391" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="combo_emp" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="combo_role" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="txt_Name" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                              <Component id="combo_Org" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
-                          </Group>
+                          <Component id="combo_emp" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="combo_role" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="txt_Name" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="combo_Org" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">

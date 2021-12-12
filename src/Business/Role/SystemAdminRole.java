@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.SystemAdminWorkarea.SystemAdminWorkAreaJPanel;
+import userinterface.SysAdminWorkarea.SystemAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

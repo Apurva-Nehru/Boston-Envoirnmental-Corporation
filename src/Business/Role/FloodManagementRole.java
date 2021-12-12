@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.FloodManagementOrganization;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.EnvironmentManagementRoles.FloodManagementWorkAreaJPanel;
+import userinterface.EnvManagementRoles.FloodAlertManagementWorkAreaJPanel;
 import javax.swing.JPanel;
 /**
  *
@@ -19,6 +19,6 @@ import javax.swing.JPanel;
 public class FloodManagementRole extends Roles {
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new FloodAManagementWorkAreaJPanel(userProcessContainer, account, (FloodManagementOrganization)organization, enterprise, business);
+        return new FloodAlertManagementWorkAreaJPanel(userProcessContainer, account, (FloodManagementOrganization)organization, enterprise, business);
     }
 }

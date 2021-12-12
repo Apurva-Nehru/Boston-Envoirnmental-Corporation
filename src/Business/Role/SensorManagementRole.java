@@ -10,7 +10,8 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.EnvironmentSensorOrganization;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.EnvironmentSensorEnterprise.SensorManagementOrganization.SensorManagementWorkAreaJPanel;
+import userinterface.EnvSensor
+import userinterface.EnvironmentSensorEnterprise.SensorManagementOrganization.SensorManagementWorkAreaJPanel;
 import javax.swing.JPanel;
 
 

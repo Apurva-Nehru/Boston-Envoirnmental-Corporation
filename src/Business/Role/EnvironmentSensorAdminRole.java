@@ -9,7 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.EnvironmentSensorWorkArea.EnvironmentSensorAdminWorkAreaJPanel;
+import userinterface.EnvSensorWorkArea.EnvironmentSensorAdminWorkAreaJPanel;
 import javax.swing.JPanel;
 
 

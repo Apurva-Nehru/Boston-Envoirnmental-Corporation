@@ -20,6 +20,8 @@ public class NoisePollutionOrganization extends Organization{
         super(EnvironmentManagementType.NoisePollution.getValue());
     }
     
+   
+    
     public ArrayList<Role> getSupportedRole() {
         ArrayList<Role> roles = new ArrayList();
         roles.add(new NoisePollutionManagementRole());

@@ -27,13 +27,13 @@
                       <EmptySpace min="-2" pref="233" max="-2" attributes="0"/>
                       <Component id="lblEnterprise" min="-2" pref="110" max="-2" attributes="0"/>
                       <EmptySpace pref="27" max="32767" attributes="0"/>
-                      <Component id="lblEnterprise3" min="-2" pref="308" max="-2" attributes="0"/>
+                      <Component id="lblEnterprisevalue" min="-2" pref="308" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="223" max="-2" attributes="0"/>
                       <Component id="lblEnterprise2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="lblEnterprise1" min="-2" pref="308" max="-2" attributes="0"/>
+                      <Component id="lblOrganizationvalue" min="-2" pref="308" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
@@ -68,11 +68,11 @@
               <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="lblEnterprise" alignment="3" min="-2" pref="47" max="-2" attributes="0"/>
-                  <Component id="lblEnterprise3" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  <Component id="lblEnterprisevalue" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="lblEnterprise1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="lblOrganizationvalue" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                   <Component id="lblEnterprise2" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="109" max="32767" attributes="0"/>
@@ -110,7 +110,7 @@
         <Property name="text" type="java.lang.String" value="Enterprise"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblEnterprise1">
+    <Component class="javax.swing.JLabel" name="lblOrganizationvalue">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
@@ -126,7 +126,7 @@
         <Property name="text" type="java.lang.String" value="Organization"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="lblEnterprise3">
+    <Component class="javax.swing.JLabel" name="lblEnterprisevalue">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Tahoma" size="18" style="1"/>
@@ -141,6 +141,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Waste Management"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnWasteManagementActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnAirPollutionManagement1">
       <Properties>
@@ -149,6 +152,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Air Pollution Management"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAirPollutionManagement1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnNoiePollutionManagement">
       <Properties>
@@ -157,6 +163,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Noise Pollution Management"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNoiePollutionManagementActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btnFloodManagement">
       <Properties>
@@ -165,6 +174,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Flood Management"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnFloodManagementActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

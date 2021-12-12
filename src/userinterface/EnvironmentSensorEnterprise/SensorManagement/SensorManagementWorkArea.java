@@ -5,17 +5,45 @@
  */
 package userinterface.EnvironmentSensorEnterprise.SensorManagement;
 
+import userinterface.EnvironmentSensorEnterprise.AirPollution.NotifytoAirPolltuionSolutionDepartment;
+import userinterface.EnvironmentSensorEnterprise.AirPollution.ViewAirPollutionWorkQueue;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.EnvironmentSensorOrganization;
+import Business.UserAccount.UserAccount;
+import userinterface.EnvironmentSensorEnterprise.AirPollution.AirPollutionSensorJPanel;
+import userinterface.EnvironmentSensorEnterprise.FloodManagement.FloodManagementSensorJPanel;
+import userinterface.EnvironmentSensorEnterprise.WasteManagement.WasteManagementSensor;
+import userinterface.EnvironmentSensorEnterprise.NoisePollutionManagement.NoisePollutionManagementSensorJPanel;
+import java.awt.CardLayout;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JPanel;
 /**
  *
  * @author aishw
  */
 public class SensorManagementWorkArea extends javax.swing.JPanel {
-
+    
+    private JPanel userProcessContainer; 
+    private UserAccount account; 
+    private EnvironmentSensorOrganization organization; 
+    private Enterprise enterprise; 
+    private EcoSystem business;
     /**
      * Creates new form SensorManagementWorkArea
      */
-    public SensorManagementWorkArea() {
+    public SensorManagementWorkArea(JPanel userProcessContainer, UserAccount account, EnvironmentSensorOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
+        this.userProcessContainer = userProcessContainer;
+        this.account = account;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
+        
+        lblEnterprisevalue.setText(enterprise.getName());
+        lblOrganizationvalue.setText(account.getEmp().getName());
     }
 
     /**
@@ -29,9 +57,9 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         lblEnterprise = new javax.swing.JLabel();
-        lblEnterprise1 = new javax.swing.JLabel();
+        lblOrganizationvalue = new javax.swing.JLabel();
         lblEnterprise2 = new javax.swing.JLabel();
-        lblEnterprise3 = new javax.swing.JLabel();
+        lblEnterprisevalue = new javax.swing.JLabel();
         btnWasteManagement = new javax.swing.JButton();
         btnAirPollutionManagement1 = new javax.swing.JButton();
         btnNoiePollutionManagement = new javax.swing.JButton();
@@ -45,26 +73,46 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
         lblEnterprise.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEnterprise.setText("Enterprise");
 
-        lblEnterprise1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblEnterprise1.setText("<value>");
+        lblOrganizationvalue.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblOrganizationvalue.setText("<value>");
 
         lblEnterprise2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         lblEnterprise2.setText("Organization");
 
-        lblEnterprise3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        lblEnterprise3.setText("<value>");
+        lblEnterprisevalue.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        lblEnterprisevalue.setText("<value>");
 
         btnWasteManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnWasteManagement.setText("Waste Management");
+        btnWasteManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnWasteManagementActionPerformed(evt);
+            }
+        });
 
         btnAirPollutionManagement1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnAirPollutionManagement1.setText("Air Pollution Management");
+        btnAirPollutionManagement1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAirPollutionManagement1ActionPerformed(evt);
+            }
+        });
 
         btnNoiePollutionManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnNoiePollutionManagement.setText("Noise Pollution Management");
+        btnNoiePollutionManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNoiePollutionManagementActionPerformed(evt);
+            }
+        });
 
         btnFloodManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         btnFloodManagement.setText("Flood Management");
+        btnFloodManagement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFloodManagementActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -76,12 +124,12 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
                         .addGap(233, 233, 233)
                         .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addComponent(lblEnterprise3, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblEnterprisevalue, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(223, 223, 223)
                         .addComponent(lblEnterprise2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lblEnterprise1, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(lblOrganizationvalue, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -107,10 +155,10 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblEnterprise, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblEnterprise3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblEnterprisevalue, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblEnterprise1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblOrganizationvalue, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblEnterprise2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
                 .addComponent(btnNoiePollutionManagement, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,6 +175,38 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnAirPollutionManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAirPollutionManagement1ActionPerformed
+        // TODO add your handling code here:
+        AirPollutionSensorJPanel airPollutionSensorManagement = new AirPollutionSensorJPanel(userProcessContainer, account, organization, enterprise, business);
+        userProcessContainer.add("airPollutionSensorJPanel", airPollutionSensorManagement);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnAirPollutionManagement1ActionPerformed
+
+    private void btnNoiePollutionManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNoiePollutionManagementActionPerformed
+        // TODO add your handling code here:
+        NoisePollutionManagementSensorJPanel noisePollutionSensorManagement = new NoisePollutionManagementSensorJPanel(userProcessContainer, account, organization, enterprise, business);
+        userProcessContainer.add("noisePollutionSensorManagement", noisePollutionSensorManagement);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnNoiePollutionManagementActionPerformed
+
+    private void btnFloodManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFloodManagementActionPerformed
+        // TODO add your handling code here:
+        FloodManagementSensorJPanel floodsensor = new FloodManagementSensorJPanel(userProcessContainer, account, organization, enterprise, business);
+        userProcessContainer.add("floodsensor", floodsensor);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnFloodManagementActionPerformed
+
+    private void btnWasteManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWasteManagementActionPerformed
+        // TODO add your handling code here:
+        WasteManagementSensor wasteSensorManagement = new WasteManagementSensor(userProcessContainer, account, organization, enterprise, business);
+        userProcessContainer.add("garbageSensorManagementJPanel", wasteSensorManagement);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnWasteManagementActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAirPollutionManagement1;
@@ -135,8 +215,8 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
     private javax.swing.JButton btnWasteManagement;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblEnterprise;
-    private javax.swing.JLabel lblEnterprise1;
     private javax.swing.JLabel lblEnterprise2;
-    private javax.swing.JLabel lblEnterprise3;
+    private javax.swing.JLabel lblEnterprisevalue;
+    private javax.swing.JLabel lblOrganizationvalue;
     // End of variables declaration//GEN-END:variables
 }

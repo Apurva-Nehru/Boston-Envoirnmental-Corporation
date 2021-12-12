@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.EnvironmentSensorEnterprise.NoisePollutionManagement;
+package userinterface.EnvironmentSensorEnterprise.NoisePollutionManagement;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
@@ -117,10 +117,10 @@ public class NoisePollutionManagementSensorJPanel extends javax.swing.JPanel {
 
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
         // TODO add your handling code here:
-        NotifyToNoisePollutionSolutionDepartmentJPanel sendRequestToAirPollutionSolutionDepartment;
+        NotifyToNoisePollutionSolutionDepartmentJPanel NotifyToNoisePollutionSolutionDepartment;
         try {
-            sendRequestToAirPollutionSolutionDepartment = new NotifyToNoisePollutionSolutionDepartmentJPanel(userProcessContainer, account, business, enterprise.getOrganizationDirectory());
-            userProcessContainer.add("sendRequestToAirPollutionSolutionDepartment", sendRequestToAirPollutionSolutionDepartment);
+            NotifyToNoisePollutionSolutionDepartment = new NotifyToNoisePollutionSolutionDepartmentJPanel(userProcessContainer, account, business, enterprise.getOrganizationDirectory());
+            userProcessContainer.add("NotifyToNoisePollutionSolutionDepartmentJPanel", NotifyToNoisePollutionSolutionDepartment);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
         } catch (IOException ex) {

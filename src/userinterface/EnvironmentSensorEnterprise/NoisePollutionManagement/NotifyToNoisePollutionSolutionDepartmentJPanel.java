@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package UserInterface.EnvironmentSensorEnterprise.NoisePollutionManagement;
+package userinterface.EnvironmentSensorEnterprise.NoisePollutionManagement;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;

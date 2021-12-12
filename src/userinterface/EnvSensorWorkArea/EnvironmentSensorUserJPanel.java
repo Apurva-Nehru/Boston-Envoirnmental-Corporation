@@ -10,6 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Role.Roles;
 import java.awt.CardLayout;
 import javax.management.relation.Role;
 import javax.swing.JOptionPane;
@@ -289,10 +290,10 @@ public class EnvironmentSensorUserJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordCharArray);
         Organization organization = (Organization) combo_Org.getSelectedItem();
         Employee employee = (Employee) combo_emp.getSelectedItem();
-        Role role = (Role) combo_role.getSelectedItem();
+        Roles role = (Roles) combo_role.getSelectedItem();
         if (employee == null) {
             JOptionPane.showMessageDialog(null, "You cannot add user account as employee combo box is empty");
-        } else if (business.checkIfUsernameIsUnique(userName)) {
+        } else if (business.UniqueUserName(userName)) {
             organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         } else {
             JOptionPane.showMessageDialog(null, "Username should be unique");

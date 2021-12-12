@@ -10,6 +10,7 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Role.Roles;
 import java.awt.CardLayout;
 import javax.management.relation.Role;
 import javax.swing.JOptionPane;
@@ -58,7 +59,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
         combo_Org.removeAllItems();
 
         for (Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()) {
-            combo_Org.addItem(organization);
+            combo_Org.addItem(organization.toString());
         }
     }
 
@@ -66,14 +67,14 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
         combo_Emp.removeAllItems();
 
         for (Employee employee : organization.getEmployeeDirectory().getEmployeeList()) {
-            combo_Emp.addItem(employee);
+            combo_Emp.addItem(employee.toString());
         }
     }
 
     private void populateRoleComboBox(Organization organization) {
         combo_Roles.removeAllItems();
         for (Role role : organization.getSupportedRole()) {
-            combo_Roles.addItem(role);
+            combo_Roles.addItem(role.toString());
         }
     }
     
@@ -98,9 +99,9 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         txt_Username = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        txt_Password = new javax.swing.JTextField();
         btn_Back = new javax.swing.JButton();
         btn_Resolve = new javax.swing.JButton();
+        txt_Password = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(0, 153, 102));
 
@@ -147,12 +148,6 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
 
         jLabel5.setText("Password");
 
-        txt_Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txt_PasswordActionPerformed(evt);
-            }
-        });
-
         btn_Back.setText("<<BAck");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -181,7 +176,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(33, 33, 33)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -199,7 +194,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txt_Password, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txt_Password)))))
                 .addContainerGap(38, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -247,10 +242,6 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_txt_UsernameActionPerformed
 
-    private void txt_PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_PasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txt_PasswordActionPerformed
-
     private void combo_OrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_OrgActionPerformed
         // TODO add your handling code here:
           Organization organization = (Organization) combo_Org.getSelectedItem();
@@ -280,10 +271,10 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordCharArray);
         Organization organization = (Organization) combo_Org.getSelectedItem();
         Employee employee = (Employee) combo_Emp.getSelectedItem();
-        Role role = (Role) combo_Roles.getSelectedItem();
+        Roles role = (Roles) combo_Roles.getSelectedItem();
         if (employee == null) {
             JOptionPane.showMessageDialog(null, "You cannot add user account as employee combo box is empty");
-        } else if (business.checkIfUsernameIsUnique(userName)) {
+        } else if (business.UniqueUserName(userName)) {
             organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         } else {
             JOptionPane.showMessageDialog(null, "Username should be unique");
@@ -311,7 +302,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_User;
-    private javax.swing.JTextField txt_Password;
+    private javax.swing.JPasswordField txt_Password;
     private javax.swing.JTextField txt_Username;
     // End of variables declaration//GEN-END:variables
 }

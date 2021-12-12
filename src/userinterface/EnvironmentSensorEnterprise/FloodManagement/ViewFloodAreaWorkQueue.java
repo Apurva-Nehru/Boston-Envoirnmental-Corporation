@@ -43,7 +43,7 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
     /**
      * Creates new form ViewFloodAreaWorkQueue
      */
-    public ViewFloodAreaWorkQueue() {
+    public ViewFloodAreaWorkQueue(JPanel userProcessContainer, UserAccount account, OrganizationDirectory organizationDirectory, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;

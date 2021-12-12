@@ -173,13 +173,13 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
 
     private void btn_Delete_OrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Delete_OrgActionPerformed
         // TODO add your handling code here:
-        int selectedRow = combo_org_type.getSelectedRow();
+        int selectedRow = tbl_OrgAdd.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select the row");
             return;
         }
-        Organization org = (Organization) combo_org_type.getValueAt(selectedRow, 0);
+        Organization org = (Organization) tbl_OrgAdd.getValueAt(selectedRow, 0);
         directory.DeleteOrganization(org);
         populateTable();
         JOptionPane.showMessageDialog(null, "Organization deleted Succesfully");
@@ -211,10 +211,10 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
         }    }
 
     private void populateCombo() {
-combo_org_type.removeAllItems();
+    combo_org_type.removeAllItems();
         for (Organization.EnvironmentManagementType type : Organization.EnvironmentManagementType.values()) {
             if (!type.getValue().equals(EnvironmentManagementType.EnvironmentManagementAdmin.getValue())) {
-                combo_org_type.addItem(type);
+                combo_org_type.addItem(type.toString());
             }
         }    }
 }

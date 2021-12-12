@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.FloodManagementOrganization;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.EnvironmentManagementRoles.FloodManagementWorkAreaJPanel;
+import userinterface.EnvironmentManagementRoles.FloodManagementWorkAreaJPanel;
 import javax.swing.JPanel;
 /**
  *

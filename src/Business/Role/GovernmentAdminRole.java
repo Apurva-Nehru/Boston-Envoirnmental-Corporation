@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import javax.swing.JPanel;
+import userinterface.GovWorkArea.GovernmentAdminWorkAreaJPanel;
 
 /**
  *
@@ -16,7 +17,7 @@ import javax.swing.JPanel;
  */
 public class GovernmentAdminRole extends Roles {
 
-    @Override
+   
     public JPanel createWorkArea(JPanel arg0, Object arg1, Organization arg2, Enterprise arg3, EcoSystem arg4) {
         return new GovernmentAdminWorkAreaJPanel(userProcessContainer, enterprise, business); //To change body of generated methods, choose Tools | Templates.
     }

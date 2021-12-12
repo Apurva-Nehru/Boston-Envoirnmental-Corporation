@@ -36,7 +36,7 @@ public class Network {
         return enterpriseDirectory;
     }
     
-    public boolean sameEnterprise(String name) {
+    public boolean setEnterprise(String name) {
         for (Enterprise ent : enterpriseDirectory.getEnterpriseList()) {
             if (ent.getName().equals(name)) {
                 return true;

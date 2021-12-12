@@ -188,7 +188,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterprise.jpg"))); // NOI18N
         jLabel6.setText("jLabel6");
         add(jLabel6);
-        jLabel6.setBounds(0, 10, 830, 630);
+        jLabel6.setBounds(0, 0, 830, 640);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed

@@ -85,9 +85,8 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btn_ent_admin.setBounds(630, 120, 169, 21);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(100, -20, 900, 660);
+        jLabel2.setBounds(0, -90, 900, 660);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_MAnage_CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MAnage_CityActionPerformed

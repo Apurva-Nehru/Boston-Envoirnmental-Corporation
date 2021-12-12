@@ -15,11 +15,11 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author apurv
+ * @author aishw
  */
 public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
 
- private OrganizationDirectory directory;
+    private OrganizationDirectory directory;
     private JPanel userProcessContainer;
     /**
      * Creates new form EnvironmentManagementOrganizationJPanel
@@ -33,6 +33,29 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
         populateCombo();
     }
 
+    private void populateCombo() {
+        organizationJComboBox.removeAllItems();
+        for (Organization.EnvironmentManagementType type : Organization.EnvironmentManagementType.values()) {
+            if (!type.getValue().equals(EnvironmentManagementType.EnvironmentManagementAdmin.getValue())) {
+                organizationJComboBox.addItem(type);
+            }
+        }
+    }
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
+
+        model.setRowCount(0);
+
+        for (Organization organization : directory.getOrganizationList()) {
+            Object[] row = new Object[1];
+
+            row[0] = organization;
+
+            model.addRow(row);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,26 +65,23 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tbl_OrgAdd = new javax.swing.JTable();
+        organizationJTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        combo_org_type = new javax.swing.JComboBox<>();
-        btn_Back = new javax.swing.JButton();
-        btn_Add_Org = new javax.swing.JButton();
-        btn_Delete_Org = new javax.swing.JButton();
+        organizationJComboBox = new javax.swing.JComboBox();
+        backJButton = new javax.swing.JButton();
+        addJButton = new javax.swing.JButton();
+        btnDeleteOrganization = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel2.setText("Environment Management Organization");
-
-        tbl_OrgAdd.setModel(new javax.swing.table.DefaultTableModel(
+        organizationJTable.setBackground(new java.awt.Color(234, 234, 249));
+        organizationJTable.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        organizationJTable.setForeground(new java.awt.Color(0, 0, 51));
+        organizationJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+
             },
             new String [] {
                 "Name"
@@ -75,37 +95,52 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tbl_OrgAdd);
+        jScrollPane1.setViewportView(organizationJTable);
 
-        jLabel1.setText("Organization Type");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Organization Type ");
 
-        combo_org_type.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        combo_org_type.addActionListener(new java.awt.event.ActionListener() {
+        organizationJComboBox.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        organizationJComboBox.setForeground(new java.awt.Color(0, 0, 51));
+        organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                combo_org_typeActionPerformed(evt);
+                organizationJComboBoxActionPerformed(evt);
             }
         });
 
-        btn_Back.setText("<<Back");
-        btn_Back.addActionListener(new java.awt.event.ActionListener() {
+        backJButton.setBackground(new java.awt.Color(0, 0, 204));
+        backJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        backJButton.setForeground(new java.awt.Color(255, 255, 255));
+        backJButton.setText("<< Back");
+        backJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_BackActionPerformed(evt);
+                backJButtonActionPerformed(evt);
             }
         });
 
-        btn_Add_Org.setText("Add Organization");
-        btn_Add_Org.addActionListener(new java.awt.event.ActionListener() {
+        addJButton.setBackground(new java.awt.Color(0, 0, 204));
+        addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        addJButton.setForeground(new java.awt.Color(255, 255, 255));
+        addJButton.setText("Add Organization");
+        addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Add_OrgActionPerformed(evt);
+                addJButtonActionPerformed(evt);
             }
         });
 
-        btn_Delete_Org.setText("Delete Organization");
-        btn_Delete_Org.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteOrganization.setBackground(new java.awt.Color(0, 0, 204));
+        btnDeleteOrganization.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnDeleteOrganization.setForeground(new java.awt.Color(255, 255, 255));
+        btnDeleteOrganization.setText("Delete Organization");
+        btnDeleteOrganization.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_Delete_OrgActionPerformed(evt);
+                btnDeleteOrganizationActionPerformed(evt);
             }
         });
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setText("Environment Management Organization");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -114,107 +149,88 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(108, 108, 108)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(addJButton)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(backJButton)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnDeleteOrganization))
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
-                        .addComponent(btn_Back))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_Delete_Org, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_Add_Org, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(31, 31, 31)
-                        .addComponent(combo_org_type, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(140, 140, 140)
+                        .addComponent(jLabel2)))
+                .addContainerGap(230, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(31, 31, 31)
                 .addComponent(jLabel2)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(combo_org_type, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel1)
+                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32)
+                .addComponent(addJButton)
                 .addGap(18, 18, 18)
-                .addComponent(btn_Add_Org)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_Delete_Org)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 113, Short.MAX_VALUE)
-                .addComponent(btn_Back)
-                .addGap(48, 48, 48))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeleteOrganization)
+                    .addComponent(backJButton))
+                .addContainerGap(178, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void combo_org_typeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_org_typeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_combo_org_typeActionPerformed
+    private void backJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButtonActionPerformed
 
-    private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
-        // TODO add your handling code here:
-          userProcessContainer.remove(this);
+        userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_btn_BackActionPerformed
+    }//GEN-LAST:event_backJButtonActionPerformed
 
-    private void btn_Add_OrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Add_OrgActionPerformed
-        // TODO add your handling code here:
-         EnvironmentManagementType type = (EnvironmentManagementType) combo_org_type.getSelectedItem();
+    private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
+
+        EnvironmentManagementType type = (EnvironmentManagementType) organizationJComboBox.getSelectedItem();
 
         directory.createEnvironmentManagement(type);
         populateTable();
-    }//GEN-LAST:event_btn_Add_OrgActionPerformed
+      
+    }//GEN-LAST:event_addJButtonActionPerformed
 
-    private void btn_Delete_OrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Delete_OrgActionPerformed
+    private void btnDeleteOrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteOrganizationActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tbl_OrgAdd.getSelectedRow();
+        int selectedRow = organizationJTable.getSelectedRow();
 
         if (selectedRow < 0) {
             JOptionPane.showMessageDialog(null, "Please Select the row");
             return;
         }
-        Organization org = (Organization) tbl_OrgAdd.getValueAt(selectedRow, 0);
+        Organization org = (Organization) organizationJTable.getValueAt(selectedRow, 0);
         directory.DeleteOrganization(org);
         populateTable();
         JOptionPane.showMessageDialog(null, "Organization deleted Succesfully");
-    }//GEN-LAST:event_btn_Delete_OrgActionPerformed
+    }//GEN-LAST:event_btnDeleteOrganizationActionPerformed
+
+    private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_organizationJComboBoxActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_Add_Org;
-    private javax.swing.JButton btn_Back;
-    private javax.swing.JButton btn_Delete_Org;
-    private javax.swing.JComboBox<String> combo_org_type;
+    private javax.swing.JButton addJButton;
+    private javax.swing.JButton backJButton;
+    private javax.swing.JButton btnDeleteOrganization;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tbl_OrgAdd;
+    private javax.swing.JComboBox organizationJComboBox;
+    private javax.swing.JTable organizationJTable;
     // End of variables declaration//GEN-END:variables
-
-    private void populateTable() {
- DefaultTableModel model = (DefaultTableModel) tbl_OrgAdd.getModel();
-
-        model.setRowCount(0);
-
-        for (Organization organization : directory.getOrganizationList()) {
-            Object[] row = new Object[1];
-
-            row[0] = organization;
-
-            model.addRow(row);
-        }    }
-
-    private void populateCombo() {
-    combo_org_type.removeAllItems();
-        for (Organization.EnvironmentManagementType type : Organization.EnvironmentManagementType.values()) {
-            if (!type.getValue().equals(EnvironmentManagementType.EnvironmentManagementAdmin.getValue())) {
-                combo_org_type.addItem(type.toString());
-            }
-        }    }
 }

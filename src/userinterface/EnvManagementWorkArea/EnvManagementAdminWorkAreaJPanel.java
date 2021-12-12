@@ -12,14 +12,16 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author apurv
+ * @author aishw
  */
 public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
- JPanel userProcessContainer;
+
+    JPanel userProcessContainer;
     EcoSystem business;
     Enterprise enterprise;
+    
     /**
-     * Creates new form EnvManagementAdminWorkAreaJPanel
+     * Creates new form EnvironmentManagementAdminWorkAreaJPanel
      */
     public EnvManagementAdminWorkAreaJPanel(JPanel userProcessContainer, Enterprise enterprise, EcoSystem business) {
         initComponents();
@@ -27,7 +29,7 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;
         this.business = business;
-        lblAdminvalue.setText(enterprise.getName());
+        valueLabel.setText(enterprise.getName());
     }
 
     /**
@@ -40,115 +42,130 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        btn_manageorg = new javax.swing.JButton();
-        btn_ManageUser = new javax.swing.JButton();
-        btn_manageemployee = new javax.swing.JButton();
-        lblAdminvalue = new javax.swing.JLabel();
+        enterpriseLabel = new javax.swing.JLabel();
+        valueLabel = new javax.swing.JLabel();
+        manageOrganizationJButton = new javax.swing.JButton();
+        manageEmployeeJButton = new javax.swing.JButton();
+        userJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(0, 153, 102));
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Environment Admin Work Area");
+        jLabel1.setText("Environment Management Admin Work Area");
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Enterprise");
+        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        enterpriseLabel.setText("EnterPrise :");
 
-        btn_manageorg.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btn_manageorg.setText("Manage Organization");
-        btn_manageorg.addActionListener(new java.awt.event.ActionListener() {
+        valueLabel.setBackground(new java.awt.Color(255, 255, 255));
+        valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        valueLabel.setForeground(new java.awt.Color(0, 0, 51));
+        valueLabel.setText("<value>");
+
+        manageOrganizationJButton.setBackground(new java.awt.Color(0, 0, 204));
+        manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageOrganizationJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageOrganizationJButton.setText("Manage Organization");
+        manageOrganizationJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_manageorgActionPerformed(evt);
+                manageOrganizationJButtonActionPerformed(evt);
             }
         });
 
-        btn_ManageUser.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btn_ManageUser.setText("Manage User");
-        btn_ManageUser.addActionListener(new java.awt.event.ActionListener() {
+        manageEmployeeJButton.setBackground(new java.awt.Color(0, 0, 204));
+        manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        manageEmployeeJButton.setForeground(new java.awt.Color(255, 255, 255));
+        manageEmployeeJButton.setText("Manage Employee");
+        manageEmployeeJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_ManageUserActionPerformed(evt);
+                manageEmployeeJButtonActionPerformed(evt);
             }
         });
 
-        btn_manageemployee.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btn_manageemployee.setText("Manage Employee");
-        btn_manageemployee.addActionListener(new java.awt.event.ActionListener() {
+        userJButton.setBackground(new java.awt.Color(0, 0, 204));
+        userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        userJButton.setForeground(new java.awt.Color(255, 255, 255));
+        userJButton.setText("Manage User");
+        userJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_manageemployeeActionPerformed(evt);
+                userJButtonActionPerformed(evt);
             }
         });
-
-        lblAdminvalue.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblAdminvalue.setText("<Value>");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAdminvalue, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(btn_ManageUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_manageorg, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btn_manageemployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(150, 150, 150)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(30, 30, 30)
+                                .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(110, 110, 110)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel1)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 25, Short.MAX_VALUE)
-                    .addComponent(lblAdminvalue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(btn_manageorg)
-                .addGap(18, 18, 18)
-                .addComponent(btn_manageemployee)
-                .addGap(18, 18, 18)
-                .addComponent(btn_ManageUser)
-                .addContainerGap(222, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addComponent(jLabel1)
+                .addGap(36, 36, 36)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(valueLabel))
+                .addGap(44, 44, 44)
+                .addComponent(manageOrganizationJButton)
+                .addGap(57, 57, 57)
+                .addComponent(manageEmployeeJButton)
+                .addGap(60, 60, 60)
+                .addComponent(userJButton)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_manageorgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_manageorgActionPerformed
-        // TODO add your handling code here:
+    private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
+
         EnvManagementOrganizationJPanel environmentManagementOrganizationJPanel = new EnvManagementOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
         userProcessContainer.add("environmentManagementOrganizationJPanel", environmentManagementOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btn_manageorgActionPerformed
+    }//GEN-LAST:event_manageOrganizationJButtonActionPerformed
 
-    private void btn_ManageUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ManageUserActionPerformed
-        // TODO add your handling code here:
+    private void manageEmployeeJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageEmployeeJButtonActionPerformed
+
         EnvManagementEmployeeJPanel environmentManagementEmployeeJPanel = new EnvManagementEmployeeJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
         userProcessContainer.add("environmentManagementEmployeeJPanel", environmentManagementEmployeeJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btn_ManageUserActionPerformed
 
-    private void btn_manageemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_manageemployeeActionPerformed
+    }//GEN-LAST:event_manageEmployeeJButtonActionPerformed
+
+    private void userJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userJButtonActionPerformed
         // TODO add your handling code here:
-         EnvManagementUserJPanel environmentManagementUser = new EnvManagementUserJPanel(userProcessContainer, enterprise,business);
-        userProcessContainer.add("environmentManagementUser", environmentManagementUser);
+        EnvManagementUserJPanel environmentManagementUserJPanel = new EnvManagementUserJPanel(userProcessContainer, enterprise,business);
+        userProcessContainer.add("environmentManagementUserJPanel", environmentManagementUserJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
-    }//GEN-LAST:event_btn_manageemployeeActionPerformed
+    }//GEN-LAST:event_userJButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btn_ManageUser;
-    private javax.swing.JButton btn_manageemployee;
-    private javax.swing.JButton btn_manageorg;
+    private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblAdminvalue;
+    private javax.swing.JButton manageEmployeeJButton;
+    private javax.swing.JButton manageOrganizationJButton;
+    private javax.swing.JButton userJButton;
+    private javax.swing.JLabel valueLabel;
     // End of variables declaration//GEN-END:variables
 }

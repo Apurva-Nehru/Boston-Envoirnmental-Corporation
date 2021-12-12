@@ -5,10 +5,22 @@
  */
 package Business.Role;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.AirPollutionOrganization;
+import Business.Oragnization.Organization;
+import Business.UserAccount.UserAccount;
+import Business.Role.Roles;
+import userinterface.EnvManagementRoles.AirPollutionManagementWorkJPanel;
+import javax.swing.JPanel;
+import userinterface.EnvManagementRoles.AirPollutionManagementWorkQueueJPanel;
 /**
  *
  * @author aishw
  */
-public class AirPollutionManagementRole {
-    
+public class AirPollutionManagementRole extends Roles{
+    @Override
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new AirPollutionManagementWorkJPanel(userProcessContainer, account, (AirPollutionOrganization)organization, enterprise, business);
+    }
 }

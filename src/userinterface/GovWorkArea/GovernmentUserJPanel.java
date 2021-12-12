@@ -10,8 +10,8 @@ import Business.Employee.Employee;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
+import Business.Role.Roles;
 import java.awt.CardLayout;
-import javax.management.relation.Role;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -72,7 +72,7 @@ public class GovernmentUserJPanel extends javax.swing.JPanel {
     
     private void populateRoleComboBox(Organization organization) {
         Combo_role.removeAllItems();
-        for (Role role : organization.getSupportedRole()) {
+        for (Roles role : organization.getSupportedRole()) {
             Combo_role.addItem(role);
         }
     }
@@ -292,10 +292,10 @@ public class GovernmentUserJPanel extends javax.swing.JPanel {
         String password = String.valueOf(passwordCharArray);
         Organization organization = (Organization) combo_Org.getSelectedItem();
         Employee employee = (Employee) combo_employee.getSelectedItem();
-        Role role = (Role) Combo_role.getSelectedItem();
+        Roles role = (Roles) Combo_role.getSelectedItem();
         if (employee == null) {
             JOptionPane.showMessageDialog(null, "You cannot add user account as employee combo box is empty");
-        } else if (business.checkIfUsernameIsUnique(userName)) {
+        } else if (business.UniqueUserName(userName)) {
             organization.getUserAccountDirectory().createUserAccount(userName, password, employee, role);
         } else {
             JOptionPane.showMessageDialog(null, "Username should be unique");

@@ -21,7 +21,7 @@ import javax.swing.JPanel;
 public class EnvironmentManagementAdminRole extends Roles{
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new EnvironmentManagementAdminWorkAreaJPanel(userProcessContainer, enterprise, business);
+        return new EnvManagementAdminWorkAreaJPanel(userProcessContainer, enterprise, business);
     }
     
 }

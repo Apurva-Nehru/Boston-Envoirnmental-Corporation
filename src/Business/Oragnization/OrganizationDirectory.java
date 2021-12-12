@@ -5,9 +5,12 @@
  */
 package Business.Oragnization;
 
+import Business.Oragnization.Organization.EnvironmentManagementType;
+import static Business.Oragnization.Organization.EnvironmentManagementType.AirPollution;
+import Business.Oragnization.Organization.EnvironmentSensorManagementType;
+import Business.Oragnization.Organization.GovernmentType;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author apurv
@@ -32,8 +35,8 @@ public class OrganizationDirectory {
         boolean isOrganizatonOfWasteManagementExist = false;
         boolean isOrganizatonOfFloodManagementExist = false;
         
-        for (Organization org : organizationList) {
-            if (org instanceof PollutionOrganization) {
+        for (Organization orgzn : organizationList) {
+            if (orgzn instanceof AirPollutionOrganization) {
                 isOrganizationOfAirPollutionExist = true;
                 break;
             } else {
@@ -41,8 +44,8 @@ public class OrganizationDirectory {
             }
         }
         
-        for (Organization org : organizationList) {
-            if (org instanceof NoisePollutionOrganization) {
+        for (Organization orgzn : organizationList) {
+            if (orgzn instanceof NoisePollutionOrganization) {
                 isOrganizationOfNoisePollutionExist = true;
                 break;
             } else {
@@ -50,8 +53,8 @@ public class OrganizationDirectory {
             }
         }
         
-        for (Organization org : organizationList) {
-            if (org instanceof WasteManagementOrganization) {
+        for (Organization orgzn : organizationList) {
+            if (orgzn instanceof WasteManagementOrganization) {
                 isOrganizatonOfWasteManagementExist = true;
                 break;
             } else {
@@ -59,8 +62,8 @@ public class OrganizationDirectory {
             }
         }
         
-        for (Organization org : organizationList) {
-            if (org instanceof FloodManagementOrganization) {
+        for (Organization orgzn : organizationList) {
+            if (orgzn instanceof FloodManagementOrganization) {
                 isOrganizatonOfFloodManagementExist = true;
                 break;
             } else {

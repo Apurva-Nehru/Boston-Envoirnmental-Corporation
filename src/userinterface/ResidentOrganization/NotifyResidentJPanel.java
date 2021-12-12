@@ -5,12 +5,21 @@
  */
 package userinterface.ResidentOrganization;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.GovOrg;
 import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
 import Business.Oragnization.ResidentOrganization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.ResidentWorkRequest;
+import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+
 
 /**
  *
@@ -50,6 +59,7 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         tbl_wrk_request = new javax.swing.JTable();
         btn_BACK = new javax.swing.JButton();
         btn_view_Full_Message = new javax.swing.JButton();
+        lblMessage = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
 
@@ -89,18 +99,24 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 28, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 28, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btn_view_Full_Message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btn_BACK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(btn_view_Full_Message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btn_BACK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(20, 20, 20)
+                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -110,7 +126,9 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addGap(33, 33, 33)
+                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btn_BACK)
                 .addGap(31, 31, 31)
                 .addComponent(btn_view_Full_Message)
@@ -120,10 +138,28 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
 
     private void btn_BACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BACKActionPerformed
         // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btn_BACKActionPerformed
 
     private void btn_view_Full_MessageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_view_Full_MessageActionPerformed
         // TODO add your handling code here:
+        int getSelectedRow = tbl_wrk_request.getSelectedRow();
+        if(getSelectedRow <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }
+        else
+        {
+        ResidentWorkRequest request = (ResidentWorkRequest)tbl_wrk_request.getValueAt(getSelectedRow, 0);
+        if(request.getAirPollutionSensor() != null){
+        lblMessage.setText(request.getAirPollutionMessage());
+        }
+        else
+        {
+        lblMessage.setText(request.getFloodManagementMessage());
+        }
+        }
     }//GEN-LAST:event_btn_view_Full_MessageActionPerformed
 
 
@@ -132,11 +168,12 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btn_view_Full_Message;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblMessage;
     private javax.swing.JTable tbl_wrk_request;
     // End of variables declaration//GEN-END:variables
 
     public void populateTable() {
-        ResidentWorkRequest cit_wrs = null;
+        ResidentWorkRequest resident_wrs = null;
         DefaultTableModel model = (DefaultTableModel) tbl_wrk_request.getModel();
         model.setRowCount(0);
         
@@ -146,23 +183,23 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         for (WorkRequest wr : organization.getWorkQueue().getWorkRequestList()) {
             if (wr instanceof ResidentWorkRequest) 
             {
-                cit_wrs = (ResidentWorkRequest)wr;
+                resident_wrs = (ResidentWorkRequest)wr;
             
-                if(cit_wrs.getAirPollutionSensor()!=null)
+                if(resident_wrs.getAirPollutionSensor()!=null)
                 {
                 Object[] row1 = new Object[3];
-                row1[0] = cit_wrs;
-                row1[1] = cit_wrs.getSender();
-                row1[2] = cit_wrs.getAirPollutionMessage();
+                row1[0] = resident_wrs;
+                row1[1] = resident_wrs.getSender();
+                row1[2] = resident_wrs.getAirPollutionMessage();
                 model.addRow(row1);
                 }
                             
-                else if(cit_wrs.getFloodAlertSensorList() != null)
+                else if(resident_wrs.getFloodManagementSensorList() != null)
                 {
                 Object[] row = new Object[3];
-                row[0] = cit_wrs;
-                row[1] = cit_wrs.getSender();
-                row[2] = cit_wrs.getFloodAlertMessage();
+                row[0] = resident_wrs;
+                row[1] = resident_wrs.getSender();
+                row[2] = resident_wrs.getFloodManagementMessage();
                 model.addRow(row);
                 }
                 

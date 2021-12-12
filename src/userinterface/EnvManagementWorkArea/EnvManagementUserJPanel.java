@@ -12,7 +12,6 @@ import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
 import Business.Role.Roles;
 import java.awt.CardLayout;
-import javax.management.relation.Role;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
@@ -73,7 +72,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
 
     private void populateRoleComboBox(Organization organization) {
         combo_Roles.removeAllItems();
-        for (Role role : organization.getSupportedRole()) {
+        for (Roles role : organization.getSupportedRole()) {
             combo_Roles.addItem(role.toString());
         }
     }

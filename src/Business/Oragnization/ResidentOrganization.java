@@ -7,7 +7,7 @@ package Business.Oragnization;
 
 import Business.Role.ResidentRole;
 import Business.Role.GovernmentOfficialRole;
-import Business.Role.Role;
+import Business.Role.Roles;
 import java.util.ArrayList;
 /**
  *
@@ -19,8 +19,8 @@ public class ResidentOrganization extends Organization {
    }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new ResidentRole());
         return roles;
     }

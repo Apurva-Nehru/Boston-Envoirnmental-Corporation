@@ -6,7 +6,7 @@
 package Business.Oragnization;
 
 import Business.Role.AirPollutionManagementRole;
-import Business.Role.Role;
+import Business.Role.Roles;
 import java.util.ArrayList;
 
 /**
@@ -15,12 +15,12 @@ import java.util.ArrayList;
  */
 public class AirPollutionOrganization extends Organization{
      public AirPollutionOrganization() {
-        super(EnvironmentManagementType.AirPollutionSolution.getValue());
+        super(EnvironmentManagementType.AirPollution.getValue());
     }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new AirPollutionManagementRole());
         return roles;
     } 

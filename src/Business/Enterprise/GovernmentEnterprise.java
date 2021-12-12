@@ -5,7 +5,7 @@
  */
 package Business.Enterprise;
 
-import Business.Role.Role;
+import Business.Role.Roles;
 import java.util.ArrayList;
 import Business.Role.GovernmentAdminRole;
 
@@ -20,8 +20,8 @@ public class GovernmentEnterprise extends Enterprise{
     }
 
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList<>();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList<>();
         roles.add(new GovernmentAdminRole());
         return roles; //To change body of generated methods, choose Tools | Templates.
     }

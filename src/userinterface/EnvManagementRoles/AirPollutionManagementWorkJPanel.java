@@ -27,7 +27,7 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
     /**
      * Creates new form AirPollutionManagementWorkJPanel
      */
-    public AirPollutionManagementWorkJPanel() {
+    public AirPollutionManagementWorkJPanel(JPanel userProcessContainer, UserAccount account, AirPollutionOrganization organization, Enterprise enterprise, EcoSystem business) {
         this.userProcessContainer = userProcessContainer;
         this.account = account;
        this.organization = organization;

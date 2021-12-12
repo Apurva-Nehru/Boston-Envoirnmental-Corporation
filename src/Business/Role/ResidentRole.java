@@ -8,9 +8,9 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.ResidentOrganization;
 import Business.Oragnization.GovOrg;
-import Business.Organization.Organization;
+import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.CitizenOrganization.CitizenWorkAreaJPanel;
+import userinterface.ResidentOrganization.ResidentWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

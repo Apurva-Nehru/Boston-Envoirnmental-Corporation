@@ -15,7 +15,6 @@ import Business.Role.SystemAdminRole;
 import Business.UserAccount.UserAccount;
 import Network.Network;
 import java.util.ArrayList;
-import javax.management.relation.Role;
 
 /**
  *
@@ -36,8 +35,8 @@ public class EcoSystem extends Organization{
         networkList.add(network);
         return network;
     }
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roleList=new ArrayList<Role>();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roleList=new ArrayList<Roles>();
         roleList.add(new SystemAdminRole());
         return roleList;
     }
@@ -58,7 +57,7 @@ public class EcoSystem extends Organization{
 
         for (UserAccount user : this.getUserAccountDirectory().getUserAccountList()) {
           
-            if (user.getUsname()).equals(username)) {
+            if (user.getUsname().equals(username)) {
                 return false;
             }
             for (Network network : this.getNetworkList()) {

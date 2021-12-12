@@ -312,19 +312,19 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
             Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
             if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.EnvManagement) {
-                if (system.checkIfUsernameIsUnique(username)) {
+                if (system.UniqueUserName(username)) {
                     UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new EnvironmentManagementAdminRole());
                 } else {
                     JOptionPane.showMessageDialog(null, "User name already exist");
                 }
             } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.Government) {
-                if (system.checkIfUsernameIsUnique(username)) {
+                if (system.UniqueUserName(username)) {
                     UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new GovernmentAdminRole());
                 } else {
                     JOptionPane.showMessageDialog(null, "User name already exist");
                 }
             } else if (enterprise.getEnterpriseType() == Enterprise.EnterpriseType.SensorManagement) {
-                if (system.checkIfUsernameIsUnique(username)) {
+                if (system.UniqueUserName(username)) {
                     UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new EnvironmentSensorAdminRole());
                 } else {
                     JOptionPane.showMessageDialog(null, "User name already exist");

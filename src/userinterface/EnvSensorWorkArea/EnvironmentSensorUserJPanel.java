@@ -73,7 +73,7 @@ public class EnvironmentSensorUserJPanel extends javax.swing.JPanel {
     
     private void populateRoleComboBox(Organization organization) {
         combo_role.removeAllItems();
-        for (Role role : organization.getSupportedRole()) {
+        for (Roles role : organization.getSupportedRole()) {
             combo_role.addItem(role);
         }
     }

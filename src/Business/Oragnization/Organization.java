@@ -19,6 +19,7 @@ import javax.management.relation.Role;
 public abstract class Organization {
  private String name;
     private WorkQueue workQueue;
+    private ArrayList<Roles> roleList;
     private EmployeeDirectory employeeDirectory;
     private UserAccountDirectory userAccountDirectory;
     private int organizationID;
@@ -83,7 +84,9 @@ public abstract class Organization {
         ++counter;
     }
 
-    public abstract ArrayList<Role> getSupportedRole();
+    public ArrayList<Roles> getSupportedRole(){
+        return roleList;
+    };
     
     
     public UserAccountDirectory getUserAccountDirectory() {

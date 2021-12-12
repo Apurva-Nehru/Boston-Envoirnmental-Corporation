@@ -25,7 +25,7 @@ public class UserAccountDirectory {
     
     public UserAccount authenticateUser(String username, String password){
         for (UserAccount useracc : userAccountList)
-            if (useracc.getUsname().equals(usname)) && useracc.getPswd().equals(pswd)){
+            if (useracc.getUsname().equals(username) && useracc.getPswd().equals(password)){
                 return useracc;
             }
         return null;

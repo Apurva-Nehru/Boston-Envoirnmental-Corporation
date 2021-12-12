@@ -5,6 +5,9 @@
  */
 package Business.Oragnization;
 
+import Business.Role.FloodManagementRole;
+import Business.Role.Roles;
+import java.util.ArrayList;
 /**
  *
  * @author aishw
@@ -15,8 +18,8 @@ public class FloodManagementOrganization extends Organization {
     }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new FloodManagementRole());
         return roles;
     } 

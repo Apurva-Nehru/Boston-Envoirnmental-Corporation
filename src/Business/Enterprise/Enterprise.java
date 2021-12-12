@@ -5,7 +5,7 @@
  */
 package Business.Enterprise;
 
-import Business.Role.Role;
+import Business.Role.Roles;
 import java.util.ArrayList;
 import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
@@ -32,7 +32,7 @@ public class Enterprise extends Organization{
     }
 
     @Override
-    public ArrayList<Role> getSupportedRole() {
+    public ArrayList<Roles> getSupportedRole() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

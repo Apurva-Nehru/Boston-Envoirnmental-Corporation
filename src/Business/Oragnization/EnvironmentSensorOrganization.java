@@ -20,7 +20,7 @@ import java.util.ArrayList;
  *
  * @author apurv
  */
-public abstract class EnvironmentSensorOrganization extends Organization{
+public  class EnvironmentSensorOrganization extends Organization{
     
     
     private SensorDirectory sensorDirectory;

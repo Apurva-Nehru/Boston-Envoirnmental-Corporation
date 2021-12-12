@@ -7,6 +7,7 @@ package Business.Oragnization;
 import Business.Role.Roles;
 import java.util.ArrayList;
 import Business.Oragnization.Organization.EnvironmentManagementType;
+import Business.Role.WasteManagementRole;
 
 /**
  *
@@ -18,8 +19,8 @@ public class WasteManagementOrganization extends Organization {
     }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new WasteManagementRole());
         return roles;
 }

@@ -6,7 +6,8 @@
 package Business.Oragnization;
 
 import Business.Oragnization.Organization.GovernmentType;
-import Business.Role.Role;
+import Business.Role.GovernmentOfficialRole;
+import Business.Role.Roles;
 import java.util.ArrayList;
 
 /**
@@ -19,8 +20,8 @@ public class GovOrg extends Organization {
     }
     
     @Override
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new GovernmentOfficialRole());
         return roles;
     }

@@ -10,7 +10,9 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.WasteManagementOrganization;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import UserInterface.EnvironmentManagementRoles.GarbageManagementWorkAreaJPanel;
+import userinterface.EnvManagementRoles.WasteManagementWorkAreaJPanel;
+import Business.Role.Roles;
+
 import javax.swing.JPanel;
 
 /**

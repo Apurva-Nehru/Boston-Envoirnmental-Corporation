@@ -25,7 +25,7 @@ private JPanel userProcessContainer;
     /**
      * Creates new form WasteManagementWorkAreaJPanel
      */
-    public WasteManagementWorkAreaJPanel() {
+    public WasteManagementWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, WasteManagementOrganization organization, Enterprise enterprise, EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.account = account;

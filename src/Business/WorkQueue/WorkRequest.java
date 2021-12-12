@@ -31,21 +31,7 @@ public class WorkRequest {
        rqstDate = new Date();
        Work_Queue_id = "Work Request "+count++;
     }
-    public String getWork_Queue_id() {
-        return Work_Queue_id;
-    }
-
-    public void setWork_Queue_id(String Work_Queue_id) {
-        this.Work_Queue_id = Work_Queue_id;
-    }
-
-    public static int getCount() {
-        return count;
-    }
-
-    public static void setCount(int count) {
-        WorkRequest.count = count;
-    }
+    
 
     public String getMsg() {
         return msg;

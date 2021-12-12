@@ -22,8 +22,8 @@ public class NoisePollutionOrganization extends Organization{
     
    
     
-    public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
+    public ArrayList<Roles> getSupportedRole() {
+        ArrayList<Roles> roles = new ArrayList();
         roles.add(new NoisePollutionManagementRole());
         return roles;
     }

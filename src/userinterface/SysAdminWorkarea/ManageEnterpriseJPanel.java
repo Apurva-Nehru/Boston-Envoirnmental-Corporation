@@ -99,6 +99,11 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
 
         combo_enterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_enterprise.setForeground(new java.awt.Color(0, 0, 51));
+        combo_enterprise.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                combo_enterpriseActionPerformed(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Type");
@@ -272,6 +277,10 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         populateTable();
 
     }//GEN-LAST:event_btn_deleteActionPerformed
+
+    private void combo_enterpriseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_enterpriseActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_combo_enterpriseActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

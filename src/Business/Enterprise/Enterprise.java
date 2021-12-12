@@ -33,7 +33,7 @@ public class Enterprise extends Organization{
 
     @Override
     public ArrayList<Roles> getSupportedRole() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); 
     }
     
     public enum EnterpriseType {
@@ -45,7 +45,7 @@ public class Enterprise extends Organization{
         private String val;
 
         private EnterpriseType(String value) {
-            this.val = val;
+            this.val = value;
         }
 
         public String getValue() {

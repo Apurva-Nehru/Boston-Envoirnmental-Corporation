@@ -131,6 +131,11 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
         jLabel1.setText("Air Pollution Sensor Readings for the Desired Zipcode");
 
         jButton1.setText("Back");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton2.setText("Send Request To Government");
@@ -251,6 +256,10 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
             }
         }
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

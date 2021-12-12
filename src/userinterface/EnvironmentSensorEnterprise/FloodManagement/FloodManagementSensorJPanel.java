@@ -133,14 +133,14 @@ public class FloodManagementSensorJPanel extends javax.swing.JPanel {
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     } catch (IOException ex) {
-        Logger.getLogger(FloodManagementSensorJpanel.class.getName()).log(Level.SEVERE, null, ex);
+        Logger.getLogger(FloodManagementSensorJPanel.class.getName()).log(Level.SEVERE, null, ex);
     }
     }//GEN-LAST:event_btnSendRequests1ActionPerformed
 
     private void btnViewSentRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewSentRequestsActionPerformed
         // TODO add your handling code here:
-        ViewFloodAreaWorkQueuejPanel viewfloodWorkQueueJPanel = new ViewFloodAreaWorkQueuejPanel(userProcessContainer, account, enterprise.getOrganizationDirectory(), business);
-        userProcessContainer.add("viewfloodWorkQueueJPanel", viewfloodWorkQueueJPanel);
+        ViewFloodAreaWorkQueue viewfloodAreaWorkQueue = new ViewFloodAreaWorkQueue(userProcessContainer, account, enterprise.getOrganizationDirectory(), business);
+        userProcessContainer.add("viewfloodAreaWorkQueue", viewfloodAreaWorkQueue);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnViewSentRequestsActionPerformed

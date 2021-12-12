@@ -51,7 +51,44 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         this.business = business;
         populateTable();
     }
-
+    
+      public String convertListToCSV(ArrayList<String> ZipcodeList)
+    {
+        String zipcodesCommaSeparated = ZipcodeList.stream().collect(Collectors.joining(","));     
+        return zipcodesCommaSeparated;
+    }
+    
+    public void populateTable(){
+        ArrayList<String> ZipcodeList = new ArrayList<String>();
+        FloodManagementWorkRequest noise_works = null;
+        DefaultTableModel model = (DefaultTableModel) FloodWorkQueueJTable.getModel();
+        model.setRowCount(0);
+        
+        for(Organization organization : organizationDirectory.getOrganizationList())
+        {
+            if(organization instanceof EnvironmentSensorOrganization)
+            {
+                for (WorkRequest workr : organization.getWorkQueue().getWorkRequestList()) {
+                    if (workr instanceof FloodManagementWorkRequest) {
+                        noise_works = (FloodManagementWorkRequest)workr;
+            
+                        for(FloodManagementSensor fas : noise_works.getFloodManagementSensor())
+                        {
+                        ZipcodeList.add(fas.getZipcode());
+                        }
+                        Object[] row = new Object[7];
+                        row[0] = noise_works;
+                        row[1] = noise_works.getSender();                        
+                        row[2] = convertListToCSV(ZipcodeList);
+                        row[3] = noise_works.getStatus();
+                        row[4] = noise_works.getMessage();
+                        row[5] = noise_works.getRqstDate();
+                        model.addRow(row);
+                }
+                }
+            }
+    }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -74,6 +111,8 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         ResolvedJTable = new javax.swing.JTable();
         btnResolvedMessageGov = new javax.swing.JButton();
+
+        setBackground(new java.awt.Color(0, 153, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -304,6 +343,58 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
 
     private void btnResolvedMessageGovActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResolvedMessageGovActionPerformed
         // TODO add your handling code here:
+        ArrayList<String> ZipcodeList = new ArrayList<String>();
+        int row = ResolvedJTable.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }
+        else
+        {
+            //AirPollutionSensor airPollutionSensor = (AirPollutionSensor)SensorReadingsjTable.getValueAt(row, 0);
+
+//            Sensor airPollutionSenso = (Sensor)ResolvedWorkQueuejTable.getValueAt(row, 0);
+            
+            FloodManagementWorkRequest reques = (FloodManagementWorkRequest)ResolvedJTable.getValueAt(row, 0);
+
+            for(FloodManagementSensor fas : reques.getFloodManagementSensor())
+            {
+            ZipcodeList.add(fas.getZipcode());
+            }
+            
+            ArrayList<FloodManagementSensor> floodAlertSensorList = reques.getFloodManagementSensor();
+            GovWorkRequest govWorkRequest = new GovWorkRequest();
+            govWorkRequest.setFloodManagementSensorList(floodAlertSensorList);
+            govWorkRequest.setFloodManagementMessage("The Area bearing pincodes "+ZipcodeList.stream().collect(Collectors.joining(","))+"'are now out of danger for floods.");
+            govWorkRequest.setSender(account);
+            govWorkRequest.setStatus("Resolution Message Sent to Government");
+
+            Organization orgzn = null;
+            for(Network ntwk: business.getNetworkList())
+            {
+                for(Enterprise entprise : ntwk.getEnterpriseDirectory().getEnterpriseList())
+                {
+                    for(Organization org : entprise.getOrganizationDirectory().getOrganizationList())
+                    {
+                        //System.out.println(org.getName());
+                        if (org instanceof GovOrg){
+                            orgzn = org;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (orgzn!=null)
+            {
+
+                ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
+                boolean workRequestAlreadyPresent = false;
+
+                    orgzn.getWorkQueue().getWorkRequestList().add(govWorkRequest);
+                    account.getWorkQ().getWorkRequestList().add(govWorkRequest);
+                    JOptionPane.showMessageDialog(null, "Request sent to Government successfully");
+            }
+             
+          }
     }//GEN-LAST:event_btnResolvedMessageGovActionPerformed
 
 

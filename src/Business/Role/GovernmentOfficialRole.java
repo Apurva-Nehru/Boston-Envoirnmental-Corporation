@@ -10,7 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.Oragnization.GovOrg;
 import Business.UserAccount.UserAccount;
-import UserInterface.GovernmentOfficialOrganizationRole.GovernmentOfficialWorkAreaJPanel;
+import userinterface.GovOfficialOrgRole.GovernmentOfficialWorkAreaJPanel;
 import javax.swing.JPanel;
 
 /**

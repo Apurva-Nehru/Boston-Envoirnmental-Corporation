@@ -7,9 +7,13 @@ package Business.Role;
 
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
+import Business.Oragnization.NoisePollutionOrganization;
 import Business.Oragnization.Organization;
+import Business.UserAccount.UserAccount;
+import UserInterface.EnvironmentSensorEnterprise.NoisePollutionManagement.ViewNoisePollutionWorkQueueJPanel;
 import javax.swing.JPanel;
-
+import userinterface.EnvManagementRoles.NoisePollutionManagementWorkQueueJPanel;
+import userinterface.EnvManagementRoles.NoisePollutionWorkAreaJPanel;
 /**
  *
  * @author apurv
@@ -18,7 +22,7 @@ public class NoisePollutionManagementRole extends Roles{
 
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-      return new NoisePollutionManagementWorkAreaJPanel(userProcessContainer, account, (NoisePollutionSolutionOrganization)organization, enterprise, business);
+      return new NoisePollutionWorkAreaJPanel(userProcessContainer, account, (NoisePollutionOrganization)organization, enterprise,business);
     }
     
 }

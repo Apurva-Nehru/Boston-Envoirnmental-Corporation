@@ -9,6 +9,7 @@ import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import javax.swing.JPanel;
+import Business.UserAccount.UserAccount;
 import userinterface.GovWorkArea.GovernmentAdminWorkAreaJPanel;
 
 /**

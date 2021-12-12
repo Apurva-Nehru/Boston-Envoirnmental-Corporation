@@ -117,9 +117,9 @@ public class WasteManagementSensor extends javax.swing.JPanel {
 
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
         // TODO add your handling code here:
-        NotifyToWasteManagementDepartment notifyTogarbageSolutionDepartment;
+        NotifyToWasteManagement notifyTogarbageSolutionDepartment;
         try {
-            notifyTogarbageSolutionDepartment = new NotifyToWasteManagementDepartment(userProcessContainer, account, business, enterprise.getOrganizationDirectory());
+            notifyTogarbageSolutionDepartment = new NotifyToWasteManagement(userProcessContainer, account, business, enterprise.getOrganizationDirectory());
             userProcessContainer.add("NotifytosolutionSolutionDepartment", notifyTogarbageSolutionDepartment);
             CardLayout layout = (CardLayout) userProcessContainer.getLayout();
             layout.next(userProcessContainer);
@@ -130,7 +130,7 @@ public class WasteManagementSensor extends javax.swing.JPanel {
 
     private void btnViewrequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewrequestsActionPerformed
         // TODO add your handling code here:
-        ViewWasteManagementWorkQueue viewWorkQueueJPanel = new ViewWasteManagementWorkQueue(userProcessContainer, account, enterprise.getOrganizationDirectory());
+        ViewWasteWorkQueue viewWorkQueueJPanel = new ViewWasteWorkQueue(userProcessContainer, account, enterprise.getOrganizationDirectory());
         userProcessContainer.add("viewWorkQueueJPanel", viewWorkQueueJPanel);
         CardLayout layot = (CardLayout) userProcessContainer.getLayout();
         layot.next(userProcessContainer);

@@ -214,6 +214,11 @@ public class NotifyToNoisePollutionSolutionDepartmentJPanel extends javax.swing.
 
         btnsendrequests.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnsendrequests.setText("Send Request to Noise Pollution department");
+        btnsendrequests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsendrequestsActionPerformed(evt);
+            }
+        });
 
         jButton3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jButton3.setText("Back");
@@ -345,6 +350,123 @@ public class NotifyToNoisePollutionSolutionDepartmentJPanel extends javax.swing.
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void btnsendrequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsendrequestsActionPerformed
+        // TODO add your handling code here:
+        int row = GetHighlypollutedareasJTable.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }else{
+        //AirPollutionSensor airPollutionSensor = (AirPollutionSensor)SensorReadingsjTable.getValueAt(row, 0);
+
+        Sensor noisePollutionSenso = (Sensor)GetHighlypollutedareasJTable.getValueAt(row, 0);
+
+        NoisePollutionSensor noisePollutionSensor = (NoisePollutionSensor) noisePollutionSenso;
+        NoisePollutionWorkRequest reques = new NoisePollutionWorkRequest();
+        reques.setNoisePollutionSensor(noisePollutionSensor);
+        reques.setSender(userAccount);
+        reques.setStatus("Sent");
+        reques.setMsg("Please look at the reasons for such loud noise in the locality");
+
+        Organization orgzn = null;
+        Organization orgzn1 = null;
+        for(Network ntwk: business.getNetworkList())
+        {
+            for(Enterprise entprise : ntwk.getEnterpriseDirectory().getEnterpriseList())
+            {
+                for(Organization org : entprise.getOrganizationDirectory().getOrganizationList())
+                {
+                    //System.out.println(org.getName());
+                    if (org instanceof NoisePollutionOrganization){
+                        orgzn = org;
+                        break;
+                    }
+
+                }
+                for(Organization org1 : entprise.getOrganizationDirectory().getOrganizationList())
+                {
+                    if(org1 instanceof EnvironmentSensorOrganization){
+                        orgzn1 = org1;
+                        break;
+                    }
+                }
+
+            } }
+            if (orgzn!=null)
+            {
+            ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
+            boolean workRequestAlreadyPresent = false;
+                    
+            if(orgzn.getWorkQueue().getWorkRequestList().isEmpty())
+            {
+                orgzn.getWorkQueue().getWorkRequestList().add(reques);
+                userAccount.getWorkQ().getWorkRequestList().add(reques);
+                JOptionPane.showMessageDialog(null, "Request sent to Noise Pollution Solution Department successfully");
+            }
+            else
+            {
+            for(WorkRequest request1 : orgzn.getWorkQueue().getWorkRequestList())
+            {
+                if(request1 instanceof NoisePollutionWorkRequest)
+                {
+                    NoisePollutionWorkRequest reque = (NoisePollutionWorkRequest) request1; 
+                    sensorIDsArray.add(reque.getNoisePollutionSensor().getSensorId());
+                    for(int i=0; i<sensorIDsArray.size(); i++)
+                    {
+                        if(reques.getNoisePollutionSensor().getSensorId() == sensorIDsArray.get(i))
+                        {
+                            workRequestAlreadyPresent = true;
+                        }
+                    }
+                }
+            }
+                    if(workRequestAlreadyPresent)   
+                    {
+                        JOptionPane.showMessageDialog(null, "Request has already been sent about this sensor to the Noise Pollution Department");
+                    }
+                    else
+                    {
+                        orgzn.getWorkQueue().getWorkRequestList().add(reques);
+                        userAccount.getWorkQ().getWorkRequestList().add(reques);
+                        JOptionPane.showMessageDialog(null, "Request sent to Noise Pollution Department successfully");
+                    }
+                }
+            }
+
+            if (orgzn1!=null){
+            ArrayList<Integer> sensorIDsArray = new ArrayList<Integer>();
+            boolean workRequestAlreadyPresent = false;
+            if(orgzn1.getWorkQueue().getWorkRequestList().isEmpty())
+            {
+                orgzn1.getWorkQueue().getWorkRequestList().add(reques);
+                userAccount.getWorkQ().getWorkRequestList().add(reques);
+            }
+            else
+            {
+            for(WorkRequest request1 : orgzn1.getWorkQueue().getWorkRequestList())
+            {
+                if(request1 instanceof NoisePollutionWorkRequest)
+                {
+                    NoisePollutionWorkRequest req = (NoisePollutionWorkRequest) request1; 
+                    sensorIDsArray.add(req.getNoisePollutionSensor().getSensorId());
+                    for(int i=0; i<sensorIDsArray.size(); i++)
+                    {
+                        if(reques.getNoisePollutionSensor().getSensorId() == sensorIDsArray.get(i))
+                        {
+                            workRequestAlreadyPresent = true;
+                        }
+                    }
+                }
+            }
+                    if(!(workRequestAlreadyPresent))                    
+                    {
+                        orgzn1.getWorkQueue().getWorkRequestList().add(reques);
+                        userAccount.getWorkQ().getWorkRequestList().add(reques);
+                    }
+                }
+        }
+        }
+    }//GEN-LAST:event_btnsendrequestsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

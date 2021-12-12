@@ -120,8 +120,8 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btn_manageorgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_manageorgActionPerformed
         // TODO add your handling code here:
-        EnvManagementOrganizationJPanel environmentManagementOrganization = new EnvManagementOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
-        userProcessContainer.add("environmentManagementOrganizationJPanel", environmentManagementOrganization);
+        EnvironmentManagementOrganizationJPanel environmentManagementOrganizationJPanel = new EnvironmentManagementOrganizationJPanel(userProcessContainer, enterprise.getOrganizationDirectory());
+        userProcessContainer.add("environmentManagementOrganizationJPanel", environmentManagementOrganizationJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btn_manageorgActionPerformed
@@ -136,7 +136,7 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btn_manageemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_manageemployeeActionPerformed
         // TODO add your handling code here:
-         EnvManagementUserJPanel environmentManagementUserJPanel = new EnvManagementUserJPanel(userProcessContainer, enterprise,business);
+         EnvironmentManagementUserJPanel environmentManagementUserJPanel = new EnvironmentManagementUserJPanel(userProcessContainer, enterprise,business);
         userProcessContainer.add("environmentManagementUserJPanel", environmentManagementUserJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

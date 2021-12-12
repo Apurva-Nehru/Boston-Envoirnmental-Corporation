@@ -214,16 +214,9 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
 
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
         // TODO add your handling code here:
-        int selectedRow = tbl_govorg.getSelectedRow();
-
-        if (selectedRow < 0) {
-            JOptionPane.showMessageDialog(null, "Please Select the row");
-            return;
-        }
-        Organization org = (Organization) tbl_govorg.getValueAt(selectedRow, 0);
-        directory.DeleteOrganization(org);
-        populateTable();
-        JOptionPane.showMessageDialog(null, "Organization deleted Succesfully");
+         userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btn_BackActionPerformed
 
 

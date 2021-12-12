@@ -52,11 +52,10 @@
                                           <Component id="combo_ChooseOrg_emp" pref="184" max="32767" attributes="0"/>
                                           <Component id="txt_Name" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                                   </Group>
                                   <Component id="btn_Back" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
+                              <EmptySpace min="15" max="32767" attributes="0"/>
                               <Component id="btn_addemp" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>

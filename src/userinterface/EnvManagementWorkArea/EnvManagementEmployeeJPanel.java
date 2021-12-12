@@ -35,7 +35,7 @@ private OrganizationDirectory organizationDir;
         combo_ChooseOrg.removeAllItems();
 
         for (Organization organization : organizationDir.getOrganizationList()) {
-            combo_ChooseOrg.addItem(organization);
+            combo_ChooseOrg.addItem(organization.toString());
         }
     }
     
@@ -43,7 +43,7 @@ private OrganizationDirectory organizationDir;
         combo_ChooseOrg_emp.removeAllItems();
 
         for (Organization organization : organizationDir.getOrganizationList()) {
-            combo_ChooseOrg_emp.addItem(organization);
+            combo_ChooseOrg_emp.addItem(organization.toString());
         }
     }
 

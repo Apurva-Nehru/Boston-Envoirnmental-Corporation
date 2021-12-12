@@ -22,6 +22,7 @@ private JPanel userProcessContainer;
     private WasteManagementOrganization organization; 
     private Enterprise enterprise; 
     private EcoSystem business;
+   // private Enterprise enterprise;
     /**
      * Creates new form WasteManagementWorkAreaJPanel
      */

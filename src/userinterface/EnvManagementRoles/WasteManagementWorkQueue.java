@@ -5,11 +5,18 @@
  */
 package userinterface.EnvManagementRoles;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
 import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
+import Business.Oragnization.WasteManagementOrganization;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.WasteManagementWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.util.Date;
+import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -19,8 +26,12 @@ import javax.swing.table.DefaultTableModel;
  */
 public class WasteManagementWorkQueue extends javax.swing.JPanel {
 private OrganizationDirectory organizationdirectory;
+private WasteManagementOrganization organization; 
     private UserAccount userAccount;
     private JPanel userProcessContainer;
+       private Enterprise enterprise; 
+    private EcoSystem business;
+    
     /**
      * Creates new form WasteManagementWorkQueue
      */
@@ -29,6 +40,10 @@ private OrganizationDirectory organizationdirectory;
          this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.organizationdirectory = organizationDirectory;
+        this.organization = organization;
+        this.business = business;
+        this.enterprise = enterprise;
+        
         populateTable();
     }
 
@@ -75,7 +90,7 @@ private OrganizationDirectory organizationdirectory;
         setBackground(new java.awt.Color(0, 153, 102));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel1.setText("Waste MAnagement Work Queue");
+        jLabel1.setText("Waste Management Work Queue");
 
         tvl_Waste_Table.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -91,8 +106,18 @@ private OrganizationDirectory organizationdirectory;
         jScrollPane1.setViewportView(tvl_Waste_Table);
 
         btn_Back.setText("<<BAck");
+        btn_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BackActionPerformed(evt);
+            }
+        });
 
         btn_Resolve.setText("Resolve");
+        btn_Resolve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ResolveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -129,6 +154,38 @@ private OrganizationDirectory organizationdirectory;
                 .addContainerGap(275, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
+        JPanel panel = new WasteManagementWorkAreaJPanel(userProcessContainer,userAccount,organization, enterprise,business);
+        //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
+        //sysAdminwjp.populateTree();
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btn_BackActionPerformed
+
+    private void btn_ResolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResolveActionPerformed
+        // TODO add your handling code here:
+        int row = tvl_Waste_Table.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }else{
+        Random rn = new Random();
+
+        WorkRequest workRequest = (WorkRequest) tvl_Waste_Table.getValueAt(row, 0);
+
+        WasteManagementWorkRequest wasteWorkRequest = (WasteManagementWorkRequest)workRequest;
+        wasteWorkRequest.setStatus("Resolved");
+        wasteWorkRequest.setRslvDate(new Date());
+        wasteWorkRequest.getWastesensor().setCurrentlevel(0);
+
+        populateTable();
+        JOptionPane.showMessageDialog(null, "Resolved");
+        }
+    }//GEN-LAST:event_btn_ResolveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

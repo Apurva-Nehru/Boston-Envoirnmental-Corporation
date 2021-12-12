@@ -95,7 +95,7 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
         tbl_Gov_wrd_queue = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnNotifyResidents = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 102));
@@ -175,10 +175,25 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
         });
 
         jButton3.setText("View complete Message");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("Send Resolved Notification");
+        btnNotifyResidents.setText("Send Resolved Notification");
+        btnNotifyResidents.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNotifyResidentsActionPerformed(evt);
+            }
+        });
 
-        jButton5.setText("Send Alert Notification to citizen");
+        jButton5.setText("Send Alert Notification to Residents");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -213,10 +228,10 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
                         .addGap(64, 64, 64)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(62, 62, 62)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(100, 100, 100)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(btnNotifyResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32)
+                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(315, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,7 +244,7 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4)
+                    .addComponent(btnNotifyResidents)
                     .addComponent(jButton5))
                 .addGap(86, 86, 86)
                 .addComponent(MessagejLabel)
@@ -245,76 +260,19 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backjButton1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-         int row = tbl_Gov_wrd_queue.getSelectedRow();
-        try
-        {
-         GovWorkRequest request = (GovWorkRequest)tbl_Gov_wrd_queue.getValueAt(row, 0);
-         MessagejLabel.setText(request.getAirPollutionMessage());
-        }
-        
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "Please select a row");
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void CitizenNotificationjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitizenNotificationjButtonActionPerformed
         // TODO add your handling code here:
-        int row = tbl_Gov_wrd_queue.getSelectedRow();
-        if(row <0){
-            JOptionPane.showMessageDialog(null, "No row selected");
-        }else{
         
-        GovWorkRequest request = (GovWorkRequest)tbl_Gov_wrd_queue.getValueAt(row, 0);
-        
-        ResidentWorkRequest citizenWorkRequest = new ResidentWorkRequest();
-        
-        citizenWorkRequest.setAirPollutionSensor(request.getAirPollutionSensor());
-        citizenWorkRequest.setAirPollutionMessage("The Area bearing pincode "+request.getAirPollutionSensor().getZipcode()+" has bad air quality please avoid this area until further notice");
-        citizenWorkRequest.setSender(userAccount);
-        citizenWorkRequest.setStatus("Message Sent to Citizens");
-        
-        Organization orgn = null;
-        Organization orgn1 = null;
-                for(Organization org : directory.getOrganizationList())
-                {
-            //System.out.println(org.getName());
-            if (org instanceof GovOrg){
-                orgn = org;
-                break;
-            }
-           
-            } 
-                for(Organization org1 : directory.getOrganizationList())
-                {
-                if(org1 instanceof ResidentOrganization){
-                orgn1 = org1;
-                break;
-            
-            } }
-        if (orgn!=null){
-            orgn.getWorkQueue().getWorkRequestList().add(citizenWorkRequest);
-            userAccount.getWorkQ().getWorkRequestList().add(citizenWorkRequest);
-        }
-        
-        if (orgn1!=null){            
-            orgn1.getWorkQueue().getWorkRequestList().add(citizenWorkRequest);
-            userAccount.getWorkQ().getWorkRequestList().add(citizenWorkRequest);
-        }
-         JOptionPane.showMessageDialog(null, "Request Sent to Citizen");
-        }
     }//GEN-LAST:event_CitizenNotificationjButtonActionPerformed
 
-    private void CitizenNotificationjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitizenNotificationjButton1ActionPerformed
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+         userProcessContainer.remove(this);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void btnNotifyResidentsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNotifyResidentsActionPerformed
         // TODO add your handling code here:
         int row = tbl_Gov_wrd_queue.getSelectedRow();
         if(row <0){
@@ -359,14 +317,86 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
         }
          JOptionPane.showMessageDialog(null, "Request Sent to Citizen");
         }
+    }//GEN-LAST:event_btnNotifyResidentsActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        int row = tbl_Gov_wrd_queue.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }else{
+        
+        GovWorkRequest request = (GovWorkRequest)tbl_Gov_wrd_queue.getValueAt(row, 0);
+        
+        ResidentWorkRequest citizenWorkRequest = new ResidentWorkRequest();
+        
+        citizenWorkRequest.setAirPollutionSensor(request.getAirPollutionSensor());
+        citizenWorkRequest.setAirPollutionMessage("The Area bearing pincode "+request.getAirPollutionSensor().getZipcode()+" has bad air quality please avoid this area until further notice");
+        citizenWorkRequest.setSender(userAccount);
+        citizenWorkRequest.setStatus("Message Sent to Citizens");
+        
+        Organization orgn = null;
+        Organization orgn1 = null;
+                for(Organization org : directory.getOrganizationList())
+                {
+            //System.out.println(org.getName());
+            if (org instanceof GovOrg){
+                orgn = org;
+                break;
+            }
+           
+            } 
+                for(Organization org1 : directory.getOrganizationList())
+                {
+                if(org1 instanceof ResidentOrganization){
+                orgn1 = org1;
+                break;
+            
+            } }
+        if (orgn!=null){
+            orgn.getWorkQueue().getWorkRequestList().add(citizenWorkRequest);
+            userAccount.getWorkQ().getWorkRequestList().add(citizenWorkRequest);
+        }
+        
+        if (orgn1!=null){            
+            orgn1.getWorkQueue().getWorkRequestList().add(citizenWorkRequest);
+            userAccount.getWorkQ().getWorkRequestList().add(citizenWorkRequest);
+        }
+         JOptionPane.showMessageDialog(null, "Request Sent to Citizen");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        int row = tbl_Gov_wrd_queue.getSelectedRow();
+        try
+        {
+         GovWorkRequest request = (GovWorkRequest)tbl_Gov_wrd_queue.getValueAt(row, 0);
+         MessagejLabel.setText(request.getAirPollutionMessage());
+        }
+        
+        catch(Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Please select a row");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void CitizenNotificationjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitizenNotificationjButton1ActionPerformed
+        // TODO add your handling code here:
+
     }//GEN-LAST:event_CitizenNotificationjButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         userProcessContainer.remove(this);
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_backjButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -374,10 +404,10 @@ public class GovernmentOfficialWorkQueueJPanel extends javax.swing.JPanel {
     private javax.swing.JButton CitizenNotificationjButton1;
     private javax.swing.JLabel MessagejLabel;
     private javax.swing.JButton backjButton1;
+    private javax.swing.JButton btnNotifyResidents;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane2;

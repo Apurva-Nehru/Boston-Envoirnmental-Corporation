@@ -87,15 +87,21 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         btn_back = new javax.swing.JButton();
         btn_Submit = new javax.swing.JButton();
         btn_delete = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("City");
+        add(jLabel1);
+        jLabel1.setBounds(60, 240, 100, 22);
 
         combo_City.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_City.setForeground(new java.awt.Color(0, 0, 51));
+        add(combo_City);
+        combo_City.setBounds(210, 240, 242, 25);
 
         combo_enterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_enterprise.setForeground(new java.awt.Color(0, 0, 51));
@@ -104,18 +110,28 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 combo_enterpriseActionPerformed(evt);
             }
         });
+        add(combo_enterprise);
+        combo_enterprise.setBounds(210, 300, 242, 25);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Type");
+        add(jLabel3);
+        jLabel3.setBounds(40, 300, 170, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Name");
+        add(jLabel2);
+        jLabel2.setBounds(40, 350, 120, 22);
 
         txt_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_name.setForeground(new java.awt.Color(0, 0, 51));
+        add(txt_name);
+        txt_name.setBounds(210, 350, 242, 23);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel4.setText("Manage Enterprise");
+        add(jLabel4);
+        jLabel4.setBounds(210, 20, 235, 41);
 
         tbl_ent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -138,89 +154,41 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbl_ent);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(90, 110, 452, 100);
+
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back_Final.png"))); // NOI18N
         btn_back.setText("<<back");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_backActionPerformed(evt);
             }
         });
+        add(btn_back);
+        btn_back.setBounds(20, 20, 80, 50);
 
-        btn_Submit.setText("Submit");
+        btn_Submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/submit.png"))); // NOI18N
         btn_Submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_SubmitActionPerformed(evt);
             }
         });
+        add(btn_Submit);
+        btn_Submit.setBounds(170, 420, 80, 30);
 
-        btn_delete.setText("Delete");
+        btn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/delete_Final.png"))); // NOI18N
         btn_delete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_deleteActionPerformed(evt);
             }
         });
+        add(btn_delete);
+        btn_delete.setBounds(320, 420, 90, 30);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(62, 62, 62)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                .addGap(359, 359, 359)
-                                .addComponent(btn_delete))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(btn_Submit)
-                                    .addGap(113, 113, 113))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel1)
-                                        .addComponent(jLabel3))
-                                    .addGap(96, 96, 96)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(txt_name)
-                                        .addComponent(combo_enterprise, 0, 242, Short.MAX_VALUE)
-                                        .addComponent(combo_City, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 235, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addComponent(btn_back)))
-                .addContainerGap(468, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(combo_City, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(combo_enterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addComponent(btn_Submit)
-                .addGap(61, 61, 61)
-                .addComponent(btn_delete)
-                .addGap(37, 37, 37)
-                .addComponent(btn_back)
-                .addContainerGap(271, Short.MAX_VALUE))
-        );
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterprise.jpg"))); // NOI18N
+        jLabel6.setText("jLabel6");
+        add(jLabel6);
+        jLabel6.setBounds(0, 10, 830, 630);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
@@ -293,6 +261,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_ent;
     private javax.swing.JTextField txt_name;

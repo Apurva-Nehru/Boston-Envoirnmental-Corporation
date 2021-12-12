@@ -98,11 +98,15 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         tbl_Admin = new javax.swing.JTable();
         btn_back = new javax.swing.JButton();
         txt_submit = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("City");
+        add(jLabel1);
+        jLabel1.setBounds(30, 420, 130, 22);
 
         combo_city.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_city.setForeground(new java.awt.Color(0, 0, 51));
@@ -111,6 +115,8 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 combo_cityActionPerformed(evt);
             }
         });
+        add(combo_city);
+        combo_city.setBounds(276, 418, 227, 25);
 
         Combo_enterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Combo_enterprise.setForeground(new java.awt.Color(0, 0, 51));
@@ -119,15 +125,23 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 Combo_enterpriseActionPerformed(evt);
             }
         });
+        add(Combo_enterprise);
+        Combo_enterprise.setBounds(276, 474, 227, 25);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise");
+        add(jLabel3);
+        jLabel3.setBounds(26, 474, 150, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Username");
+        add(jLabel2);
+        jLabel2.setBounds(26, 590, 140, 22);
 
         txt_usrname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_usrname.setForeground(new java.awt.Color(0, 0, 51));
+        add(txt_usrname);
+        txt_usrname.setBounds(276, 591, 227, 23);
 
         txt_passwrd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_passwrd.setForeground(new java.awt.Color(0, 0, 51));
@@ -136,12 +150,18 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 txt_passwrdActionPerformed(evt);
             }
         });
+        add(txt_passwrd);
+        txt_passwrd.setBounds(276, 645, 227, 23);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Password");
+        add(jLabel4);
+        jLabel4.setBounds(26, 644, 130, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Name");
+        add(jLabel5);
+        jLabel5.setBounds(26, 537, 130, 22);
 
         txt_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_name.setForeground(new java.awt.Color(0, 0, 51));
@@ -150,9 +170,13 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                 txt_nameActionPerformed(evt);
             }
         });
+        add(txt_name);
+        txt_name.setBounds(276, 538, 227, 23);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Manage Enterprise Admin");
+        add(jLabel6);
+        jLabel6.setBounds(209, 22, 340, 29);
 
         tbl_Admin.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -175,90 +199,31 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbl_Admin);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(137, 131, 452, 100);
+
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back.png"))); // NOI18N
         btn_back.setText("<<Back");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_backActionPerformed(evt);
             }
         });
+        add(btn_back);
+        btn_back.setBounds(20, 10, 95, 50);
 
-        txt_submit.setText("Submit");
+        txt_submit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/submit.png"))); // NOI18N
         txt_submit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txt_submitActionPerformed(evt);
             }
         });
+        add(txt_submit);
+        txt_submit.setBounds(276, 710, 290, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
-                        .addComponent(jLabel6))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(154, 154, 154)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(combo_city, 0, 227, Short.MAX_VALUE)
-                                .addComponent(Combo_enterprise, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(txt_name)
-                                .addComponent(txt_usrname))
-                            .addComponent(txt_passwrd, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txt_submit, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(382, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel6)
-                .addGap(80, 80, 80)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(148, 148, 148)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(combo_city, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(56, 56, 56))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel3)
-                        .addComponent(Combo_enterprise, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(txt_name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_usrname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(txt_passwrd, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(34, 34, 34)
-                        .addComponent(btn_back))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(42, 42, 42)
-                        .addComponent(txt_submit)))
-                .addContainerGap(119, Short.MAX_VALUE))
-        );
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
+        add(jLabel7);
+        jLabel7.setBounds(10, -90, 970, 580);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_cityActionPerformed
@@ -348,6 +313,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_Admin;
     private javax.swing.JTextField txt_name;

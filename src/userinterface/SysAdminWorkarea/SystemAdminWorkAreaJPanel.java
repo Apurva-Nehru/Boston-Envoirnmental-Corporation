@@ -41,63 +41,53 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         btn_MAnage_City = new javax.swing.JButton();
         btn_ent = new javax.swing.JButton();
         btn_ent_admin = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("System Admin Workarea");
+        add(jLabel1);
+        jLabel1.setBounds(177, 31, 431, 29);
 
+        btn_MAnage_City.setBackground(new java.awt.Color(0, 0, 0));
+        btn_MAnage_City.setForeground(new java.awt.Color(255, 255, 255));
         btn_MAnage_City.setText("MANAGE CITY");
         btn_MAnage_City.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_MAnage_CityActionPerformed(evt);
             }
         });
+        add(btn_MAnage_City);
+        btn_MAnage_City.setBounds(230, 120, 171, 21);
 
+        btn_ent.setBackground(new java.awt.Color(0, 0, 0));
+        btn_ent.setForeground(new java.awt.Color(255, 255, 255));
         btn_ent.setText("MANAGE ENTERPRISE");
         btn_ent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_entActionPerformed(evt);
             }
         });
+        add(btn_ent);
+        btn_ent.setBounds(410, 120, 171, 21);
 
+        btn_ent_admin.setBackground(new java.awt.Color(0, 0, 0));
+        btn_ent_admin.setForeground(new java.awt.Color(255, 255, 255));
         btn_ent_admin.setText("MANAGE ENTERPRISE ADMIN");
         btn_ent_admin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_ent_adminActionPerformed(evt);
             }
         });
+        add(btn_ent_admin);
+        btn_ent_admin.setBounds(630, 120, 169, 21);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(290, 290, 290)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_ent, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_MAnage_City, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btn_ent_admin))))
-                .addContainerGap(179, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addGap(109, 109, 109)
-                .addComponent(btn_MAnage_City)
-                .addGap(45, 45, 45)
-                .addComponent(btn_ent)
-                .addGap(53, 53, 53)
-                .addComponent(btn_ent_admin)
-                .addContainerGap(266, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(100, -20, 900, 660);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_MAnage_CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MAnage_CityActionPerformed
@@ -133,5 +123,6 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btn_ent;
     private javax.swing.JButton btn_ent_admin;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

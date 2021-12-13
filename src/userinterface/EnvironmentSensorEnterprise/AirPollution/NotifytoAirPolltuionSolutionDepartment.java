@@ -42,8 +42,10 @@ import javax.swing.table.DefaultTableModel;
 public class NotifytoAirPolltuionSolutionDepartment extends javax.swing.JPanel {
     private JPanel userProcessContainer;
     private EcoSystem business;
+    private Enterprise enterprise; 
     private UserAccount userAccount;
     private OrganizationDirectory organizationDirectory; 
+    private EnvironmentSensorOrganization organization;
     /**
      * Creates new form NotifytoAirPolltuionSolutionDepartment
      */
@@ -53,6 +55,8 @@ public class NotifytoAirPolltuionSolutionDepartment extends javax.swing.JPanel {
         this.business = business;
         this.userAccount = userAccount;
         this.organizationDirectory = organizationDirectory;
+        this.organization = organization;
+        this.enterprise = enterprise;
         
         readFromCSV();
         populateTable();
@@ -400,8 +404,9 @@ public class NotifytoAirPolltuionSolutionDepartment extends javax.swing.JPanel {
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+        JPanel panel = new AirPollutionSensorJPanel(userProcessContainer,userAccount,organization,enterprise,business);
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

@@ -15,6 +15,8 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JPanel;
+import userinterface.EnvManagementRoles.NoisePollutionWorkAreaJPanel;
+import userinterface.EnvironmentSensorEnterprise.SensorManagement.SensorManagementWorkArea;
 /**
  *
  * @author aishw
@@ -138,8 +140,9 @@ public class AirPollutionSensorJPanel extends javax.swing.JPanel {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+        JPanel panel = new SensorManagementWorkArea(userProcessContainer,account,organization, enterprise,business);
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton3ActionPerformed

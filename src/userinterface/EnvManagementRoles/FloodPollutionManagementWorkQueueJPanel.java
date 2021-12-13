@@ -5,6 +5,9 @@
  */
 package userinterface.EnvManagementRoles;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.FloodManagementOrganization;
 import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
 import Business.Sensor.FloodManagementSensor;
@@ -27,6 +30,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class FloodPollutionManagementWorkQueueJPanel extends javax.swing.JPanel {
 private OrganizationDirectory organizationdirectory;
+private FloodManagementOrganization organization;
+private Enterprise enterprise; 
+    private EcoSystem business;
     private UserAccount userAccount;
     private JPanel userProcessContainer;
     /**
@@ -37,6 +43,9 @@ private OrganizationDirectory organizationdirectory;
         this.userProcessContainer = userProcessContainer;
         this.userAccount = account;
         this.organizationdirectory = organizationDirectory;
+        this.organization = organization;
+        this.business = business;
+        this.enterprise = enterprise;
         populateTable();
     }
  public String convertListToCSV(ArrayList<String> ZipcodeList)
@@ -129,8 +138,9 @@ private OrganizationDirectory organizationdirectory;
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
         // TODO add your handling code here:
              userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
+        JPanel panel = new FloodAlertManagementWorkAreaJPanel(userProcessContainer,userAccount,organization, enterprise,business);
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

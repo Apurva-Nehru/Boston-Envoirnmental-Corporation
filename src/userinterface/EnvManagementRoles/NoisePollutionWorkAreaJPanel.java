@@ -46,12 +46,17 @@ public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         btn_View_Queue = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Noise Pollution Work Area");
+        add(jLabel1);
+        jLabel1.setBounds(130, 20, 490, 41);
 
         btn_View_Queue.setText("View_Work_QUEUE");
         btn_View_Queue.addActionListener(new java.awt.event.ActionListener() {
@@ -59,28 +64,12 @@ public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
                 btn_View_QueueActionPerformed(evt);
             }
         });
+        add(btn_View_Queue);
+        btn_View_Queue.setBounds(320, 210, 140, 21);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(172, 172, 172)
-                .addComponent(btn_View_Queue)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(131, 131, 131)
-                .addComponent(btn_View_Queue)
-                .addContainerGap(278, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/noise_Pollution_Black.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 780, 500);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_View_QueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_View_QueueActionPerformed
@@ -96,5 +85,6 @@ public class NoisePollutionWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_View_Queue;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

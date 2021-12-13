@@ -243,7 +243,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add_employee.png"))); // NOI18N
         add(jLabel7);
-        jLabel7.setBounds(0, 0, 640, 610);
+        jLabel7.setBounds(0, 70, 640, 620);
     }// </editor-fold>//GEN-END:initComponents
 
     private void organizationJComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_organizationJComboBoxActionPerformed

@@ -36,7 +36,7 @@
                       <Component id="btnViewrequests" min="-2" pref="196" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="246" max="32767" attributes="0"/>
+              <EmptySpace pref="93" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>

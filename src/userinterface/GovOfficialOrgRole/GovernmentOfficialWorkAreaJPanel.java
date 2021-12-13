@@ -98,7 +98,7 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btn_pollution_wrk_queueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pollution_wrk_queueActionPerformed
         // TODO add your handling code here:
-        GovernmentOfficialWorkQueueJPanel governmentOfficialWorkQueueJPanel = new GovernmentOfficialWorkQueueJPanel(userProcessContainer, account, enterprise, enterprise.getOrganizationDirectory());
+        GovernmentOfficialWorkAirPollutionQueueJPanel governmentOfficialWorkQueueJPanel = new GovernmentOfficialWorkAirPollutionQueueJPanel(userProcessContainer, account, enterprise, enterprise.getOrganizationDirectory());
         userProcessContainer.add("governmentOfficialWorkQueueJPanel", governmentOfficialWorkQueueJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
@@ -106,7 +106,7 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
 
     private void btn_Flood_queueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_Flood_queueActionPerformed
         // TODO add your handling code here:
-         GovernmentOfficialWorkQueue2JPanel governmentOfficialWorkQueue2JPanel = new GovernmentOfficialWorkQueue2JPanel(userProcessContainer, account, enterprise, enterprise.getOrganizationDirectory());
+         GovernmentOfficialWorkNoisePolltuionQueue2JPanel governmentOfficialWorkQueue2JPanel = new GovernmentOfficialWorkNoisePolltuionQueue2JPanel(userProcessContainer, account, enterprise, enterprise.getOrganizationDirectory());
         userProcessContainer.add("governmentOfficialWorkQueue2JPanel", governmentOfficialWorkQueue2JPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

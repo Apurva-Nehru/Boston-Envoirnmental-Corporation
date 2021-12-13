@@ -49,11 +49,15 @@ public class FloodAlertManagementWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         btn_View_Work_Queue = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Flood Alert Management Work Area");
+        add(jLabel1);
+        jLabel1.setBounds(0, 10, 490, 44);
 
         btn_View_Work_Queue.setText("View Work Queue");
         btn_View_Work_Queue.addActionListener(new java.awt.event.ActionListener() {
@@ -61,28 +65,12 @@ public class FloodAlertManagementWorkAreaJPanel extends javax.swing.JPanel {
                 btn_View_Work_QueueActionPerformed(evt);
             }
         });
+        add(btn_View_Work_Queue);
+        btn_View_Work_Queue.setBounds(175, 116, 140, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(175, 175, 175)
-                .addComponent(btn_View_Work_Queue)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(62, 62, 62)
-                .addComponent(btn_View_Work_Queue)
-                .addContainerGap(362, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/flood_management.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(100, 90, 280, 410);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_View_Work_QueueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_View_Work_QueueActionPerformed
@@ -96,5 +84,6 @@ FloodPollutionManagementWorkQueueJPanel floodmanagementWorkQueue = new FloodPoll
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_View_Work_Queue;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

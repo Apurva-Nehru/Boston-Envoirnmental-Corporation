@@ -53,14 +53,7 @@ public class OrganizationDirectory {
             }
         }
         
-        for (Organization orgzn : organizationList) {
-            if (orgzn instanceof WasteManagementOrganization) {
-                isOrganizatonOfWasteManagementExist = true;
-                break;
-            } else {
-                isOrganizatonOfWasteManagementExist = false;
-            }
-        }
+       
         
         for (Organization orgzn : organizationList) {
             if (orgzn instanceof FloodManagementOrganization) {
@@ -87,14 +80,7 @@ public class OrganizationDirectory {
                 JOptionPane.showMessageDialog(null, "You can add only one Noise Pollution Organization for one Enterprise");
             }
         }
-        else if (type.getValue().equals(EnvironmentManagementType.WasteManagement.getValue())){
-            if(!isOrganizatonOfWasteManagementExist) {
-            organization = new WasteManagementOrganization();
-            organizationList.add(organization);
-            } else {
-                JOptionPane.showMessageDialog(null, "You can add only one Waste Management Organization for one Enterprise");
-            }
-        }
+        
         else if (type.getValue().equals(EnvironmentManagementType.FloodManagement.getValue())){
             if(!isOrganizatonOfFloodManagementExist) {
             organization = new FloodManagementOrganization();

@@ -111,6 +111,7 @@ public class ViewAirPollutionWorkQueue extends javax.swing.JPanel {
         jLabel1.setText("Air Pollution Work Queue");
 
         PendingReqJTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        PendingReqJTable.setForeground(new java.awt.Color(255, 0, 51));
         PendingReqJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},

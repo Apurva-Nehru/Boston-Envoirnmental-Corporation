@@ -75,11 +75,15 @@ public class EnvironmentSensorOrganizationJPanel extends javax.swing.JPanel {
         btn_back = new javax.swing.JButton();
         btn_add_org = new javax.swing.JButton();
         btn_delete_Org = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("Organization Type ");
+        add(jLabel1);
+        jLabel1.setBounds(53, 305, 190, 30);
 
         combo_Organization.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_Organization.setForeground(new java.awt.Color(0, 0, 51));
@@ -89,9 +93,13 @@ public class EnvironmentSensorOrganizationJPanel extends javax.swing.JPanel {
                 combo_OrganizationActionPerformed(evt);
             }
         });
+        add(combo_Organization);
+        combo_Organization.setBounds(298, 306, 268, 23);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel2.setText("Environment Sensor Organization");
+        add(jLabel2);
+        jLabel2.setBounds(200, 40, 450, 29);
 
         tbl_org.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,73 +114,44 @@ public class EnvironmentSensorOrganizationJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tbl_org);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(81, 101, 452, 112);
+
+        btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back_Final.png"))); // NOI18N
         btn_back.setText("<<Back");
         btn_back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_backActionPerformed(evt);
             }
         });
+        add(btn_back);
+        btn_back.setBounds(10, 10, 95, 40);
 
+        btn_add_org.setBackground(new java.awt.Color(0, 0, 255));
+        btn_add_org.setForeground(new java.awt.Color(255, 255, 255));
         btn_add_org.setText("Add Organization");
         btn_add_org.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_add_orgActionPerformed(evt);
             }
         });
+        add(btn_add_org);
+        btn_add_org.setBounds(82, 445, 140, 50);
 
+        btn_delete_Org.setBackground(new java.awt.Color(0, 102, 255));
+        btn_delete_Org.setForeground(new java.awt.Color(255, 255, 255));
         btn_delete_Org.setText("Delete Organization");
         btn_delete_Org.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_delete_OrgActionPerformed(evt);
             }
         });
+        add(btn_delete_Org);
+        btn_delete_Org.setBounds(380, 440, 170, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(53, 53, 53)
-                        .addComponent(jLabel1)
-                        .addGap(70, 70, 70)
-                        .addComponent(combo_Organization, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
-                        .addComponent(jLabel2))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(82, 82, 82)
-                        .addComponent(btn_add_org, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(343, 343, 343)
-                        .addComponent(btn_delete_Org))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(81, 81, 81)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btn_back, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_back)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel2)
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(92, 92, 92)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(combo_Organization, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(116, 116, 116)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_delete_Org)
-                    .addComponent(btn_add_org))
-                .addContainerGap(136, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Sensor.png"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(570, -40, 960, 600);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_OrganizationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_OrganizationActionPerformed
@@ -219,6 +198,7 @@ public class EnvironmentSensorOrganizationJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox combo_Organization;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_org;
     // End of variables declaration//GEN-END:variables

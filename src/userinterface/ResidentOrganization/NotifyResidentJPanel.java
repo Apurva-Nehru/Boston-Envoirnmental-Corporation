@@ -60,13 +60,17 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         btn_BACK = new javax.swing.JButton();
         btn_view_Full_Message = new javax.swing.JButton();
         lblMessage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("RESIDENT WORK QUEUE");
+        add(jLabel1);
+        jLabel1.setBounds(300, 27, 838, 40);
 
-        tbl_wrk_request.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        tbl_wrk_request.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         tbl_wrk_request.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -80,60 +84,35 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(tbl_wrk_request);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(209, 85, 644, 166);
+
         btn_BACK.setText("<<BACK");
         btn_BACK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_BACKActionPerformed(evt);
             }
         });
+        add(btn_BACK);
+        btn_BACK.setBounds(730, 275, 123, 21);
 
+        btn_view_Full_Message.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_view_Full_Message.setText("View_Full_Message");
         btn_view_Full_Message.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_view_Full_MessageActionPerformed(evt);
             }
         });
+        add(btn_view_Full_Message);
+        btn_view_Full_Message.setBounds(380, 280, 199, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 28, Short.MAX_VALUE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(46, 46, 46)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btn_view_Full_Message, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btn_BACK, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 427, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
-                .addComponent(lblMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btn_BACK)
-                .addGap(31, 31, 31)
-                .addComponent(btn_view_Full_Message)
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
+        lblMessage.setForeground(new java.awt.Color(255, 0, 0));
+        add(lblMessage);
+        lblMessage.setBounds(106, 401, 811, 91);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/alert.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(-250, -520, 1580, 1350);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_BACKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BACKActionPerformed
@@ -167,6 +146,7 @@ public class NotifyResidentJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btn_BACK;
     private javax.swing.JButton btn_view_Full_Message;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblMessage;
     private javax.swing.JTable tbl_wrk_request;

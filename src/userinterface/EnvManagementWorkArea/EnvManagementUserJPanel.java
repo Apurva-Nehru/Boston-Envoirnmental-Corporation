@@ -222,7 +222,7 @@ public class EnvManagementUserJPanel extends javax.swing.JPanel {
             }
         });
         add(backjButton1);
-        backjButton1.setBounds(50, 546, 112, 50);
+        backjButton1.setBounds(50, 546, 80, 50);
 
         createUserJButton.setBackground(new java.awt.Color(255, 255, 255));
         createUserJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

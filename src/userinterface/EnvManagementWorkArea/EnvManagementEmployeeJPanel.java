@@ -165,7 +165,7 @@ public class EnvManagementEmployeeJPanel extends javax.swing.JPanel {
         nameJTextField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         nameJTextField.setForeground(new java.awt.Color(0, 0, 51));
         add(nameJTextField);
-        nameJTextField.setBounds(220, 460, 250, 21);
+        nameJTextField.setBounds(220, 460, 250, 30);
 
         addJButton.setBackground(new java.awt.Color(255, 255, 255));
         addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N

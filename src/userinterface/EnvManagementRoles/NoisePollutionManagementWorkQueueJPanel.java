@@ -62,10 +62,13 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         btn_Resolve = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Noise Pollution Work Queue");
+        add(jLabel1);
+        jLabel1.setBounds(0, 0, 490, 53);
 
         tbl_NoiseTAble.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -80,12 +83,17 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         ));
         jScrollPane1.setViewportView(tbl_NoiseTAble);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(0, 63, 500, 93);
+
         btn_Back.setText("<<BACK");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_BackActionPerformed(evt);
             }
         });
+        add(btn_Back);
+        btn_Back.setBounds(10, 174, 110, 21);
 
         btn_Resolve.setText("Resolve");
         btn_Resolve.addActionListener(new java.awt.event.ActionListener() {
@@ -93,34 +101,8 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
                 btn_ResolveActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btn_Back)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_Resolve)
-                .addGap(24, 24, 24))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Back)
-                    .addComponent(btn_Resolve))
-                .addContainerGap(303, Short.MAX_VALUE))
-        );
+        add(btn_Resolve);
+        btn_Resolve.setBounds(409, 174, 65, 21);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed

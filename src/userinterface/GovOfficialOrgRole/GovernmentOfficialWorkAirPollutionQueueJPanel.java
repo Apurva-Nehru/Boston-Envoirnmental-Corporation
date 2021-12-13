@@ -91,65 +91,27 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        backjButton1 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
         MessagejLabel = new javax.swing.JLabel();
-        CitizenNotificationjButton = new javax.swing.JButton();
-        CitizenNotificationjButton1 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_Gov_wrd_queue = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         btnNotifyResidents = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Government Official Work Queue");
-
-        backjButton1.setBackground(new java.awt.Color(0, 0, 204));
-        backjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        backjButton1.setForeground(new java.awt.Color(255, 255, 255));
-        backjButton1.setText("<< Back");
-        backjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backjButton1ActionPerformed(evt);
-            }
-        });
-
-        jButton1.setBackground(new java.awt.Color(0, 0, 204));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setText("View Complete Message");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
+        add(jLabel1);
+        jLabel1.setBounds(340, 30, 450, 29);
 
         MessagejLabel.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         MessagejLabel.setForeground(new java.awt.Color(255, 0, 51));
-
-        CitizenNotificationjButton.setBackground(new java.awt.Color(255, 0, 51));
-        CitizenNotificationjButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CitizenNotificationjButton.setForeground(new java.awt.Color(255, 255, 255));
-        CitizenNotificationjButton.setText("Send Alert Notificatication to Citizens");
-        CitizenNotificationjButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CitizenNotificationjButtonActionPerformed(evt);
-            }
-        });
-
-        CitizenNotificationjButton1.setBackground(new java.awt.Color(0, 204, 0));
-        CitizenNotificationjButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        CitizenNotificationjButton1.setForeground(new java.awt.Color(255, 255, 255));
-        CitizenNotificationjButton1.setText("Send Resolve Notificatication to Citizens");
-        CitizenNotificationjButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CitizenNotificationjButton1ActionPerformed(evt);
-            }
-        });
+        add(MessagejLabel);
+        MessagejLabel.setBounds(663, 446, 0, 0);
 
         tbl_Gov_wrd_queue.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -172,103 +134,58 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         });
         jScrollPane2.setViewportView(tbl_Gov_wrd_queue);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(10, 144, 777, 90);
+
+        jButton2.setBackground(new java.awt.Color(0, 51, 255));
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setText("<<Back");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
+        add(jButton2);
+        jButton2.setBounds(10, 20, 100, 21);
 
+        jButton3.setBackground(new java.awt.Color(0, 51, 255));
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setText("View complete Message");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
             }
         });
+        add(jButton3);
+        jButton3.setBounds(370, 350, 162, 21);
 
+        btnNotifyResidents.setBackground(new java.awt.Color(0, 255, 0));
+        btnNotifyResidents.setForeground(new java.awt.Color(255, 255, 255));
         btnNotifyResidents.setText("Send Resolved Notification");
         btnNotifyResidents.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNotifyResidentsActionPerformed(evt);
             }
         });
+        add(btnNotifyResidents);
+        btnNotifyResidents.setBounds(30, 530, 201, 21);
 
+        jButton5.setBackground(new java.awt.Color(255, 0, 51));
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Send Alert Notification to Residents");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
             }
         });
+        add(jButton5);
+        jButton5.setBounds(720, 520, 185, 21);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 145, Short.MAX_VALUE)
-                .addComponent(CitizenNotificationjButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CitizenNotificationjButton, javax.swing.GroupLayout.PREFERRED_SIZE, 307, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(344, 344, 344))
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2)
-                .addGap(336, 336, 336))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(backjButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(99, 99, 99)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(663, 663, 663)
-                        .addComponent(MessagejLabel))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(jButton2)
-                        .addGap(64, 64, 64)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(62, 62, 62)
-                        .addComponent(btnNotifyResidents, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(32, 32, 32)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(315, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel1)
-                .addGap(87, 87, 87)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(btnNotifyResidents)
-                    .addComponent(jButton5))
-                .addGap(86, 86, 86)
-                .addComponent(MessagejLabel)
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(backjButton1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(CitizenNotificationjButton)
-                    .addComponent(CitizenNotificationjButton1))
-                .addGap(32, 32, 32))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/letter-to-a-government-official.png"))); // NOI18N
+        jLabel2.setText("jLabel2");
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 950, 590);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void CitizenNotificationjButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitizenNotificationjButtonActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_CitizenNotificationjButtonActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
@@ -387,35 +304,15 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
-    private void CitizenNotificationjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CitizenNotificationjButton1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_CitizenNotificationjButton1ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void backjButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backjButton1ActionPerformed
-        // TODO add your handling code here:
-        userProcessContainer.remove(this);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.previous(userProcessContainer);
-    }//GEN-LAST:event_backjButton1ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton CitizenNotificationjButton;
-    private javax.swing.JButton CitizenNotificationjButton1;
     private javax.swing.JLabel MessagejLabel;
-    private javax.swing.JButton backjButton1;
     private javax.swing.JButton btnNotifyResidents;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_Gov_wrd_queue;
     // End of variables declaration//GEN-END:variables

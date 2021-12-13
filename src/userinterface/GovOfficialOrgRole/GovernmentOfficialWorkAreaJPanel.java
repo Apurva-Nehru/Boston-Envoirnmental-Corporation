@@ -47,53 +47,40 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         btn_pollution_wrk_queue = new javax.swing.JButton();
         btn_Flood_queue = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Government Official Work Area");
+        add(jLabel1);
+        jLabel1.setBounds(90, 10, 510, 29);
 
+        btn_pollution_wrk_queue.setBackground(new java.awt.Color(255, 255, 255));
+        btn_pollution_wrk_queue.setForeground(new java.awt.Color(0, 0, 255));
         btn_pollution_wrk_queue.setText("View Air Pollution Work Queue");
         btn_pollution_wrk_queue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_pollution_wrk_queueActionPerformed(evt);
             }
         });
+        add(btn_pollution_wrk_queue);
+        btn_pollution_wrk_queue.setBounds(20, 120, 210, 21);
 
+        btn_Flood_queue.setForeground(new java.awt.Color(0, 51, 255));
         btn_Flood_queue.setText("View Flood Alert Work Queue");
         btn_Flood_queue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_Flood_queueActionPerformed(evt);
             }
         });
+        add(btn_Flood_queue);
+        btn_Flood_queue.setBounds(370, 120, 210, 21);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(94, 94, 94)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(264, 264, 264)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(btn_Flood_queue)
-                            .addComponent(btn_pollution_wrk_queue))))
-                .addContainerGap(544, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jLabel1)
-                .addGap(62, 62, 62)
-                .addComponent(btn_pollution_wrk_queue)
-                .addGap(46, 46, 46)
-                .addComponent(btn_Flood_queue)
-                .addContainerGap(393, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gov.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 680, 600);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_pollution_wrk_queueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pollution_wrk_queueActionPerformed
@@ -117,5 +104,6 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btn_Flood_queue;
     private javax.swing.JButton btn_pollution_wrk_queue;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

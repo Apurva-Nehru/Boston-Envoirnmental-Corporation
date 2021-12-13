@@ -70,7 +70,7 @@ public class AirPollutionManagementWorkJPanel extends javax.swing.JPanel {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/air-pollution.jpg"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 500, 500);
+        jLabel2.setBounds(0, 0, 980, 680);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_View_Work_requestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_View_Work_requestActionPerformed

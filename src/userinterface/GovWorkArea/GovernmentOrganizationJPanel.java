@@ -75,11 +75,16 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
         btn_Add_org = new javax.swing.JButton();
         btn_delete_org = new javax.swing.JButton();
         btn_Back = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Organization Type ");
+        add(jLabel1);
+        jLabel1.setBounds(60, 250, 230, 22);
 
         combo_org.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_org.setForeground(new java.awt.Color(0, 0, 51));
@@ -89,10 +94,16 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
                 combo_orgActionPerformed(evt);
             }
         });
+        add(combo_org);
+        combo_org.setBounds(300, 250, 268, 23);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Government Organization");
+        add(jLabel2);
+        jLabel2.setBounds(240, 40, 380, 29);
 
+        tbl_govorg.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         tbl_govorg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
@@ -114,19 +125,28 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tbl_govorg);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(107, 111, 570, 120);
+
+        btn_Add_org.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_Add_org.setText("Add organization");
         btn_Add_org.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_Add_orgActionPerformed(evt);
             }
         });
+        add(btn_Add_org);
+        btn_Add_org.setBounds(140, 420, 157, 21);
 
+        btn_delete_org.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btn_delete_org.setText("Delete Organization");
         btn_delete_org.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_delete_orgActionPerformed(evt);
             }
         });
+        add(btn_delete_org);
+        btn_delete_org.setBounds(360, 420, 177, 25);
 
         btn_Back.setText("<<BACK");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
@@ -134,54 +154,12 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
                 btn_BackActionPerformed(evt);
             }
         });
+        add(btn_Back);
+        btn_Back.setBounds(60, 20, 95, 21);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(60, 60, 60)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(67, 67, 67)
-                                .addComponent(combo_org, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(75, 75, 75)
-                                .addComponent(btn_Add_org, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(62, 62, 62)
-                                .addComponent(btn_delete_org, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(107, 107, 107)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(46, 46, 46)
-                        .addComponent(jLabel2)))
-                .addContainerGap(297, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(btn_Back))
-                .addGap(49, 49, 49)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(94, 94, 94)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(combo_org, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(71, 71, 71)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btn_Add_org)
-                    .addComponent(btn_delete_org))
-                .addContainerGap(186, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/govorganization.jpg"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 1030, 710);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_orgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_orgActionPerformed
@@ -227,6 +205,7 @@ public class GovernmentOrganizationJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox combo_org;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_govorg;
     // End of variables declaration//GEN-END:variables

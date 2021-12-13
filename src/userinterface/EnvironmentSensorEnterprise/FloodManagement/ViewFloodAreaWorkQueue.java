@@ -111,12 +111,17 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         ResolvedJTable = new javax.swing.JTable();
         btnResolvedMessageGov = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Flood Management Work Request");
+        add(jLabel1);
+        jLabel1.setBounds(151, 18, 516, 42);
 
         FloodWorkQueueJTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         FloodWorkQueueJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -132,17 +137,25 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(FloodWorkQueueJTable);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(10, 59, 937, 160);
+
         lblPending.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         lblPending.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPending.setText("Pending Requests");
+        add(lblPending);
+        lblPending.setBounds(10, 229, 156, 29);
 
         btnPendingRequest.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnPendingRequest.setForeground(new java.awt.Color(0, 0, 255));
         btnPendingRequest.setText("Get Pending Requests");
         btnPendingRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPendingRequestActionPerformed(evt);
             }
         });
+        add(btnPendingRequest);
+        btnPendingRequest.setBounds(336, 229, 227, 31);
 
         PendingReqJTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         PendingReqJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -158,17 +171,25 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(PendingReqJTable);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(10, 267, 937, 121);
+
         lblresolve.setFont(new java.awt.Font("Tahoma", 2, 18)); // NOI18N
         lblresolve.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblresolve.setText("Resolved Requests");
+        add(lblresolve);
+        lblresolve.setBounds(10, 398, 156, 29);
 
         btnResolved.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnResolved.setForeground(new java.awt.Color(0, 204, 51));
         btnResolved.setText("Get Resolved Work Requests");
         btnResolved.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResolvedActionPerformed(evt);
             }
         });
+        add(btnResolved);
+        btnResolved.setBounds(244, 398, 227, 31);
 
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBack.setText("Back");
@@ -177,6 +198,8 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack);
+        btnBack.setBounds(810, 230, 104, 32);
 
         ResolvedJTable.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         ResolvedJTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -192,75 +215,23 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
         ));
         jScrollPane3.setViewportView(ResolvedJTable);
 
+        add(jScrollPane3);
+        jScrollPane3.setBounds(10, 442, 937, 130);
+
         btnResolvedMessageGov.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        btnResolvedMessageGov.setForeground(new java.awt.Color(0, 204, 0));
         btnResolvedMessageGov.setText("Send Resolution Message to Government");
         btnResolvedMessageGov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnResolvedMessageGovActionPerformed(evt);
             }
         });
+        add(btnResolvedMessageGov);
+        btnResolvedMessageGov.setBounds(530, 398, 302, 31);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(lblPending, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(170, 170, 170)
-                                .addComponent(btnPendingRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 397, Short.MAX_VALUE)
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(151, 151, 151)
-                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 516, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblresolve, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(78, 78, 78)
-                                .addComponent(btnResolved, javax.swing.GroupLayout.PREFERRED_SIZE, 227, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(59, 59, 59)
-                                .addComponent(btnResolvedMessageGov, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 937, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addGap(389, 389, 389))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPending, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnPendingRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblresolve, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnResolved, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnResolvedMessageGov, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floodboston.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, -60, 1150, 770);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnPendingRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPendingRequestActionPerformed
@@ -407,6 +378,7 @@ public class ViewFloodAreaWorkQueue extends javax.swing.JPanel {
     private javax.swing.JButton btnResolved;
     private javax.swing.JButton btnResolvedMessageGov;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

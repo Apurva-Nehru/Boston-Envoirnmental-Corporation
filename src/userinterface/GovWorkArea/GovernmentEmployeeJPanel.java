@@ -83,14 +83,22 @@ public class GovernmentEmployeeJPanel extends javax.swing.JPanel {
         tbl_Org = new javax.swing.JTable();
         Btn_Back = new javax.swing.JButton();
         btn_add_employee = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("View Employees");
+        add(jLabel4);
+        jLabel4.setBounds(280, 30, 360, 40);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Organization");
+        add(jLabel1);
+        jLabel1.setBounds(93, 99, 150, 22);
 
         combo_Org.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_Org.setForeground(new java.awt.Color(0, 0, 51));
@@ -100,23 +108,43 @@ public class GovernmentEmployeeJPanel extends javax.swing.JPanel {
                 combo_OrgActionPerformed(evt);
             }
         });
+        add(combo_Org);
+        combo_Org.setBounds(270, 100, 340, 30);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Add Employee");
+        add(jLabel5);
+        jLabel5.setBounds(100, 360, 200, 29);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Organization");
+        add(jLabel3);
+        jLabel3.setBounds(110, 410, 160, 22);
 
         combo_employeeorg.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_employeeorg.setForeground(new java.awt.Color(0, 0, 51));
         combo_employeeorg.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        add(combo_employeeorg);
+        combo_employeeorg.setBounds(380, 420, 250, 23);
 
         txt_Name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_Name.setForeground(new java.awt.Color(0, 0, 51));
+        txt_Name.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txt_NameActionPerformed(evt);
+            }
+        });
+        add(txt_Name);
+        txt_Name.setBounds(380, 470, 250, 30);
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Name");
+        add(jLabel2);
+        jLabel2.setBounds(140, 480, 90, 22);
 
         tbl_Org.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -131,78 +159,32 @@ public class GovernmentEmployeeJPanel extends javax.swing.JPanel {
         ));
         jScrollPane2.setViewportView(tbl_Org);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(60, 160, 790, 170);
+
         Btn_Back.setText("<<Back");
         Btn_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_BackActionPerformed(evt);
             }
         });
+        add(Btn_Back);
+        Btn_Back.setBounds(770, 90, 95, 21);
 
-        btn_add_employee.setText("Created Employee");
+        btn_add_employee.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btn_add_employee.setText("Create Employee");
         btn_add_employee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_add_employeeActionPerformed(evt);
             }
         });
+        add(btn_add_employee);
+        btn_add_employee.setBounds(390, 520, 160, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(combo_employeeorg, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(241, 241, 241)
-                                    .addComponent(txt_Name, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(Btn_Back, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(295, 295, 295)
-                                    .addComponent(btn_add_employee, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(62, 62, 62)
-                                .addComponent(combo_Org, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(301, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel4)
-                .addGap(44, 44, 44)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(combo_Org, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 109, Short.MAX_VALUE)
-                .addComponent(jLabel5)
-                .addGap(33, 33, 33)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(combo_employeeorg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(txt_Name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(84, 84, 84)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(Btn_Back)
-                    .addComponent(btn_add_employee))
-                .addGap(25, 25, 25))
-        );
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/g.png"))); // NOI18N
+        add(jLabel6);
+        jLabel6.setBounds(0, -40, 1000, 710);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_OrgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_OrgActionPerformed
@@ -240,6 +222,10 @@ public class GovernmentEmployeeJPanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_btn_add_employeeActionPerformed
 
+    private void txt_NameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_NameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txt_NameActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_Back;
@@ -251,6 +237,7 @@ public class GovernmentEmployeeJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tbl_Org;
     private javax.swing.JTextField txt_Name;

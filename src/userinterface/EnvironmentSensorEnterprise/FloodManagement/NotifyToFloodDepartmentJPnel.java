@@ -171,11 +171,15 @@ private JPanel userProcessContainer;
         btnBack = new javax.swing.JButton();
         btnCheckFloodReadings = new javax.swing.JButton();
         lblFloodMessage = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Flood Management Sensore Readings");
+        add(jLabel1);
+        jLabel1.setBounds(182, 33, 578, 38);
 
         SelectedFloodReadingsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -190,13 +194,19 @@ private JPanel userProcessContainer;
         ));
         jScrollPane1.setViewportView(SelectedFloodReadingsJTable);
 
+        add(jScrollPane1);
+        jScrollPane1.setBounds(30, 338, 820, 179);
+
         btnSendRequest.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSendRequest.setForeground(new java.awt.Color(255, 0, 0));
         btnSendRequest.setText("Send Request to Flood Management Department");
         btnSendRequest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendRequestActionPerformed(evt);
             }
         });
+        add(btnSendRequest);
+        btnSendRequest.setBounds(30, 540, 420, 36);
 
         FloodManagementReadingsJTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -211,13 +221,19 @@ private JPanel userProcessContainer;
         ));
         jScrollPane2.setViewportView(FloodManagementReadingsJTable);
 
+        add(jScrollPane2);
+        jScrollPane2.setBounds(30, 76, 820, 190);
+
         btnSendSensoreInfroGov.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSendSensoreInfroGov.setForeground(new java.awt.Color(255, 0, 51));
         btnSendSensoreInfroGov.setText("Send Sensor Information to Government");
         btnSendSensoreInfroGov.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSendSensoreInfroGovActionPerformed(evt);
             }
         });
+        add(btnSendSensoreInfroGov);
+        btnSendSensoreInfroGov.setBounds(490, 540, 400, 36);
 
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         btnBack.setText("Back");
@@ -226,62 +242,25 @@ private JPanel userProcessContainer;
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack);
+        btnBack.setBounds(790, 290, 88, 23);
 
         btnCheckFloodReadings.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnCheckFloodReadings.setForeground(new java.awt.Color(0, 0, 255));
         btnCheckFloodReadings.setText("Check Flood Data Sensor Readings");
         btnCheckFloodReadings.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCheckFloodReadingsActionPerformed(evt);
             }
         });
+        add(btnCheckFloodReadings);
+        btnCheckFloodReadings.setBounds(30, 284, 310, 25);
+        add(lblFloodMessage);
+        lblFloodMessage.setBounds(348, 284, 563, 36);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(182, 182, 182)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnSendSensoreInfroGov)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(btnSendRequest)
-                                .addGap(86, 86, 86)
-                                .addComponent(btnBack, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 578, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCheckFloodReadings)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 594, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(151, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(lblFloodMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 563, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(16, 16, 16)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblFloodMessage, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnCheckFloodReadings, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSendRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBack))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnSendSensoreInfroGov, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/floodcontrol.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 1110, 710);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
@@ -473,6 +452,7 @@ private JPanel userProcessContainer;
     private javax.swing.JButton btnSendRequest;
     private javax.swing.JButton btnSendSensoreInfroGov;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblFloodMessage;

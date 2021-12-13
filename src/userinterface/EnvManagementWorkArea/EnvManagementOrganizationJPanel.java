@@ -134,7 +134,7 @@ public class EnvManagementOrganizationJPanel extends javax.swing.JPanel {
 
         addJButton.setBackground(new java.awt.Color(255, 255, 255));
         addJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        addJButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/add_final.png"))); // NOI18N
+        addJButton.setText("CREATE");
         addJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addJButtonActionPerformed(evt);

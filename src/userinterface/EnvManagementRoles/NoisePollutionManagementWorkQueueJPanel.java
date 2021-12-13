@@ -60,11 +60,13 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         tbl_NoiseTAble = new javax.swing.JTable();
         btn_Back = new javax.swing.JButton();
         btn_Resolve = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Noise Pollution Work Queue");
         add(jLabel1);
@@ -84,8 +86,9 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         jScrollPane1.setViewportView(tbl_NoiseTAble);
 
         add(jScrollPane1);
-        jScrollPane1.setBounds(0, 63, 500, 93);
+        jScrollPane1.setBounds(40, 200, 500, 93);
 
+        btn_Back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back_Final.png"))); // NOI18N
         btn_Back.setText("<<BACK");
         btn_Back.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,8 +96,10 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
             }
         });
         add(btn_Back);
-        btn_Back.setBounds(10, 174, 110, 21);
+        btn_Back.setBounds(20, 340, 110, 50);
 
+        btn_Resolve.setBackground(new java.awt.Color(0, 51, 255));
+        btn_Resolve.setForeground(new java.awt.Color(255, 255, 255));
         btn_Resolve.setText("Resolve");
         btn_Resolve.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +107,11 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
             }
         });
         add(btn_Resolve);
-        btn_Resolve.setBounds(409, 174, 65, 21);
+        btn_Resolve.setBounds(450, 330, 90, 50);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/noise_Pollution_Black.png"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 790, 490);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
@@ -140,6 +149,7 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
     private javax.swing.JButton btn_Back;
     private javax.swing.JButton btn_Resolve;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbl_NoiseTAble;
     // End of variables declaration//GEN-END:variables

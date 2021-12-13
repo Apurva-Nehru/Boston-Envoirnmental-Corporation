@@ -5,11 +5,18 @@
  */
 package userinterface.EnvManagementRoles;
 
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.NoisePollutionOrganization;
 import Business.Oragnization.Organization;
 import Business.Oragnization.OrganizationDirectory;
 import Business.UserAccount.UserAccount;
 import Business.WorkQueue.NoisePollutionWorkRequest;
 import Business.WorkQueue.WorkRequest;
+import java.awt.CardLayout;
+import java.util.Date;
+import java.util.Random;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -21,6 +28,9 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
 
    private OrganizationDirectory directory;
     private UserAccount userAccount;
+    private NoisePollutionOrganization organization; 
+    private Enterprise enterprise; 
+    private EcoSystem business;
     private JPanel userProcessContainer;
     /**
      * Creates new form NoisePollutionManagementWorkQueueJPanel
@@ -30,6 +40,9 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.directory = directory;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
         
         populateTable();        
     }
@@ -68,8 +81,18 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
         jScrollPane1.setViewportView(tbl_NoiseTAble);
 
         btn_Back.setText("<<BACK");
+        btn_Back.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BackActionPerformed(evt);
+            }
+        });
 
         btn_Resolve.setText("Resolve");
+        btn_Resolve.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ResolveActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -84,7 +107,7 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
                 .addComponent(btn_Back)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btn_Resolve)
-                .addGap(20, 20, 20))
+                .addGap(24, 24, 24))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,13 +115,43 @@ public class NoisePollutionManagementWorkQueueJPanel extends javax.swing.JPanel 
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 311, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_Back)
                     .addComponent(btn_Resolve))
-                .addContainerGap())
+                .addContainerGap(303, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_BackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BackActionPerformed
+        // TODO add your handling code here:
+        userProcessContainer.remove(this);
+        JPanel panel = new NoisePollutionWorkAreaJPanel(userProcessContainer,userAccount,organization, enterprise,business);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.previous(userProcessContainer);
+    }//GEN-LAST:event_btn_BackActionPerformed
+
+    private void btn_ResolveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResolveActionPerformed
+        // TODO add your handling code here:
+        int row = tbl_NoiseTAble.getSelectedRow();
+        if(row <0){
+            JOptionPane.showMessageDialog(null, "No row selected");
+        }else{
+        Random rn = new Random();
+
+        WorkRequest workRequest = (WorkRequest) tbl_NoiseTAble.getValueAt(row, 0);
+
+        NoisePollutionWorkRequest noisePollutionWorkRequest = (NoisePollutionWorkRequest)workRequest;
+        noisePollutionWorkRequest.setStatus("Resolved");
+        noisePollutionWorkRequest.setRslvDate(new Date());
+
+        noisePollutionWorkRequest.getNoisePollutionSensor().setNoiseLevelInDecibel(rn.nextInt(60));
+
+        populateTable();
+        
+        JOptionPane.showMessageDialog(null, "problem resolved");
+        }
+    }//GEN-LAST:event_btn_ResolveActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package userinterface.EnvManagementRoles;
+import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Oragnization.AirPollutionOrganization;
 import Business.Oragnization.Organization;
 import Business.WorkQueue.AirPollutionWorkRequest;
 import Business.Oragnization.OrganizationDirectory;
@@ -24,6 +27,9 @@ import javax.swing.table.DefaultTableModel;
 public class AirPollutionManagementWorkQueueJPanel extends javax.swing.JPanel {
 private OrganizationDirectory directory;
     private UserAccount userAccount;
+    private AirPollutionOrganization organization;
+    private Enterprise enterprise; 
+    private EcoSystem business;
     private JPanel userProcessContainer;
     /**
      * Creates new form AirPollutionManagementWorkQueueJPanel
@@ -34,6 +40,9 @@ private OrganizationDirectory directory;
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
         this.directory = directory;
+        this.organization = organization;
+        this.enterprise = enterprise;
+        this.business = business;
         
         populateTable();
     }
@@ -121,8 +130,10 @@ private OrganizationDirectory directory;
         // TODO add your handling code here:
                                                    
         userProcessContainer.remove(this);
-        Component[] componentArray = userProcessContainer.getComponents();
-        Component component = componentArray[componentArray.length - 1];
+         JPanel panel = new AirPollutionManagementWorkJPanel(userProcessContainer,userAccount,organization, enterprise,business);
+
+        //Component[] componentArray = userProcessContainer.getComponents();
+        //Component component = componentArray[componentArray.length - 1];
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;
         //sysAdminwjp.populateTree();
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();

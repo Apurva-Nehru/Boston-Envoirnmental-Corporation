@@ -26,6 +26,7 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
+import userinterface.EnvironmentSensorEnterprise.SensorManagement.SensorManagementWorkArea;
 
 /**
  *
@@ -260,6 +261,7 @@ public class NotifyToGovernmentJPanel extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         userProcessContainer.remove(this);
+        //JPanel panel = new NotifytoAirPolltuionSolutionDepartment(userProcessContainer,userAccount,business,organizationDirectory);
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         //SystemAdminWorkAreaJPanel sysAdminwjp = (SystemAdminWorkAreaJPanel) component;

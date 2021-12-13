@@ -32,7 +32,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author apurv
  */
-public class GovernmentOfficialWorkQueue2JPanel extends javax.swing.JPanel {
+public class GovernmentOfficialWorkNoisePolltuionQueue2JPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private UserAccount userAccount;
@@ -41,7 +41,7 @@ public class GovernmentOfficialWorkQueue2JPanel extends javax.swing.JPanel {
     /**
      * Creates new form GovernmentOfficialWorkQueueJPanel
      */
-    public GovernmentOfficialWorkQueue2JPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, OrganizationDirectory directory) {
+    public GovernmentOfficialWorkNoisePolltuionQueue2JPanel(JPanel userProcessContainer, UserAccount userAccount, Enterprise enterprise, OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
@@ -80,7 +80,7 @@ public class GovernmentOfficialWorkQueue2JPanel extends javax.swing.JPanel {
     /**
      * Creates new form GovernmentOfficialWorkQueue2JPanel
      */
-    public GovernmentOfficialWorkQueue2JPanel() {
+    public GovernmentOfficialWorkNoisePolltuionQueue2JPanel() {
         initComponents();
     }
 

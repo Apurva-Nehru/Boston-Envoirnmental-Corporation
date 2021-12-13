@@ -192,6 +192,10 @@ public class MainJFrame extends javax.swing.JFrame {
 
        
     }//GEN-LAST:event_btn_LoginActionPerformed
+        btn_Login.setEnabled(false);
+        btn_Logout.setEnabled(true);
+        txt_UserNAme.setEnabled(false);
+        txt_Password.setEnabled(false);
     }
     private void btn_LogoutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LogoutActionPerformed
         btn_Logout.setEnabled(false);

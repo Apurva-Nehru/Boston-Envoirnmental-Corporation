@@ -106,7 +106,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel1.setText("City");
         add(jLabel1);
-        jLabel1.setBounds(30, 420, 130, 22);
+        jLabel1.setBounds(30, 440, 130, 22);
 
         combo_city.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         combo_city.setForeground(new java.awt.Color(0, 0, 51));
@@ -116,7 +116,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(combo_city);
-        combo_city.setBounds(276, 418, 227, 25);
+        combo_city.setBounds(280, 440, 227, 25);
 
         Combo_enterprise.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Combo_enterprise.setForeground(new java.awt.Color(0, 0, 51));
@@ -126,22 +126,22 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(Combo_enterprise);
-        Combo_enterprise.setBounds(276, 474, 227, 25);
+        Combo_enterprise.setBounds(280, 500, 227, 25);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise");
         add(jLabel3);
-        jLabel3.setBounds(26, 474, 150, 22);
+        jLabel3.setBounds(20, 500, 150, 22);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Username");
         add(jLabel2);
-        jLabel2.setBounds(26, 590, 140, 22);
+        jLabel2.setBounds(20, 610, 140, 22);
 
         txt_usrname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_usrname.setForeground(new java.awt.Color(0, 0, 51));
         add(txt_usrname);
-        txt_usrname.setBounds(276, 591, 227, 23);
+        txt_usrname.setBounds(280, 620, 227, 23);
 
         txt_passwrd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_passwrd.setForeground(new java.awt.Color(0, 0, 51));
@@ -151,17 +151,17 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(txt_passwrd);
-        txt_passwrd.setBounds(276, 645, 227, 23);
+        txt_passwrd.setBounds(280, 670, 227, 23);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel4.setText("Password");
         add(jLabel4);
-        jLabel4.setBounds(26, 644, 130, 22);
+        jLabel4.setBounds(20, 670, 130, 22);
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel5.setText("Name");
         add(jLabel5);
-        jLabel5.setBounds(26, 537, 130, 22);
+        jLabel5.setBounds(20, 560, 130, 22);
 
         txt_name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_name.setForeground(new java.awt.Color(0, 0, 51));
@@ -171,7 +171,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
             }
         });
         add(txt_name);
-        txt_name.setBounds(276, 538, 227, 23);
+        txt_name.setBounds(280, 570, 227, 23);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel6.setText("Manage Enterprise Admin");
@@ -200,7 +200,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         jScrollPane2.setViewportView(tbl_Admin);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(137, 131, 452, 100);
+        jScrollPane2.setBounds(110, 150, 690, 140);
 
         btn_back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back.png"))); // NOI18N
         btn_back.setText("<<Back");
@@ -221,9 +221,9 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
         add(txt_submit);
         txt_submit.setBounds(276, 710, 290, 40);
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enter.jpg"))); // NOI18N
         add(jLabel7);
-        jLabel7.setBounds(0, -80, 970, 520);
+        jLabel7.setBounds(-550, 0, 2000, 1010);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_cityActionPerformed

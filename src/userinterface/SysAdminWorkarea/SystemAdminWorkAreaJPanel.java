@@ -49,7 +49,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("System Admin Workarea");
         add(jLabel1);
-        jLabel1.setBounds(177, 31, 431, 29);
+        jLabel1.setBounds(290, 70, 431, 29);
 
         btn_MAnage_City.setBackground(new java.awt.Color(0, 0, 0));
         btn_MAnage_City.setForeground(new java.awt.Color(255, 255, 255));
@@ -60,7 +60,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btn_MAnage_City);
-        btn_MAnage_City.setBounds(230, 120, 171, 21);
+        btn_MAnage_City.setBounds(140, 150, 171, 21);
 
         btn_ent.setBackground(new java.awt.Color(0, 0, 0));
         btn_ent.setForeground(new java.awt.Color(255, 255, 255));
@@ -71,7 +71,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btn_ent);
-        btn_ent.setBounds(410, 120, 171, 21);
+        btn_ent.setBounds(400, 150, 171, 30);
 
         btn_ent_admin.setBackground(new java.awt.Color(0, 0, 0));
         btn_ent_admin.setForeground(new java.awt.Color(255, 255, 255));
@@ -82,11 +82,11 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btn_ent_admin);
-        btn_ent_admin.setBounds(630, 120, 169, 21);
+        btn_ent_admin.setBounds(650, 150, 169, 21);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/enterprise1.jpg"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, -90, 900, 660);
+        jLabel2.setBounds(0, -160, 1060, 930);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_MAnage_CityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_MAnage_CityActionPerformed

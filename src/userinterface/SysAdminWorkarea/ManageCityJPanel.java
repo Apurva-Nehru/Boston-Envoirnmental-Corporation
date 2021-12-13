@@ -70,6 +70,7 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Name");
         add(jLabel1);
         jLabel1.setBounds(30, 190, 80, 22);
@@ -130,10 +131,10 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         add(btn_delete);
         btn_delete.setBounds(640, 190, 120, 40);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Manage-City.jpg"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/city.png"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3);
-        jLabel3.setBounds(0, -60, 960, 680);
+        jLabel3.setBounds(-1250, -1610, 2800, 2730);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed

@@ -52,11 +52,16 @@ public class NoisePollutionManagementSensorJPanel extends javax.swing.JPanel {
         btnSendRequest = new javax.swing.JButton();
         btnViewrequests = new javax.swing.JButton();
         btnBack = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Noise Pollution Sensor Management");
+        add(jLabel1);
+        jLabel1.setBounds(20, 20, 470, 60);
 
         btnSendRequest.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnSendRequest.setText("Send Request");
@@ -65,6 +70,8 @@ public class NoisePollutionManagementSensorJPanel extends javax.swing.JPanel {
                 btnSendRequestActionPerformed(evt);
             }
         });
+        add(btnSendRequest);
+        btnSendRequest.setBounds(127, 127, 155, 22);
 
         btnViewrequests.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         btnViewrequests.setText("View Sent Requsts");
@@ -73,46 +80,22 @@ public class NoisePollutionManagementSensorJPanel extends javax.swing.JPanel {
                 btnViewrequestsActionPerformed(evt);
             }
         });
+        add(btnViewrequests);
+        btnViewrequests.setBounds(348, 127, 196, 22);
 
         btnBack.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        btnBack.setText("Back");
+        btnBack.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/back_Final.png"))); // NOI18N
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
+        add(btnBack);
+        btnBack.setBounds(180, 210, 70, 50);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(127, 127, 127)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnSendRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(66, 66, 66)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnViewrequests, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(125, 125, 125)
-                                .addComponent(btnBack)))))
-                .addContainerGap(473, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
-                .addComponent(jLabel1)
-                .addGap(56, 56, 56)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnSendRequest, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnViewrequests, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(34, 34, 34)
-                .addComponent(btnBack)
-                .addContainerGap(393, Short.MAX_VALUE))
-        );
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/control-noise.jpg"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(0, 0, 950, 600);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnSendRequestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSendRequestActionPerformed
@@ -151,5 +134,6 @@ public class NoisePollutionManagementSensorJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnSendRequest;
     private javax.swing.JButton btnViewrequests;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 }

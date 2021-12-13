@@ -49,13 +49,13 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
         btn_Flood_queue = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(0, 153, 102));
+        setBackground(new java.awt.Color(102, 0, 102));
         setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Government Official Work Area");
         add(jLabel1);
-        jLabel1.setBounds(90, 10, 510, 29);
+        jLabel1.setBounds(270, 60, 510, 29);
 
         btn_pollution_wrk_queue.setBackground(new java.awt.Color(255, 255, 255));
         btn_pollution_wrk_queue.setForeground(new java.awt.Color(0, 0, 255));
@@ -66,7 +66,7 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btn_pollution_wrk_queue);
-        btn_pollution_wrk_queue.setBounds(20, 120, 210, 21);
+        btn_pollution_wrk_queue.setBounds(160, 190, 240, 40);
 
         btn_Flood_queue.setForeground(new java.awt.Color(0, 51, 255));
         btn_Flood_queue.setText("View Flood Alert Work Queue");
@@ -76,11 +76,11 @@ public class GovernmentOfficialWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
         add(btn_Flood_queue);
-        btn_Flood_queue.setBounds(370, 120, 210, 21);
+        btn_Flood_queue.setBounds(500, 190, 240, 40);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/gov.jpg"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/govworkqueue.jpg"))); // NOI18N
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 680, 600);
+        jLabel2.setBounds(-30, -80, 1740, 870);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_pollution_wrk_queueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_pollution_wrk_queueActionPerformed

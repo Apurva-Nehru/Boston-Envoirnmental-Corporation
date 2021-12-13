@@ -95,7 +95,6 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         jScrollPane2 = new javax.swing.JScrollPane();
         tbl_Gov_wrd_queue = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         btnNotifyResidents = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -135,7 +134,7 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         jScrollPane2.setViewportView(tbl_Gov_wrd_queue);
 
         add(jScrollPane2);
-        jScrollPane2.setBounds(10, 144, 777, 90);
+        jScrollPane2.setBounds(10, 144, 1000, 90);
 
         jButton2.setBackground(new java.awt.Color(0, 51, 255));
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,18 +147,8 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         add(jButton2);
         jButton2.setBounds(10, 20, 100, 21);
 
-        jButton3.setBackground(new java.awt.Color(0, 51, 255));
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setText("View complete Message");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        add(jButton3);
-        jButton3.setBounds(370, 350, 162, 21);
-
         btnNotifyResidents.setBackground(new java.awt.Color(0, 255, 0));
+        btnNotifyResidents.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         btnNotifyResidents.setForeground(new java.awt.Color(255, 255, 255));
         btnNotifyResidents.setText("Send Resolved Notification");
         btnNotifyResidents.addActionListener(new java.awt.event.ActionListener() {
@@ -168,9 +157,10 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
             }
         });
         add(btnNotifyResidents);
-        btnNotifyResidents.setBounds(30, 530, 201, 21);
+        btnNotifyResidents.setBounds(30, 530, 280, 25);
 
         jButton5.setBackground(new java.awt.Color(255, 0, 51));
+        jButton5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setText("Send Alert Notification to Residents");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -179,12 +169,12 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
             }
         });
         add(jButton5);
-        jButton5.setBounds(720, 520, 185, 21);
+        jButton5.setBounds(720, 520, 260, 25);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/letter-to-a-government-official.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Boston-120419-Governor-office-renovations-PHOTO-scaled.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
         add(jLabel2);
-        jLabel2.setBounds(0, 0, 950, 590);
+        jLabel2.setBounds(0, 0, 1120, 590);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -289,27 +279,11 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         }
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        int row = tbl_Gov_wrd_queue.getSelectedRow();
-        try
-        {
-         GovWorkRequest request = (GovWorkRequest)tbl_Gov_wrd_queue.getValueAt(row, 0);
-         MessagejLabel.setText(request.getAirPollutionMessage());
-        }
-        
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, "Please select a row");
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel MessagejLabel;
     private javax.swing.JButton btnNotifyResidents;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

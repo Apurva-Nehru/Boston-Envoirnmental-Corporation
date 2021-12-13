@@ -48,41 +48,31 @@ public class ResidentWorkAreaJPanel extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         Btn_View_Notification = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Resident Work Area");
+        add(jLabel1);
+        jLabel1.setBounds(0, 23, 970, 44);
 
+        Btn_View_Notification.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         Btn_View_Notification.setText("View Notification");
         Btn_View_Notification.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_View_NotificationActionPerformed(evt);
             }
         });
+        add(Btn_View_Notification);
+        Btn_View_Notification.setBounds(350, 180, 210, 40);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 490, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(Btn_View_Notification, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel1)
-                .addGap(74, 74, 74)
-                .addComponent(Btn_View_Notification)
-                .addContainerGap(338, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/resident.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(-90, -160, 1150, 710);
     }// </editor-fold>//GEN-END:initComponents
 
     private void Btn_View_NotificationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_View_NotificationActionPerformed
@@ -98,5 +88,6 @@ public class ResidentWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Btn_View_Notification;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     // End of variables declaration//GEN-END:variables
 }

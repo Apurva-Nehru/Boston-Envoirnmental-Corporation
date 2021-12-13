@@ -223,7 +223,7 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/sysadmin.png"))); // NOI18N
         add(jLabel7);
-        jLabel7.setBounds(10, -90, 970, 580);
+        jLabel7.setBounds(0, -80, 970, 520);
     }// </editor-fold>//GEN-END:initComponents
 
     private void combo_cityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combo_cityActionPerformed

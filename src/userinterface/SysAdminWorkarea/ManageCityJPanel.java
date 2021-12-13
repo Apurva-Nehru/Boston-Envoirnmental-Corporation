@@ -133,7 +133,7 @@ public class ManageCityJPanel extends javax.swing.JPanel {
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Manage-City.jpg"))); // NOI18N
         jLabel3.setText("jLabel3");
         add(jLabel3);
-        jLabel3.setBounds(0, 40, 960, 590);
+        jLabel3.setBounds(0, -60, 960, 680);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_deleteActionPerformed

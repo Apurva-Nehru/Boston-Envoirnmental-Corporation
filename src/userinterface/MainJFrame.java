@@ -126,7 +126,7 @@ public class MainJFrame extends javax.swing.JFrame {
         container.setForeground(new java.awt.Color(0, 204, 102));
         container.setLayout(new java.awt.CardLayout());
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\apurv\\Downloads\\hustle.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/hustle.png"))); // NOI18N
         container.add(jLabel4, "card2");
 
         jSplitPane1.setRightComponent(container);

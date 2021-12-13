@@ -47,19 +47,27 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
         manageOrganizationJButton = new javax.swing.JButton();
         manageEmployeeJButton = new javax.swing.JButton();
         userJButton = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
+        setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setText("Environment Management Admin Work Area");
+        add(jLabel1);
+        jLabel1.setBounds(110, 100, 530, 29);
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
+        add(enterpriseLabel);
+        enterpriseLabel.setBounds(150, 160, 120, 30);
 
         valueLabel.setBackground(new java.awt.Color(255, 255, 255));
         valueLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         valueLabel.setForeground(new java.awt.Color(0, 0, 51));
         valueLabel.setText("<value>");
+        add(valueLabel);
+        valueLabel.setBounds(330, 160, 406, 22);
 
         manageOrganizationJButton.setBackground(new java.awt.Color(0, 0, 204));
         manageOrganizationJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -70,6 +78,8 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageOrganizationJButtonActionPerformed(evt);
             }
         });
+        add(manageOrganizationJButton);
+        manageOrganizationJButton.setBounds(250, 230, 220, 25);
 
         manageEmployeeJButton.setBackground(new java.awt.Color(0, 0, 204));
         manageEmployeeJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -80,6 +90,8 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
                 manageEmployeeJButtonActionPerformed(evt);
             }
         });
+        add(manageEmployeeJButton);
+        manageEmployeeJButton.setBounds(260, 340, 220, 25);
 
         userJButton.setBackground(new java.awt.Color(0, 0, 204));
         userJButton.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -90,48 +102,12 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
                 userJButtonActionPerformed(evt);
             }
         });
+        add(userJButton);
+        userJButton.setBounds(260, 460, 220, 25);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(150, 150, 150)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(30, 30, 30)
-                                .addComponent(valueLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 740, Short.MAX_VALUE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(manageOrganizationJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(manageEmployeeJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(userJButton, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(98, 98, 98)
-                        .addComponent(jLabel1)))
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(jLabel1)
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(valueLabel))
-                .addGap(44, 44, 44)
-                .addComponent(manageOrganizationJButton)
-                .addGap(57, 57, 57)
-                .addComponent(manageEmployeeJButton)
-                .addGap(60, 60, 60)
-                .addComponent(userJButton)
-                .addContainerGap(234, Short.MAX_VALUE))
-        );
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/admin_work_area.jpg"))); // NOI18N
+        add(jLabel2);
+        jLabel2.setBounds(0, 0, 790, 600);
     }// </editor-fold>//GEN-END:initComponents
 
     private void manageOrganizationJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_manageOrganizationJButtonActionPerformed
@@ -163,6 +139,7 @@ public class EnvManagementAdminWorkAreaJPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel enterpriseLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JButton manageEmployeeJButton;
     private javax.swing.JButton manageOrganizationJButton;
     private javax.swing.JButton userJButton;

@@ -13,7 +13,7 @@ import Business.Oragnization.EnvironmentSensorOrganization;
 import Business.UserAccount.UserAccount;
 import userinterface.EnvironmentSensorEnterprise.AirPollution.AirPollutionSensorJPanel;
 import userinterface.EnvironmentSensorEnterprise.FloodManagement.FloodManagementSensorJPanel;
-import userinterface.EnvironmentSensorEnterprise.WasteManagement.WasteManagementSensor;
+
 import userinterface.EnvironmentSensorEnterprise.NoisePollutionManagement.NoisePollutionManagementSensorJPanel;
 import java.awt.CardLayout;
 import java.io.IOException;
@@ -60,11 +60,10 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
         lblOrganizationvalue = new javax.swing.JLabel();
         lblEnterprise2 = new javax.swing.JLabel();
         lblEnterprisevalue = new javax.swing.JLabel();
-        btnWasteManagement = new javax.swing.JButton();
         btnAirPollutionManagement1 = new javax.swing.JButton();
         btnNoiePollutionManagement = new javax.swing.JButton();
         btnFloodManagement = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(0, 153, 102));
         setLayout(null);
@@ -94,17 +93,9 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
         add(lblEnterprisevalue);
         lblEnterprisevalue.setBounds(370, 86, 308, 34);
 
-        btnWasteManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        btnWasteManagement.setText("Waste Management");
-        btnWasteManagement.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnWasteManagementActionPerformed(evt);
-            }
-        });
-        add(btnWasteManagement);
-        btnWasteManagement.setBounds(347, 399, 340, 42);
-
+        btnAirPollutionManagement1.setBackground(new java.awt.Color(0, 102, 255));
         btnAirPollutionManagement1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnAirPollutionManagement1.setForeground(new java.awt.Color(255, 255, 255));
         btnAirPollutionManagement1.setText("Air Pollution Management");
         btnAirPollutionManagement1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -112,9 +103,11 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
             }
         });
         add(btnAirPollutionManagement1);
-        btnAirPollutionManagement1.setBounds(348, 219, 340, 42);
+        btnAirPollutionManagement1.setBounds(460, 210, 340, 42);
 
+        btnNoiePollutionManagement.setBackground(new java.awt.Color(0, 51, 255));
         btnNoiePollutionManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnNoiePollutionManagement.setForeground(new java.awt.Color(255, 255, 255));
         btnNoiePollutionManagement.setText("Noise Pollution Management");
         btnNoiePollutionManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -122,9 +115,11 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
             }
         });
         add(btnNoiePollutionManagement);
-        btnNoiePollutionManagement.setBounds(347, 279, 340, 42);
+        btnNoiePollutionManagement.setBounds(460, 280, 340, 42);
 
+        btnFloodManagement.setBackground(new java.awt.Color(0, 51, 255));
         btnFloodManagement.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        btnFloodManagement.setForeground(new java.awt.Color(255, 255, 255));
         btnFloodManagement.setText("Flood Management");
         btnFloodManagement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,11 +127,11 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
             }
         });
         add(btnFloodManagement);
-        btnFloodManagement.setBounds(347, 339, 340, 42);
+        btnFloodManagement.setBounds(470, 350, 340, 42);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/Sensor.png"))); // NOI18N
-        add(jLabel2);
-        jLabel2.setBounds(0, 50, 870, 490);
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/airwatersound.jpg"))); // NOI18N
+        add(jLabel3);
+        jLabel3.setBounds(-20, 50, 990, 660);
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnAirPollutionManagement1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAirPollutionManagement1ActionPerformed
@@ -163,22 +158,13 @@ public class SensorManagementWorkArea extends javax.swing.JPanel {
         layout.next(userProcessContainer);
     }//GEN-LAST:event_btnFloodManagementActionPerformed
 
-    private void btnWasteManagementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnWasteManagementActionPerformed
-        // TODO add your handling code here:
-        WasteManagementSensor wasteSensorManagement = new WasteManagementSensor(userProcessContainer, account, organization, enterprise, business);
-        userProcessContainer.add("garbageSensorManagementJPanel", wasteSensorManagement);
-        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
-        layout.next(userProcessContainer);
-    }//GEN-LAST:event_btnWasteManagementActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAirPollutionManagement1;
     private javax.swing.JButton btnFloodManagement;
     private javax.swing.JButton btnNoiePollutionManagement;
-    private javax.swing.JButton btnWasteManagement;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel lblEnterprise;
     private javax.swing.JLabel lblEnterprise2;
     private javax.swing.JLabel lblEnterprisevalue;

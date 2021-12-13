@@ -127,7 +127,7 @@ public class EnvironmentSensorEmployeeJPanel extends javax.swing.JPanel {
         txt_Name.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         txt_Name.setForeground(new java.awt.Color(0, 0, 51));
         add(txt_Name);
-        txt_Name.setBounds(291, 451, 250, 23);
+        txt_Name.setBounds(291, 451, 250, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel2.setText("Name");

@@ -10,9 +10,7 @@ import Business.Enterprise.Enterprise;
 import Business.Oragnization.NoisePollutionOrganization;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
-import userinterface.EnvironmentSensorEnterprise.NoisePollutionManagement.ViewNoisePollutionWorkQueueJPanel;
 import javax.swing.JPanel;
-import userinterface.EnvManagementRoles.NoisePollutionManagementWorkQueueJPanel;
 import userinterface.EnvManagementRoles.NoisePollutionWorkAreaJPanel;
 /**
  *

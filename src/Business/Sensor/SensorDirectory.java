@@ -41,10 +41,7 @@ public class SensorDirectory {
             sensorList.add(sensor);
         }
         
-        else if (type.getValue().equals(SensorType.WasteSensor.getValue())){
-            sensor = new WasteSensor();
-            sensorList.add(sensor);
-        }
+        
         
         else if (type.getValue().equals(SensorType.NoisePollutionSensor.getValue())){
             sensor = new NoisePollutionSensor();
@@ -90,17 +87,7 @@ public class SensorDirectory {
         return floodManagementSensorResponseValues;
     }
 
-    public Map<String, Float> getWasteManagementSensorResponseValues() {
-        for(int i=0; i<sensorList.size(); i++)
-        {
-            if(sensorList.get(i) instanceof WasteSensor)
-            {
-                WasteSensor ws = (WasteSensor) sensorList.get(i);
-                wasteSensorResponseValues.put(ws.getZipcode(), ws.getCurrentlevel());
-            }
-        }        
-        return wasteSensorResponseValues;
-    }
+   
     
    public boolean AirPollutionSensorExists(String zipcode)
     {
@@ -173,30 +160,7 @@ public class SensorDirectory {
         }
         return sensorAlreadyPresent;
     }
-   public boolean WasteManagementSensorExists(String zipcode)
-    {
-        boolean sensorAlreadyPresent = false;
-        ArrayList<WasteSensor> wasteSensorList = new ArrayList<WasteSensor>();
-        
-        for(int i=0; i<sensorList.size(); i++)
-        {
-            if(sensorList.get(i) instanceof WasteSensor)
-            {
-                WasteSensor wastes = (WasteSensor) sensorList.get(i);
-                wasteSensorList.add(wastes);
-            }
-        }
-        
-        for(int i=0; i<wasteSensorList.size(); i++)
-        {
-            if(zipcode.equals(wasteSensorList.get(i).getZipcode()))
-            {
-                sensorAlreadyPresent = true;
-            }
-        }
-        return sensorAlreadyPresent;
-    }
-    
+ 
     
     public ArrayList<Sensor> getSensorList() {
         return sensorList;

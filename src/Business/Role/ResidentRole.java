@@ -7,7 +7,6 @@ package Business.Role;
 import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.ResidentOrganization;
-import Business.Oragnization.GovOrg;
 import Business.Oragnization.Organization;
 import Business.UserAccount.UserAccount;
 import userinterface.ResidentOrganization.ResidentWorkAreaJPanel;

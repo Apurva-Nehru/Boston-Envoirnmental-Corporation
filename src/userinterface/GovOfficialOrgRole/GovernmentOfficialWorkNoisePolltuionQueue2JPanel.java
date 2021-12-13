@@ -5,6 +5,7 @@
  */
 package userinterface.GovOfficialOrgRole;
 
+import Business.EcoSystem;
 import Business.Enterprise.Enterprise;
 import Business.Oragnization.ResidentOrganization;
 import Business.Oragnization.GovOrg;
@@ -38,6 +39,8 @@ public class GovernmentOfficialWorkNoisePolltuionQueue2JPanel extends javax.swin
     private UserAccount userAccount;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
+    private EcoSystem business;
+    private GovOrg organization;
     /**
      * Creates new form GovernmentOfficialWorkQueueJPanel
      */
@@ -47,6 +50,7 @@ public class GovernmentOfficialWorkNoisePolltuionQueue2JPanel extends javax.swin
         this.userAccount = userAccount;
         this.directory = directory;
         this.enterprise = enterprise;
+        this.organization = organization;
         
         populateTable();
     }
@@ -219,6 +223,7 @@ public class GovernmentOfficialWorkNoisePolltuionQueue2JPanel extends javax.swin
     private void btn_backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_backActionPerformed
         // TODO add your handling code here:
          userProcessContainer.remove(this);
+         JPanel panel = new GovernmentOfficialWorkAreaJPanel(userProcessContainer,userAccount,organization, enterprise,business);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_btn_backActionPerformed

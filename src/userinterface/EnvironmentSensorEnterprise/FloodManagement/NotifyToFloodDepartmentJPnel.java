@@ -73,9 +73,9 @@ private JPanel userProcessContainer;
     }
     public void readFromCSV() throws IOException
     {
-        //String csvFile = "C:\\Users\\Akshay\\Desktop\\Flood.csv";
         
-        String csvFile = "src\\\\CSV_Files\\\\AirPollution.csv";
+        
+        String csvFile = "src\\\\CSV_Files\\\\FloodedAreasData.csv";
         
 	        BufferedReader bufferedReader = null;
 	        String line = "";

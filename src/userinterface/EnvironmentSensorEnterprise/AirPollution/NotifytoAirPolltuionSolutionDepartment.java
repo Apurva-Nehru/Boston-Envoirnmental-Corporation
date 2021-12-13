@@ -64,7 +64,7 @@ public class NotifytoAirPolltuionSolutionDepartment extends javax.swing.JPanel {
     public void readFromCSV() throws IOException
     {
         ArrayList<Sensor> sensorList = null;
-        String csvFile = "src\\CSV_Files\\AirPollution.csv";
+        String csvFile = "src\\CSV_Files\\AirPollutionReadingsData.csv";
 	        BufferedReader bufferedReader = null;
 	        String line = "";
 	        String cvsSplitBy = ",";

@@ -38,6 +38,8 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
     private UserAccount userAccount;
     private JPanel userProcessContainer;
     private Enterprise enterprise;
+    private EcoSystem business;
+    private GovOrg organization; 
     /**
      * Creates new form GovernmentOfficialWorkQueueJPanel
      */
@@ -45,8 +47,11 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.userAccount = userAccount;
+        this.organization = organization;
         this.directory = directory;
         this.enterprise = enterprise;
+        
+        this.business = business;
         
         populateTable();
     }
@@ -268,6 +273,7 @@ public class GovernmentOfficialWorkAirPollutionQueueJPanel extends javax.swing.J
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
          userProcessContainer.remove(this);
+         JPanel panel = new GovernmentOfficialWorkAreaJPanel(userProcessContainer,userAccount,organization, enterprise,business);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_jButton2ActionPerformed
